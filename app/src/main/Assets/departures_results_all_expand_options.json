@@ -1,0 +1,7302 @@
+{
+  "departures": [
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 15941,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-29T14:02:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_348",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 15587,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-29T14:17:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_361",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 15590,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-29T14:47:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_364",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 15592,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-29T15:17:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_366",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16906,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-29T18:15:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_0",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16908,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-29T18:32:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_2",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16913,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-29T19:19:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_7",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 15942,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-29T19:20:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_0",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 15944,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-29T19:41:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_2",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16914,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-29T19:42:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_8",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16915,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-29T19:52:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_9",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 15947,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-29T19:56:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_5",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16919,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-29T20:02:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_13",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16924,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-29T20:10:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_18",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 15950,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-29T20:12:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_8",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16925,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-29T20:18:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_19",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 15958,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-29T20:22:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_16",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 15959,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-29T20:25:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_17",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16927,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-29T20:26:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_21",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 15960,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-29T20:33:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_18",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16929,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-29T20:34:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_23",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 15961,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-29T20:41:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_19",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16930,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-29T20:42:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_24",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 15963,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-29T20:49:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_21",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16932,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-29T20:50:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_26",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 15965,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-29T20:57:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_23",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16935,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-29T20:58:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_29",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 15966,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-29T21:05:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_24",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16938,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-29T21:06:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_32",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 15968,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-29T21:13:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_26",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16949,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-29T21:14:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_43",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 15975,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-29T21:21:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_33",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16950,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-29T21:22:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_44",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 15976,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-29T21:29:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_34",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16951,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-29T21:30:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_45",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 15977,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-29T21:37:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_35",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16954,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-29T21:38:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_48",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 15979,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-29T21:45:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_37",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16977,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-29T21:46:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_71",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 15983,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-29T21:53:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_41",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16982,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-29T21:54:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_76",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 15986,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-29T22:01:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_44",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16984,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-29T22:02:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_78",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 15987,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-29T22:09:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_45",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16985,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-29T22:10:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_79",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 15990,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-29T22:17:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_48",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16991,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-29T22:18:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_85",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 15993,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-29T22:25:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_51",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16992,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-29T22:26:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_86",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 15996,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-29T22:33:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_54",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16993,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-29T22:34:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_87",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 15997,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-29T22:41:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_55",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16994,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-29T22:42:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_88",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16003,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-29T22:49:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_61",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16995,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-29T22:50:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_89",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16005,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-29T22:57:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_63",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17003,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-29T22:58:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_97",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16011,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-29T23:05:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_69",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17004,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-29T23:06:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_98",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16012,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-29T23:13:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_70",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17007,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-29T23:14:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_101",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17017,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-29T23:21:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_111",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16016,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-29T23:21:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_74",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16019,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-29T23:29:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_77",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17020,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-29T23:31:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_114",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16029,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-29T23:36:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_87",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17023,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-29T23:41:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_117",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16032,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-29T23:46:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_90",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17026,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-29T23:51:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_120",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16037,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-29T23:56:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_95",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17029,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T00:01:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_123",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16038,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T00:06:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_96",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17032,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T00:11:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_126",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16052,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T00:16:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_110",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17035,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T00:21:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_129",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16053,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T00:26:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_111",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17036,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T00:31:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_130",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16054,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T00:36:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_112",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17037,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T00:41:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_131",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16055,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T00:46:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_113",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17044,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T00:51:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_138",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16058,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T00:56:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_116",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17047,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T01:01:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_141",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16061,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T01:06:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_119",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17050,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T01:11:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_144",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16064,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T01:16:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_122",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17052,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T01:21:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_146",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16067,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T01:26:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_125",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17054,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T01:31:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_148",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16070,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T01:36:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_128",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17059,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T01:41:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_153",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16073,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T01:46:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_131",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17062,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T01:51:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_156",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16076,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T01:56:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_134",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17065,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T02:01:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_159",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16079,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T02:06:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_137",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17069,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T02:11:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_163",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16082,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T02:16:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_140",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17072,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T02:21:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_166",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16085,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T02:26:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_143",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17075,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T02:31:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_169",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16088,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T02:36:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_146",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17078,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T02:41:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_172",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16091,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T02:46:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_149",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17081,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T02:51:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_175",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16094,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T02:56:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_152",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17084,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T03:01:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_178",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16097,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T03:06:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_155",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17087,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T03:11:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_181",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16100,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T03:16:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_158",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17090,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T03:21:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_184",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16103,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T03:26:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_161",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17092,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T03:31:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_186",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16106,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T03:36:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_164",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17095,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T03:41:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_189",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16109,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T03:46:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_167",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17099,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T03:51:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_193",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16112,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T03:56:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_170",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17102,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T04:01:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_196",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16116,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T04:06:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_174",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17104,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T04:11:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_198",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16118,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T04:16:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_176",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17106,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T04:21:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_200",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16124,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T04:26:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_182",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17108,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T04:31:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_202",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16125,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T04:36:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_183",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17109,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T04:41:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_203",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16127,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T04:46:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_185",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17117,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T04:51:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_211",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16131,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T04:56:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_189",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17120,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T05:01:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_214",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16134,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T05:06:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_192",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17122,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T05:11:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_216",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16137,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T05:16:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_195",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17125,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T05:21:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_219",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16139,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T05:26:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_197",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17128,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T05:31:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_222",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16142,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T05:36:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_200",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17130,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T05:39:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_224",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16145,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T05:46:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_203",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17135,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T05:47:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_229",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16151,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T05:54:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_209",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17138,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T05:55:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_232",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16153,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T06:02:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_211",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17139,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T06:03:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_233",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16155,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T06:10:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_213",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17141,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T06:11:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_235",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16156,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T06:18:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_214",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17148,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T06:19:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_242",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16158,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T06:26:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_216",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17152,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T06:27:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_246",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16161,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T06:34:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_219",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17154,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T06:35:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_248",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16164,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T06:42:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_222",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17155,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T06:43:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_249",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16168,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T06:50:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_226",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17157,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T06:51:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_251",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16176,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T06:58:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_234",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17159,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T06:59:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_253",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16177,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T07:06:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_235",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17160,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T07:07:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_254",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16181,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T07:14:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_239",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17171,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T07:15:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_265",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16200,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T07:22:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_258",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17173,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T07:23:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_267",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16203,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T07:30:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_261",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17177,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T07:31:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_271",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16206,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T07:38:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_264",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17178,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T07:39:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_272",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16207,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T07:46:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_265",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17180,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T07:47:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_274",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16209,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T07:54:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_267",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17181,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T07:55:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_275",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16210,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T08:02:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_268",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17185,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T08:03:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_279",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16211,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T08:10:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_269",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17186,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T08:11:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_280",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16215,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T08:18:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_273",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17191,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T08:19:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_285",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16217,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T08:26:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_275",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17195,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T08:27:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_289",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16220,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T08:34:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_278",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17196,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T08:35:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_290",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16221,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T08:42:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_279",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17200,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T08:43:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_294",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16232,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T08:50:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_290",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17203,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T08:51:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_297",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16233,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T08:58:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_291",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17206,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T08:59:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_300",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16237,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T09:06:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_295",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17207,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T09:07:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_301",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16249,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T09:14:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_307",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17211,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T09:15:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_305",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16250,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T09:22:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_308",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17212,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T09:23:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_306",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16254,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T09:30:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_312",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17215,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T09:31:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_309",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16255,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T09:38:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_313",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16257,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T09:46:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_315",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17219,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T09:47:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_313",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17222,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T10:02:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_316",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16259,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T10:02:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_317",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16263,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T10:17:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_321",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17226,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T10:22:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_320",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16266,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T10:37:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_324",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17231,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T10:42:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_325",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16270,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T10:57:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_328",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17236,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T11:02:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_330",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16275,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T11:17:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_333",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17237,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T11:22:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_331",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16278,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T11:37:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_336",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17243,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T11:42:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_337",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16290,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T11:57:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_348",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17247,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T12:02:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_341",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16291,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T12:17:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_349",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17251,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T12:22:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_345",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16292,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T12:37:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_350",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17255,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T12:42:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_349",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16293,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T12:57:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_351",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17259,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T13:02:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_353",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16306,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T13:17:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_364",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17263,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T13:22:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_357",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16307,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T13:32:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_365",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17266,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T13:42:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_360",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16308,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T13:52:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_366",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17267,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T14:02:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_361",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17270,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T14:17:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_364",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16309,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T14:17:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_367",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17271,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T14:47:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_365",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16312,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T14:47:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_370",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17275,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T15:03:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_369",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16315,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T15:17:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_373",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16319,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T15:37:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_377",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17276,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T15:42:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_370",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17280,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T16:02:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_374",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16320,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T16:12:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_378",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 17281,
+      "direction_id": 1,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T16:42:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_375",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 16324,
+      "direction_id": 5,
+      "disruption_ids": [
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-30T16:52:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_382",
+      "departure_sequence": 0
+    }
+  ],
+  "stops": {
+    "1035": {
+      "stop_distance": 0.0,
+      "stop_suburb": "Carrum",
+      "stop_name": "Carrum",
+      "stop_id": 1035,
+      "route_type": 0,
+      "stop_latitude": -38.0748978,
+      "stop_longitude": 145.122421,
+      "stop_sequence": 0
+    }
+  },
+  "routes": {
+    "6": {
+      "route_type": 0,
+      "route_id": 6,
+      "route_name": "Frankston",
+      "route_number": "",
+      "route_gtfs_id": "2-FKN"
+    }
+  },
+  "runs": {
+    "15941": {
+      "run_id": 15941,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "15587": {
+      "run_id": 15587,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "15590": {
+      "run_id": 15590,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "15592": {
+      "run_id": 15592,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16906": {
+      "run_id": 16906,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16908": {
+      "run_id": 16908,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16913": {
+      "run_id": 16913,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "15942": {
+      "run_id": 15942,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "15944": {
+      "run_id": 15944,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16914": {
+      "run_id": 16914,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16915": {
+      "run_id": 16915,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "15947": {
+      "run_id": 15947,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16919": {
+      "run_id": 16919,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16924": {
+      "run_id": 16924,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "15950": {
+      "run_id": 15950,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16925": {
+      "run_id": 16925,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "15958": {
+      "run_id": 15958,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "15959": {
+      "run_id": 15959,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16927": {
+      "run_id": 16927,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "15960": {
+      "run_id": 15960,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16929": {
+      "run_id": 16929,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "15961": {
+      "run_id": 15961,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16930": {
+      "run_id": 16930,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "15963": {
+      "run_id": 15963,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16932": {
+      "run_id": 16932,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "15965": {
+      "run_id": 15965,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16935": {
+      "run_id": 16935,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "15966": {
+      "run_id": 15966,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16938": {
+      "run_id": 16938,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "15968": {
+      "run_id": 15968,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16949": {
+      "run_id": 16949,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "15975": {
+      "run_id": 15975,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16950": {
+      "run_id": 16950,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "15976": {
+      "run_id": 15976,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16951": {
+      "run_id": 16951,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "15977": {
+      "run_id": 15977,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16954": {
+      "run_id": 16954,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "15979": {
+      "run_id": 15979,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16977": {
+      "run_id": 16977,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "15983": {
+      "run_id": 15983,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16982": {
+      "run_id": 16982,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "15986": {
+      "run_id": 15986,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16984": {
+      "run_id": 16984,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "15987": {
+      "run_id": 15987,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16985": {
+      "run_id": 16985,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "15990": {
+      "run_id": 15990,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16991": {
+      "run_id": 16991,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "15993": {
+      "run_id": 15993,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16992": {
+      "run_id": 16992,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "15996": {
+      "run_id": 15996,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16993": {
+      "run_id": 16993,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "15997": {
+      "run_id": 15997,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16994": {
+      "run_id": 16994,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16003": {
+      "run_id": 16003,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16995": {
+      "run_id": 16995,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16005": {
+      "run_id": 16005,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17003": {
+      "run_id": 17003,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16011": {
+      "run_id": 16011,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17004": {
+      "run_id": 17004,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16012": {
+      "run_id": 16012,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17007": {
+      "run_id": 17007,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17017": {
+      "run_id": 17017,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16016": {
+      "run_id": 16016,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16019": {
+      "run_id": 16019,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17020": {
+      "run_id": 17020,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16029": {
+      "run_id": 16029,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17023": {
+      "run_id": 17023,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16032": {
+      "run_id": 16032,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17026": {
+      "run_id": 17026,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16037": {
+      "run_id": 16037,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17029": {
+      "run_id": 17029,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16038": {
+      "run_id": 16038,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17032": {
+      "run_id": 17032,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16052": {
+      "run_id": 16052,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17035": {
+      "run_id": 17035,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16053": {
+      "run_id": 16053,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17036": {
+      "run_id": 17036,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16054": {
+      "run_id": 16054,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17037": {
+      "run_id": 17037,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16055": {
+      "run_id": 16055,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17044": {
+      "run_id": 17044,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16058": {
+      "run_id": 16058,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17047": {
+      "run_id": 17047,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16061": {
+      "run_id": 16061,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17050": {
+      "run_id": 17050,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16064": {
+      "run_id": 16064,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17052": {
+      "run_id": 17052,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16067": {
+      "run_id": 16067,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17054": {
+      "run_id": 17054,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16070": {
+      "run_id": 16070,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17059": {
+      "run_id": 17059,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16073": {
+      "run_id": 16073,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17062": {
+      "run_id": 17062,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16076": {
+      "run_id": 16076,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17065": {
+      "run_id": 17065,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16079": {
+      "run_id": 16079,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17069": {
+      "run_id": 17069,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16082": {
+      "run_id": 16082,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17072": {
+      "run_id": 17072,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16085": {
+      "run_id": 16085,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17075": {
+      "run_id": 17075,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16088": {
+      "run_id": 16088,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17078": {
+      "run_id": 17078,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16091": {
+      "run_id": 16091,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17081": {
+      "run_id": 17081,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16094": {
+      "run_id": 16094,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17084": {
+      "run_id": 17084,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16097": {
+      "run_id": 16097,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17087": {
+      "run_id": 17087,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16100": {
+      "run_id": 16100,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17090": {
+      "run_id": 17090,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16103": {
+      "run_id": 16103,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17092": {
+      "run_id": 17092,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16106": {
+      "run_id": 16106,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17095": {
+      "run_id": 17095,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16109": {
+      "run_id": 16109,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17099": {
+      "run_id": 17099,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16112": {
+      "run_id": 16112,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17102": {
+      "run_id": 17102,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16116": {
+      "run_id": 16116,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17104": {
+      "run_id": 17104,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16118": {
+      "run_id": 16118,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17106": {
+      "run_id": 17106,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16124": {
+      "run_id": 16124,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17108": {
+      "run_id": 17108,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16125": {
+      "run_id": 16125,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17109": {
+      "run_id": 17109,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16127": {
+      "run_id": 16127,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17117": {
+      "run_id": 17117,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16131": {
+      "run_id": 16131,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17120": {
+      "run_id": 17120,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16134": {
+      "run_id": 16134,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17122": {
+      "run_id": 17122,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16137": {
+      "run_id": 16137,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17125": {
+      "run_id": 17125,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16139": {
+      "run_id": 16139,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17128": {
+      "run_id": 17128,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16142": {
+      "run_id": 16142,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17130": {
+      "run_id": 17130,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16145": {
+      "run_id": 16145,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17135": {
+      "run_id": 17135,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16151": {
+      "run_id": 16151,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17138": {
+      "run_id": 17138,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16153": {
+      "run_id": 16153,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17139": {
+      "run_id": 17139,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16155": {
+      "run_id": 16155,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17141": {
+      "run_id": 17141,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16156": {
+      "run_id": 16156,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17148": {
+      "run_id": 17148,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16158": {
+      "run_id": 16158,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17152": {
+      "run_id": 17152,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16161": {
+      "run_id": 16161,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17154": {
+      "run_id": 17154,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16164": {
+      "run_id": 16164,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17155": {
+      "run_id": 17155,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16168": {
+      "run_id": 16168,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17157": {
+      "run_id": 17157,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16176": {
+      "run_id": 16176,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17159": {
+      "run_id": 17159,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16177": {
+      "run_id": 16177,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17160": {
+      "run_id": 17160,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16181": {
+      "run_id": 16181,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17171": {
+      "run_id": 17171,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16200": {
+      "run_id": 16200,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17173": {
+      "run_id": 17173,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16203": {
+      "run_id": 16203,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17177": {
+      "run_id": 17177,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16206": {
+      "run_id": 16206,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17178": {
+      "run_id": 17178,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16207": {
+      "run_id": 16207,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17180": {
+      "run_id": 17180,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16209": {
+      "run_id": 16209,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17181": {
+      "run_id": 17181,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16210": {
+      "run_id": 16210,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17185": {
+      "run_id": 17185,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16211": {
+      "run_id": 16211,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17186": {
+      "run_id": 17186,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16215": {
+      "run_id": 16215,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17191": {
+      "run_id": 17191,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16217": {
+      "run_id": 16217,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17195": {
+      "run_id": 17195,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16220": {
+      "run_id": 16220,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17196": {
+      "run_id": 17196,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16221": {
+      "run_id": 16221,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17200": {
+      "run_id": 17200,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16232": {
+      "run_id": 16232,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17203": {
+      "run_id": 17203,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16233": {
+      "run_id": 16233,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17206": {
+      "run_id": 17206,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16237": {
+      "run_id": 16237,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17207": {
+      "run_id": 17207,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16249": {
+      "run_id": 16249,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17211": {
+      "run_id": 17211,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16250": {
+      "run_id": 16250,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17212": {
+      "run_id": 17212,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16254": {
+      "run_id": 16254,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17215": {
+      "run_id": 17215,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16255": {
+      "run_id": 16255,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16257": {
+      "run_id": 16257,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17219": {
+      "run_id": 17219,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17222": {
+      "run_id": 17222,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16259": {
+      "run_id": 16259,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16263": {
+      "run_id": 16263,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17226": {
+      "run_id": 17226,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16266": {
+      "run_id": 16266,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17231": {
+      "run_id": 17231,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16270": {
+      "run_id": 16270,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17236": {
+      "run_id": 17236,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16275": {
+      "run_id": 16275,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17237": {
+      "run_id": 17237,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16278": {
+      "run_id": 16278,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17243": {
+      "run_id": 17243,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16290": {
+      "run_id": 16290,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17247": {
+      "run_id": 17247,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16291": {
+      "run_id": 16291,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17251": {
+      "run_id": 17251,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16292": {
+      "run_id": 16292,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17255": {
+      "run_id": 17255,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16293": {
+      "run_id": 16293,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17259": {
+      "run_id": 17259,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16306": {
+      "run_id": 16306,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17263": {
+      "run_id": 17263,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16307": {
+      "run_id": 16307,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17266": {
+      "run_id": 17266,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16308": {
+      "run_id": 16308,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17267": {
+      "run_id": 17267,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17270": {
+      "run_id": 17270,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16309": {
+      "run_id": 16309,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17271": {
+      "run_id": 17271,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16312": {
+      "run_id": 16312,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17275": {
+      "run_id": 17275,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16315": {
+      "run_id": 16315,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16319": {
+      "run_id": 16319,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17276": {
+      "run_id": 17276,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17280": {
+      "run_id": 17280,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16320": {
+      "run_id": 16320,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "17281": {
+      "run_id": 17281,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1024,
+      "destination_name": "Bonbeach",
+      "status": "scheduled",
+      "direction_id": 1,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    },
+    "16324": {
+      "run_id": 16324,
+      "route_id": 6,
+      "route_type": 0,
+      "final_stop_id": 1174,
+      "destination_name": "Seaford",
+      "status": "scheduled",
+      "direction_id": 5,
+      "run_sequence": 0,
+      "express_stop_count": 0,
+      "vehicle_position": null,
+      "vehicle_descriptor": null
+    }
+  },
+  "directions": {
+    "1": {
+      "direction_id": 1,
+      "direction_name": "City (Flinders Street)",
+      "route_id": 6,
+      "route_type": 0
+    },
+    "5": {
+      "direction_id": 5,
+      "direction_name": "Frankston",
+      "route_id": 6,
+      "route_type": 0
+    }
+  },
+  "disruptions": {
+    "182209": {
+      "disruption_id": 182209,
+      "title": "Caulfield Station: Temporary car park closures from Friday 30 August to Monday 2 September 2019 ",
+      "url": "http://ptv.vic.gov.au/live-travel-updates/article/caulfield-station-temporary-car-park-closures-from-friday-30-august-to-monday-2-september-2019",
+      "description": "Caulfield Station will be affected by temporary long-term car space closures from 3pm Friday 30 August to 4am Monday 2 September, due to train replacement bus operations..",
+      "disruption_status": "Current",
+      "disruption_type": "Planned Closure",
+      "published_on": "2019-08-18T20:53:46Z",
+      "last_updated": "2019-08-18T21:47:01Z",
+      "from_date": "2019-08-18T20:39:00Z",
+      "to_date": "2019-09-01T18:00:00Z",
+      "routes": [
+        {
+          "route_type": 0,
+          "route_id": 4,
+          "route_name": "Cranbourne",
+          "route_number": "",
+          "route_gtfs_id": "2-CRB",
+          "direction": null
+        },
+        {
+          "route_type": 0,
+          "route_id": 11,
+          "route_name": "Pakenham",
+          "route_number": "",
+          "route_gtfs_id": "2-PKM",
+          "direction": null
+        },
+        {
+          "route_type": 0,
+          "route_id": 6,
+          "route_name": "Frankston",
+          "route_number": "",
+          "route_gtfs_id": "2-FKN",
+          "direction": null
+        }
+      ],
+      "stops": [],
+      "colour": "#ffd500",
+      "display_on_board": false,
+      "display_status": false
+    },
+    "181613": {
+      "disruption_id": 181613,
+      "title": "Cranbourne, Frankston and Pakenham lines: Buses replace trains between Parliament and Caulfield from 8.20pm Friday 30 August to last train Sunday 1 September 2019",
+      "url": "http://ptv.vic.gov.au/live-travel-updates/article/cranbourne-frankston-and-pakenham-lines-buses-replace-trains-between-flinders-street-and-caulfield-from-8-20pm-friday-30-august-to-last-train-sunday-1-september-2019",
+      "description": "Buses will replace train services between Parliament and Caulfield stations from 8.20pm Friday 30 August to last train Sunday 1 September 2019, while project works take place.",
+      "disruption_status": "Current",
+      "disruption_type": "Planned Works",
+      "published_on": "2019-08-12T00:47:40Z",
+      "last_updated": "2019-08-27T00:58:38Z",
+      "from_date": "2019-08-12T00:40:00Z",
+      "to_date": "2019-09-01T17:00:00Z",
+      "routes": [
+        {
+          "route_type": 0,
+          "route_id": 4,
+          "route_name": "Cranbourne",
+          "route_number": "",
+          "route_gtfs_id": "2-CRB",
+          "direction": null
+        },
+        {
+          "route_type": 0,
+          "route_id": 11,
+          "route_name": "Pakenham",
+          "route_number": "",
+          "route_gtfs_id": "2-PKM",
+          "direction": null
+        },
+        {
+          "route_type": 0,
+          "route_id": 6,
+          "route_name": "Frankston",
+          "route_number": "",
+          "route_gtfs_id": "2-FKN",
+          "direction": null
+        }
+      ],
+      "stops": [],
+      "colour": "#ffd500",
+      "display_on_board": false,
+      "display_status": false
+    },
+    "175928": {
+      "disruption_id": 175928,
+      "title": "Carrum Station: Temporary station closure from 1.15am Saturday 6 July 2019 to early 2020",
+      "url": "http://ptv.vic.gov.au/live-travel-updates/article/carrum-station-temporary-station-closure-from-1-15am-saturday-6-july-2019-to-early-2020",
+      "description": "Carrum Station is temporarily closed from 1.15am Saturday 6 July 2019 to early 2020, due to Carrum Level Crossing Removal works.",
+      "disruption_status": "Current",
+      "disruption_type": "Planned Closure",
+      "published_on": "2019-06-13T02:03:58Z",
+      "last_updated": "2019-07-17T10:33:45Z",
+      "from_date": "2019-06-13T01:45:00Z",
+      "to_date": "2020-06-30T17:00:00Z",
+      "routes": [
+        {
+          "route_type": 0,
+          "route_id": 6,
+          "route_name": "Frankston",
+          "route_number": "",
+          "route_gtfs_id": "2-FKN",
+          "direction": null
+        }
+      ],
+      "stops": [
+        {
+          "stop_id": 1035,
+          "stop_name": "Carrum "
+        }
+      ],
+      "colour": "#ffd500",
+      "display_on_board": false,
+      "display_status": false
+    }
+  },
+  "status": {
+    "version": "3.0",
+    "health": 1
+  }
+}

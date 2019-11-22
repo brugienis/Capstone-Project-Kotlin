@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Data to make available to the XML via data binding. In this case,
+         the whole ViewModel, so that we can access the LiveData,
+         click handlers, and state variables. -->
+    <data>
+        <import type="android.view.View" />
+        <variable
+                name="favoriteStopsViewModel"
+                type="au.com.kbrsolutions.melbournepublictransport.favoritestops.FavoriteStopsViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent"
+                 android:orientation="vertical"
+                 tools:context=".favoritestops.FavoriteStopsFragment">
+
+        <TextView
+                android:id="@+id/emptyFavoriteStopsView"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="4dp"
+                android:textColor="@android:color/black"
+                android:text="@string/no_favorite_stops_selected"
+                tools:text="@string/no_favorite_stops_selected"
+                android:visibility="@{favoriteStopsViewModel.favoriteStops.size == 0 ? View.VISIBLE : View.INVISIBLE}"
+                app:layout_constraintBottom_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/favoriteStopsList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:visibility="@{favoriteStopsViewModel.favoriteStops.size == 0 ? View.INVISIBLE : View.VISIBLE}"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="parent" />
+
+        <!-- in Java project there was NestedScrollingListView -->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+        <!--
+
+                android:text="@{favoriteStopsViewModel.getFavoriteStopsCnt()}"
+
+            <au.com.kbrsolutions.melbournepublictransport.fragments.NestedScrollingListView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/favoriteStopsListView"
+                android:layout_gravity="center_horizontal"
+                android:paddingBottom="@dimen/list_view_bottom_padding"
+                android:clipToPadding="false" />
+
+                android:gravity="center"
+        -->

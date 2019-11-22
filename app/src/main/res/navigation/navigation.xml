@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/navigation"
+            app:startDestination="@id/favoriteStopsFragment">
+
+    <fragment
+            android:id="@+id/favoriteStopsFragment"
+            android:name="au.com.kbrsolutions.melbournepublictransport.favoritestops.FavoriteStopsFragment"
+            android:label=" Favorite Stops"
+            tools:layout="@layout/fragment_favorite_stops">
+
+        <action
+                android:id="@+id/action_favoriteStopsFragment_to_nextDeparturesFragment"
+                app:destination="@id/nextDeparturesFragment"
+                app:enterAnim="@anim/nav_default_enter_anim"
+                app:exitAnim="@anim/nav_default_exit_anim"
+                app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+                app:popExitAnim="@anim/nav_default_pop_exit_anim"
+                app:popUpTo="@+id/favoriteStopsFragment" />
+    </fragment>
+
+    <fragment
+            android:id="@+id/favStops_goToStopsSearcherFragment"
+            android:name="au.com.kbrsolutions.melbournepublictransport.stopssearcher.StopsSearcherFragment"
+            android:label="Stops Finder">
+
+        <action
+                android:id="@+id/action_stopsSearcherFragment_to_favoriteStopsFragment"
+                app:destination="@id/favoriteStopsFragment"
+                app:enterAnim="@anim/nav_default_pop_enter_anim"
+                app:exitAnim="@anim/nav_default_pop_exit_anim"
+                app:popUpTo="@+id/favoriteStopsFragment"
+                app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+            android:id="@+id/nextDeparturesFragment"
+            android:name="au.com.kbrsolutions.melbournepublictransport.departures.DeparturesFragment"
+            android:label="Departures"
+            tools:layout="@layout/fragment_departures">
+        <argument
+                android:name="stopId"
+                app:argType="string" />
+        <argument
+                android:name="locationName"
+                app:argType="string" />
+        <argument
+                android:name="favoriteStopsRequestedTimMillis"
+                app:argType="long" />
+    </fragment>
+</navigation>

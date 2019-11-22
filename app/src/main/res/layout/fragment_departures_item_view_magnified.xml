@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+                name="departure"
+                type="au.com.kbrsolutions.melbournepublictransport.domain.Departure" />
+
+        <variable
+                name="clickListener"
+                type="au.com.kbrsolutions.melbournepublictransport.departures.DepartureListener"/>
+    </data>
+
+    <LinearLayout
+            android:id="@+id/departuresTopLayoutMagId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:minHeight="?android:attr/listPreferredItemHeight"
+            android:orientation="horizontal"
+            android:onClick="@{() -> clickListener.onClickNoIcon(departure)}" >
+
+        <ImageView
+                android:id="@+id/departuresTransportImageId"
+                android:scaleType="center"
+                android:layout_width="@dimen/touchable_size"
+                android:layout_height="@dimen/touchable_size"
+                android:background="@drawable/touch_selector"
+                android:src="@drawable/ic_stock_train_blue_500"
+                android:contentDescription="@string/content_desc_train_transport_type"
+                tools:ignore="PrivateResource" />
+
+        <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="7"
+                android:orientation="vertical" >
+
+            <TextView
+                    android:id="@+id/departuresDirectionName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/touch_selector"
+                    android:text="@{departure.directionName}"
+                    tools:text="Direction"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_magnified_size" />
+
+            <TextView
+                    android:id="@+id/departuresLine1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:runTypeOrLineShortName="@{departure}"
+                    tools:text="Run type"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textColor="@android:color/black"
+                    android:background="@drawable/touch_selector"
+                    android:textSize="@dimen/list_view_line1_magnified_text_size_sp" />
+
+            <TextView
+                    android:id="@+id/departuresLine2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Platform 1"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/list_view_line1_magnified_text_size_sp"
+                    android:background="@drawable/touch_selector" />
+
+            <TextView
+                    android:id="@+id/departuresLine3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Status"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textColor="@color/deep_orange_500"
+                    android:textSize="@dimen/list_view_line1_magnified_text_size_sp"
+                    android:background="@drawable/touch_selector" />
+
+            <LinearLayout
+                    android:id="@+id/departuresDepartureLayoutId"
+                    android:layout_width="@dimen/date_time_layout_magnified_width"
+                    android:layout_height="@dimen/date_time_layout_magnified_height"
+                    android:layout_gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:background="@drawable/rectangle_selected_and_dt_tm"
+                    android:onClick="@{() -> clickListener.onDepartureLayoutId(departure)}" >
+
+                <TextView
+                        android:id="@+id/departuresDepartureDateId"
+                        tools:ignore="PrivateResource"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{departure.displayDepartureDtTm}"
+                        tools:text="dd MM (Sat)"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/list_view_line1_magnified_text_size_sp" />
+
+                <TextView
+                        android:id="@+id/departuresDepartureTimeId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:ignore="PrivateResource"
+                        android:text="@{departure.departureTimeHourMinutes}"
+                        tools:text="hh:mm"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/list_view_line1_magnified_text_size_sp" />
+
+                <TextView
+                        android:id="@+id/departuresRealTextId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:ignore="PrivateResource"
+                        android:text='@{departure.realTimeInfo ? "true" : "false"}'
+                        tools:text="Real time"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/list_view_line1_magnified_text_size_sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                <ImageView
+                        android:id="@+id/departuresStopFacilityId"
+                        android:layout_width="@dimen/touchable_size"
+                        android:layout_height="@dimen/touchable_size"
+                        android:background="@drawable/touch_selector"
+                        android:src="@drawable/ic_stock_info_outline_green_500"
+                        android:contentDescription="@string/content_show_stop_facility"
+                        android:onClick="@{() -> clickListener.onClickShowStopFacility(departure)}" />
+
+                <ImageView
+                        android:id="@+id/departuresDisruptionsImageId"
+                        android:layout_width="@dimen/touchable_size"
+                        android:layout_height="@dimen/touchable_size"
+                        android:background="@drawable/touch_selector"
+                        android:src="@drawable/ic_stock_warning_disruptions_deep_orange_700"
+                        android:contentDescription="@string/content_desc_next_departures"
+                        android:onClick="@{() -> clickListener.onDisruptionsImageId(departure)}" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>
+        <!--
+
+                android:layout_marginRight="@dimen/abc_list_item_padding_horizontal_material"
+                android:layout_marginEnd="@dimen/abc_list_item_padding_horizontal_material"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center_vertical|center_horizontal"
+                    android:textColor="@color/secondary_text"
+        -->

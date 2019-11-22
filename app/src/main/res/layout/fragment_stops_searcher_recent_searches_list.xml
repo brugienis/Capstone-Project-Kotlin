@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:minHeight="?android:attr/listPreferredItemHeight"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_weight="7"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/stopsSearcherRecentSearchText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/touch_selector"
+            tools:text="Search text"
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+            android:textColor="@android:color/black" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/stopsSearcherStartSearchImageId"
+        android:layout_width="@dimen/touchable_size"
+        android:layout_height="@dimen/touchable_size"
+        android:adjustViewBounds="true"
+        android:background="@drawable/touch_selector"
+        android:src="@drawable/ic_stock_search_green_500"
+        android:contentDescription="@string/content_desc_start_search" />
+
+</LinearLayout>
+
+    <!--android:layout_marginLeft="@dimen/abc_list_item_padding_horizontal_material"-->
+    <!--android:layout_marginStart="@dimen/abc_list_item_padding_horizontal_material"-->
+    <!--android:layout_marginRight="@dimen/abc_list_item_padding_horizontal_material"-->
+    <!--android:layout_marginEnd="@dimen/abc_list_item_padding_horizontal_material"-->

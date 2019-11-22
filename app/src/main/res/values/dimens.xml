@@ -1,0 +1,24 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+
+    <!-- TODO - later copy also values from 820dp and sw600dp-->
+    <!-- below from Java project-->
+    <dimen name="touchable_size">48dp</dimen>
+    <dimen name="list_view_line1_text_size_sp">18sp</dimen>
+    <dimen name="list_view_line1_magnified_text_size_sp">28sp</dimen>
+    <dimen name="list_view_line_2_text_size_sp">18sp</dimen>
+    <integer name="list_view_line1_text_size_absolute">18</integer>
+    <integer name="list_view_line1_magnified_text_size_absolute">28</integer>
+
+    <dimen name="garbage_image_left_margin">48dp</dimen>
+
+    <dimen name="departure_text_size">10sp</dimen>
+    <dimen name="text_magnified_size">30sp</dimen>
+    <dimen name="date_time_layout_magnified_width">280dp</dimen>
+    <dimen name="date_time_layout_magnified_height">60dp</dimen>
+
+
+    <!-- Flinders Street station location - use those values in SharedPreferencesUtility -->
+    <item name="pref_key_default_fixed_location_latitude" type="dimen" format="float">-37.817682500000004</item>
+    <item name="pref_key_default_fixed_location_longitude" type="dimen" format="float">144.96726171874994</item>
+</resources>

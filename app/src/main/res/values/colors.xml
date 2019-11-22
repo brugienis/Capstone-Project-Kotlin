@@ -3,4 +3,15 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+
+    <!-- Below from Java project-->
+
+    <color name="deep_orange_50">#FBE9E7</color>
+    <color name="deep_orange_500">#FF5722</color>
+    <color name="deep_orange_700">#E64A19</color>
+    <color name="deep_orange_100">#FFCCBC</color>
+    <color name="secondary_text">#727272</color>
+
+    <color name="grey">#cccccc</color>
+    <color name="black_text_color">#de000000</color>
 </resources>

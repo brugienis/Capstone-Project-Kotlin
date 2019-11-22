@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View" />
+        <!-- the below will point to the current FavoriteStop row available to the adapter in the ViewHolderNormal.bind(() -->
+        <variable
+                name="favoriteStop"
+                type="au.com.kbrsolutions.melbournepublictransport.domain.FavoriteStop" />
+
+        <variable
+                name="clickListener"
+                type="au.com.kbrsolutions.melbournepublictransport.favoritestops.FavoriteStopListener"/>
+    </data>
+
+    <LinearLayout
+            android:id="@+id/favoriteStopsLayoutParentId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:minHeight="?android:attr/listPreferredItemHeight"
+            android:orientation="horizontal"
+            android:background="@drawable/touch_selector"
+            android:onClick="@{() -> clickListener.onClickNoIcon(favoriteStop)}" >
+
+        <!-- app:transportImg="@{favoriteStop}" - see comments in the BindingAdapters.kt -->
+        <ImageView
+                android:id="@+id/favoriteStopsTransportImageId"
+                android:scaleType="center"
+                android:layout_width="@dimen/touchable_size"
+                android:layout_height="@dimen/touchable_size"
+                app:transportImg="@{favoriteStop}"
+                tools:src="@drawable/ic_stock_train_blue_500"
+                android:contentDescription="@string/content_desc_train_transport_type"
+                tools:ignore="PrivateResource"/>
+
+        <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="7"
+                android:orientation="vertical">
+
+            <TextView
+                    android:id="@+id/favoriteStopsLocationNameId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{favoriteStop.locationName}"
+                    tools:text="Location name"
+                    android:textSize="@dimen/list_view_line1_text_size_sp"
+                    app:setTextSize="@{favoriteStop.showInMagnifiedView}"
+                    android:textColor="@android:color/black" />
+
+            <TextView
+                    android:id="@+id/favoriteStopsSuburbId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{favoriteStop.suburb}"
+                    tools:text="Run type"
+                    android:textSize="@dimen/list_view_line_2_text_size_sp"
+                    android:visibility="@{favoriteStop.isTrainStop ? View.GONE : View.VISIBLE}"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textColor="@color/secondary_text"
+                    android:background="@drawable/touch_selector" />
+
+            <LinearLayout
+                    android:id="@+id/favoriteStopsIconsMagId"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:orientation="horizontal"
+                    android:visibility="@{favoriteStop.showInMagnifiedView ? View.VISIBLE : View.GONE}" >
+
+                <ImageView
+                        android:id="@+id/favoriteStopsDeparturesImageMagId"
+                        android:layout_width="@dimen/touchable_size"
+                        android:layout_height="@dimen/touchable_size"
+                        android:adjustViewBounds="true"
+                        android:background="@drawable/touch_selector"
+                        android:src="@drawable/ic_stock_forward_10_green_500"
+                        android:contentDescription="@string/content_desc_show_departures"
+                        android:onClick="@{() -> clickListener.onClickDepartures(favoriteStop)}" />
+
+                <ImageView
+                        android:id="@+id/favoriteStopsStopFacilityId"
+                        android:layout_width="@dimen/touchable_size"
+                        android:layout_height="@dimen/touchable_size"
+                        android:background="@drawable/touch_selector"
+                        android:src="@drawable/ic_stock_info_outline_green_500"
+                        android:contentDescription="@string/content_show_stop_facility"
+                        android:onClick="@{() -> clickListener.onClickShowStopFacility(favoriteStop)}" />
+
+                <ImageView
+                        android:id="@+id/favoriteStopsMapImageMagId"
+                        android:layout_width="@dimen/touchable_size"
+                        android:layout_height="@dimen/touchable_size"
+                        android:background="@drawable/touch_selector"
+                        android:src="@drawable/ic_stock_place_green_500"
+                        android:contentDescription="@string/content_desc_show_map"
+                        android:onClick="@{() -> clickListener.onClickShowStopOnMap(favoriteStop)}" />
+
+                <ImageView
+                        android:id="@+id/favoriteStopsGarbageImageMagId"
+                        android:layout_width="@dimen/touchable_size"
+                        android:layout_height="@dimen/touchable_size"
+                        android:background="@drawable/touch_selector"
+                        android:src="@drawable/ic_stock_delete_green_500"
+                        android:layout_marginLeft="@dimen/garbage_image_left_margin"
+                        android:layout_marginStart="@dimen/garbage_image_left_margin"
+                        android:contentDescription="@string/content_desc_remove_from_favorites"
+                        android:onClick="@{() -> clickListener.onClickRemoveStop(favoriteStop)}" />
+
+            </LinearLayout>
+
+            <!--android:onClick="@{() -> favoriteStopsViewModel.onDeleteFavoriteStop(favoriteStop)}"-->
+
+            <!--android:onClick="@{() -> favoriteStopsViewModel.onClear()}"-->
+        </LinearLayout>
+
+        <LinearLayout
+                android:id="@+id/favoriteStopsIconsId"
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:orientation="horizontal">
+
+            <ImageView
+                    android:id="@+id/favoriteStopsDeparturesImageId"
+                    android:layout_width="@dimen/touchable_size"
+                    android:layout_height="@dimen/touchable_size"
+                    android:adjustViewBounds="true"
+                    android:background="@drawable/touch_selector"
+                    android:src="@drawable/ic_stock_forward_10_green_500"
+                    android:contentDescription="@string/content_desc_show_departures"
+                    android:onClick="@{() -> clickListener.onClickDepartures(favoriteStop)}" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>
