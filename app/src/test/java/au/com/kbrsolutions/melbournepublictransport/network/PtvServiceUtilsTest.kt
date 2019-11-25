@@ -7,10 +7,9 @@ class PtvServiceUtilsTest {
 
     @Test
     fun testBuildTTAPIURL() {
-        val baseUrl = "http://timetableapi.ptv.vic.gov.au"
-        val textToSign = "/v3/departures/route_type/0/stop/1035"
+        val textToSign = "/departures/route_type/0/stop/1035?max_results=5&include_cancelled=true&expand=all&expand=stop&expand=route&expand=run&expand=disruption"
         val expected =
-            "http://timetableapi.ptv.vic.gov.au/v3/departures/route_type/0/stop/1035?devid=3000165&signature=B9A9750E19BB9833AF437FDA16CE47F31AD46705"
+            "/v3/departures/route_type/0/stop/1035?max_results=5&include_cancelled=true&expand=all&expand=stop&expand=route&expand=run&expand=disruption&devid=3000165&signature=5D07777F1278F8B57DB94796D1192E0D7DB03808"
         try {
             val actual = PtvServiceUtils.buildTTAPIURL(textToSign)
             assertEquals("Should be equal", expected, actual)

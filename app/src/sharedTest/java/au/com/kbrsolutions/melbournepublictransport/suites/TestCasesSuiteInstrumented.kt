@@ -18,4 +18,4 @@ import org.junit.runners.Suite
     DeparturesFragmentTest::class,
     DepartureDaoTest::class
 )
-class TestCasesSuite
+class TestCasesSuiteInstrumented
