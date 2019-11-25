@@ -17,6 +17,7 @@ import au.com.kbrsolutions.melbournepublictransport.repository.DeparturesReposit
 import au.com.kbrsolutions.melbournepublictransport.testutils.RecyclerViewMatcher
 import au.com.kbrsolutions.melbournepublictransport.utilities.GLOBAL_PREFIX
 import au.com.kbrsolutions.melbournepublictransport.utilities.Misc
+import au.com.kbrsolutions.melbournepublictransport.utilities.SharedPreferencesUtility
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runBlockingTest
 import org.junit.After
@@ -51,7 +52,7 @@ class DeparturesFragmentTest {
     var instantExecutorRule = InstantTaskExecutorRule()
 
     private lateinit var repository: DeparturesRepositoryFake
-//    private val departuresList = TestDataGenerator.generateDataDeparturesList3Rows()
+    //    private val departuresList = TestDataGenerator.generateDataDeparturesList3Rows()
     private val departuresList = TestDataGenerator.generateDataDeparturesList1Row()
 
     @Before
@@ -113,6 +114,8 @@ class DeparturesFragmentTest {
         scenario.onFragment {
             val context = it.context
             context?.let {
+                // Make sure the sort order is 'by time' at the beginig of the test
+                SharedPreferencesUtility.setSortDeparturesDataByTime(context!!, true)
                 derparturesList = TestDataGenerator.getDataDeparturesListNRows(
                     rowsToLoadCnt,
                     context
@@ -129,6 +132,10 @@ class DeparturesFragmentTest {
         // Sort departures by time
         var derparturesListSorted =
             Misc.sortDeparturesData(derparturesList!!.asDomainModel(), true)
+
+//        derparturesListSorted.forEachIndexed { index, departure ->
+//            Log.v(GLOBAL_PREFIX + "DeparturesFragmentTest", """verifyListViewItemsOrder - index: $index departure: ${departure.directionName} hhMm: ${departure.departureTimeHourMinutes} """)
+//        }
 
         delayNextAction(3_000)
 
@@ -154,7 +161,7 @@ class DeparturesFragmentTest {
 
     private fun verifyDeparturesOrder(derparturesListSorted: List<Departure>) {
         derparturesListSorted.forEachIndexed { index, departure ->
-//            println(GLOBAL_PREFIX + """DeparturesFragmentTest - verifyListViewItemsOrder - index: ${index} """)
+            //            println(GLOBAL_PREFIX + """DeparturesFragmentTest - verifyListViewItemsOrder - index: ${index} """)
             // First scroll to the position that needs to be matched
             onView(withId(R.id.departuresList))
                 .perform(scrollToPosition<DeparturesAdapter.ViewHolderNormal>(index))
@@ -170,7 +177,7 @@ class DeparturesFragmentTest {
         return RecyclerViewMatcher(recyclerViewId)
     }
 
-    private val ignoreDelay: Boolean = false
+    private val ignoreDelay: Boolean = true
 
     private fun delayNextAction(millis: Int) {
         if (ignoreDelay) {
