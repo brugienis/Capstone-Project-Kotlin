@@ -6,13 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProviders
-import au.com.kbrsolutions.melbournepublictransport.MptApplication
 import au.com.kbrsolutions.melbournepublictransport.R
-import au.com.kbrsolutions.melbournepublictransport.data.AppDatabase
 import au.com.kbrsolutions.melbournepublictransport.databinding.FragmentStopsSearcherBinding
+import au.com.kbrsolutions.melbournepublictransport.utilities.obtainViewModel
 
 class StopsSearcherFragment : Fragment() {
+
+    private lateinit var stopsSearcherViewModel: StopsSearcherViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -23,21 +23,7 @@ class StopsSearcherFragment : Fragment() {
 
         val application = requireNotNull(this.activity).application
 
-//        val sleepDaoTest: FavoriteStopDao =
-//            Room.inMemoryDatabaseBuilder(context!!, AppDatabase::class.java)
-//                // Allowing main thread queries, just for testing.
-////            .allowMainThreadQueries()
-//                .build().favoriteStopDao()
-
-//        val dataSource = sleepDaoTest
-        val dataSource = AppDatabase.getInstance(application).favoriteStopDao()
-
-        val viewModelFactory = StopsSearcherViewModelFactory(
-            (requireContext().applicationContext as MptApplication).favoriteStopsRepository)
-
-        val stopsSearcherViewModel =
-            ViewModelProviders.of(
-                this, viewModelFactory).get(StopsSearcherViewModel::class.java)
+        stopsSearcherViewModel =obtainViewModel(StopsSearcherViewModel::class.java, null)
 
         binding.stopsSearcherViewModel = stopsSearcherViewModel
 

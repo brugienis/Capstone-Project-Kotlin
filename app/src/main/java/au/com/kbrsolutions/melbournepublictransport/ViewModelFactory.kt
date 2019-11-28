@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModelProvider
 import au.com.kbrsolutions.melbournepublictransport.departures.DeparturesFragmentArgs
 import au.com.kbrsolutions.melbournepublictransport.departures.DeparturesViewModel
 import au.com.kbrsolutions.melbournepublictransport.favoritestops.FavoriteStopsViewModel
+import au.com.kbrsolutions.melbournepublictransport.stopssearcher.StopsSearcherViewModel
 
 /**
  * A creator is used to inject the product ID into the ViewModel
@@ -31,6 +32,10 @@ class ViewModelFactory constructor(private val arguments: Any?, val context: Con
                         mptApp.departuresRepository
                     )
                 }
+
+                isAssignableFrom(StopsSearcherViewModel::class.java) ->
+                    StopsSearcherViewModel(
+                        mptApp.favoriteStopsRepository)
 
                 else ->
                     throw IllegalArgumentException("Unknown ViewModel class: ${modelClass.name}")
