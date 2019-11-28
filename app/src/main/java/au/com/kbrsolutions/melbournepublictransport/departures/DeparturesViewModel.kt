@@ -11,16 +11,11 @@ import au.com.kbrsolutions.melbournepublictransport.utilities.GLOBAL_PREFIX
 import au.com.kbrsolutions.melbournepublictransport.utilities.Misc
 import kotlinx.coroutines.*
 
-//enum class DeparturesApiStatus { LOADING, ERROR, DONE }
-
 class DeparturesViewModel(
-    private val stopId: String,
-    val locationName: String,
-    favoriteStopsRequestedTimMillis: Long,
+    val departuresFragmentArgs: DeparturesFragmentArgs,
     val context: Context,
-    val departuresRepository: DeparturesRepository
+    private val departuresRepository: DeparturesRepository
 ) : ViewModel() {
-//    val dataSource: DepartureDao) : ViewModel() {
 
     /**
      * viewModelJob allows us to cancel all coroutines started by this ViewModel.
@@ -49,7 +44,8 @@ class DeparturesViewModel(
     val loadErrMsg: LiveData<String>
         get() = departuresRepository.loadErrMsg
 
-    val departureInPtvSortOrder = departuresRepository.getDepartures(favoriteStopsRequestedTimMillis)
+    val departureInPtvSortOrder = departuresRepository.getDepartures(
+        departuresFragmentArgs.favoriteStopsRequestedTimMillis)
 
     /**
      * Initialize some 'flags'
@@ -61,7 +57,7 @@ class DeparturesViewModel(
 
     fun loadDepartures() {
         // fixLater: Sep 20, 2019 - get hardcoded values from the SharedPreferences
-        val path = DynamicUrlBuilder.buildURI(0, stopId, 5,
+        val path = DynamicUrlBuilder.buildURI(0, departuresFragmentArgs.stopId, 5,
             setOf("all", "stop", "route", "run", "disruption"))
         uiScope.launch {
             departuresRepository.refreshPtvData(path, context)
@@ -126,7 +122,7 @@ class DeparturesViewModel(
     */
     private suspend fun toggleMagnifiedView(id: Int) {
         withContext(Dispatchers.IO) {
-//            dataSource.flipShowMagnifyView(id)
+            //            dataSource.flipShowMagnifyView(id)
             departuresRepository.toggleMagnifiedNormalView(id)
 //            clickedRowViewId = id
 

@@ -5,10 +5,8 @@ import android.view.*
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
-import au.com.kbrsolutions.melbournepublictransport.MptApplication
 import au.com.kbrsolutions.melbournepublictransport.R
 import au.com.kbrsolutions.melbournepublictransport.common.ProgressBarHandler
 import au.com.kbrsolutions.melbournepublictransport.databinding.FragmentDeparturesBinding
@@ -20,12 +18,13 @@ import au.com.kbrsolutions.melbournepublictransport.domain.Departure
 import au.com.kbrsolutions.melbournepublictransport.utilities.EspressoIdlingResource
 import au.com.kbrsolutions.melbournepublictransport.utilities.GLOBAL_PREFIX
 import au.com.kbrsolutions.melbournepublictransport.utilities.SharedPreferencesUtility
+import au.com.kbrsolutions.melbournepublictransport.utilities.obtainViewModel
 
 class DeparturesFragment : Fragment() {
 
     private lateinit var departureViewModel: DeparturesViewModel
     private lateinit var adapter: DeparturesAdapter
-//    private lateinit var adapter: DeparturesAdapterSimple
+    //    private lateinit var adapter: DeparturesAdapterSimple
     private lateinit var progressBarHandler: ProgressBarHandler
 
     companion object {
@@ -39,11 +38,6 @@ class DeparturesFragment : Fragment() {
 
         val arguments = DeparturesFragmentArgs.fromBundle(arguments!!)
 
-        // https://medium.com/androiddevelopers/viewmodels-a-simple-example-ed5ac416317e
-        val viewModelFactory = DeparturesViewModelFactory(arguments.stopId, arguments.locationName,
-            arguments.favoriteStopsRequestedTimMillis, context!!,
-            (requireContext().applicationContext as MptApplication).departuresRepository)
-
         /*
             When in the build.gradle I use lifecycleVersion = '2.2.0-alpha03', the
                 ViewModelProviders.of
@@ -51,9 +45,8 @@ class DeparturesFragment : Fragment() {
             The deprecated warning disappeared when I changed to lifecycleVersion = '2.1.0-beta01'.
             This a version used in Google's 'iosched' project.
          */
-        departureViewModel =
-            ViewModelProviders.of(
-                this, viewModelFactory).get(DeparturesViewModel::class.java)
+
+        departureViewModel = obtainViewModel(DeparturesViewModel::class.java, arguments)
 
         progressBarHandler = ProgressBarHandler(this, binding.root)
         progressBarHandler.show()
@@ -90,7 +83,7 @@ class DeparturesFragment : Fragment() {
 
         departureViewModel.departureInPtvSortOrder.observe(viewLifecycleOwner, Observer {
             val currentTimeMillis = System.currentTimeMillis()
-            println(GLOBAL_PREFIX + """DeparturesFragment - onCreateView - it.size: ${it.size} """)
+            println(GLOBAL_PREFIX + """DeparturesFragment - onCreateView - it.size: ${it.size} sorted by time: ${SharedPreferencesUtility.isSortDeparturesDataByTime(context!!)}""")
             it?.let {
                 if (it.isNotEmpty()) {
                     progressBarHandler.hide()

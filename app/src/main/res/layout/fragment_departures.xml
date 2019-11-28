@@ -1,101 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
         <import type="android.view.View" />
         <variable name="departuresViewModel"
-                  type="au.com.kbrsolutions.melbournepublictransport.departures.DeparturesViewModel" />
+            type="au.com.kbrsolutions.melbournepublictransport.departures.DeparturesViewModel" />
 
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:context=".databaseDepartures.DeparturesFragment">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".databaseDepartures.DeparturesFragment">
 
         <TextView
-                android:id="@+id/selectedStopName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginBottom="4dp"
-                android:background="@drawable/touch_selector"
-                android:textAppearance="?android:textAppearanceLarge"
-                android:textColor="@android:color/black"
-                app:layout_constraintBottom_toTopOf="@id/colorSeparator"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:text="@{departuresViewModel.locationName}"
-                tools:text="Stop name" />
+            android:id="@+id/selectedStopName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="4dp"
+            android:background="@drawable/touch_selector"
+            android:textAppearance="?android:textAppearanceLarge"
+            android:textColor="@android:color/black"
+            app:layout_constraintBottom_toTopOf="@id/colorSeparator"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="@{departuresViewModel.departuresFragmentArgs.locationName}"
+            tools:text="Stop name" />
 
         <View
-                android:id="@+id/colorSeparator"
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
-                android:background="@color/deep_orange_500"
-                app:layout_constraintBottom_toTopOf="@id/errMsgId"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/selectedStopName" />
+            android:id="@+id/colorSeparator"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@color/deep_orange_500"
+            app:layout_constraintBottom_toTopOf="@id/errMsgId"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/selectedStopName" />
 
         <!-- show load error message if it is not null -->
         <TextView
-                android:id="@+id/errMsgId"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="4dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginBottom="8dp"
-                android:textAlignment="center"
-                android:textSize="24sp"
-                android:textStyle="normal"
+            android:id="@+id/errMsgId"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="normal"
 
-                app:source='@{"errMsgId"}'
-                app:showWhenLoadErrMsgIsNull="@{false}"
-                app:loadError="@{departuresViewModel.loadErrMsg}"
+            app:source='@{"errMsgId"}'
+            app:showWhenLoadErrMsgIsNull="@{false}"
+            app:loadError="@{departuresViewModel.loadErrMsg}"
 
-                android:text="@{departuresViewModel.loadErrMsg}"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/colorSeparator"
-                tools:text="Error message" />
+            android:text="@{departuresViewModel.loadErrMsg}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/colorSeparator"
+            tools:text="Error message" />
 
         <!-- show show downloaded data only if the load error message if it is null -->
         <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/departuresList"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
+            android:id="@+id/departuresList"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
 
-                app:source='@{"departuresList"}'
-                app:showWhenLoadErrMsgIsNull="@{true}"
-                app:loadError="@{departuresViewModel.loadErrMsg}"
+            app:source='@{"departuresList"}'
+            app:showWhenLoadErrMsgIsNull="@{true}"
+            app:loadError="@{departuresViewModel.loadErrMsg}"
 
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/colorSeparator" />
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/colorSeparator" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
-<!--
+    <!--
 
-                android:visibility="visible"
+                    android:visibility="visible"
 
-                app:departuresApiStatus="@{departuresViewModel.status}"
-                app:departuresApiStatus="@{departuresViewModel.status}"
+                    app:departuresApiStatus="@{departuresViewModel.status}"
+                    app:departuresApiStatus="@{departuresViewModel.status}"
 
-                app:departuresApiStatus="@{departuresViewModel.status}"
--->
+                    app:departuresApiStatus="@{departuresViewModel.status}"
+    -->

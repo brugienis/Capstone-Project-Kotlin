@@ -6,7 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import au.com.kbrsolutions.melbournepublictransport.data.DatabaseDeparture
 import au.com.kbrsolutions.melbournepublictransport.domain.Departure
 
-interface DeparturesRepository {
+interface DeparturesRepository : Repository {
 
     val departuresLoadingInProgress: MutableLiveData<Boolean>
 

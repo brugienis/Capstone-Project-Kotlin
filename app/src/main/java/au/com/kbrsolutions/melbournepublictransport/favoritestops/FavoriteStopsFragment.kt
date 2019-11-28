@@ -6,11 +6,9 @@ import android.view.*
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
-import au.com.kbrsolutions.melbournepublictransport.MptApplication
 import au.com.kbrsolutions.melbournepublictransport.R
 import au.com.kbrsolutions.melbournepublictransport.databinding.FragmentFavoriteStopsBinding
 import au.com.kbrsolutions.melbournepublictransport.favoritestops.FavoriteStopListener.Companion.DELETE_FAVORITE_STOP
@@ -18,11 +16,12 @@ import au.com.kbrsolutions.melbournepublictransport.favoritestops.FavoriteStopLi
 import au.com.kbrsolutions.melbournepublictransport.favoritestops.FavoriteStopListener.Companion.LIST_VIEW_ROW
 import au.com.kbrsolutions.melbournepublictransport.favoritestops.FavoriteStopListener.Companion.SHOW_STOP_FACILITY
 import au.com.kbrsolutions.melbournepublictransport.favoritestops.FavoriteStopListener.Companion.SHOW_STOP_ON_MAP
+import au.com.kbrsolutions.melbournepublictransport.utilities.obtainViewModel
 
 class FavoriteStopsFragment : Fragment() {
 
     lateinit var favoriteStopsViewModel: FavoriteStopsViewModel
-    private lateinit var viewDataBinding: FragmentFavoriteStopsBinding
+//    private lateinit var viewDataBinding: FragmentFavoriteStopsBinding
 
     // fixLater: Sep 27, 2019 - below is needed to be able to run
     //           FavoriteStopsFragmentTest.clickShowDepartures_navigateToDeparturesFragment.
@@ -34,12 +33,7 @@ class FavoriteStopsFragment : Fragment() {
             inflater, R.layout.fragment_favorite_stops, container, false)
 
         // https://medium.com/androiddevelopers/viewmodels-a-simple-example-ed5ac416317e
-        val viewModelFactory = FavoriteStopsViewModelFactory(
-            (requireContext().applicationContext as MptApplication).favoriteStopsRepository)
-
-        favoriteStopsViewModel =
-            ViewModelProviders.of(
-                this, viewModelFactory).get(FavoriteStopsViewModel::class.java)
+        favoriteStopsViewModel = obtainViewModel(FavoriteStopsViewModel::class.java, null)
 
         // fixLater: Sep 27, 2019 - remove below after debugging done
         favoriteStopsViewModel.onPrintStopsIds()
@@ -82,8 +76,8 @@ class FavoriteStopsFragment : Fragment() {
             }
         })
 
-         /*Specify the current activity as the lifecycle owner of the binding. This is used so that
-         the binding can observe LiveData updates*/
+        /*Specify the current activity as the lifecycle owner of the binding. This is used so that
+        the binding can observe LiveData updates*/
         viewDataBinding.lifecycleOwner = this
 
         setHasOptionsMenu(true)

@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import au.com.kbrsolutions.melbournepublictransport.data.DatabaseFavoriteStop
 import au.com.kbrsolutions.melbournepublictransport.domain.FavoriteStop
 
-interface FavoriteStopsRepository {
+interface FavoriteStopsRepository : Repository {
 
     fun getFavoriteStops(): LiveData<List<FavoriteStop>>
 
