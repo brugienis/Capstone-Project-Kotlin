@@ -1,14 +1,17 @@
 package au.com.kbrsolutions.melbournepublictransport.stopssearcher
 
+import android.annotation.SuppressLint
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import au.com.kbrsolutions.melbournepublictransport.data.DatabaseFavoriteStop
 import au.com.kbrsolutions.melbournepublictransport.domain.FavoriteStop
 import au.com.kbrsolutions.melbournepublictransport.repository.FavoriteStopsRepository
+import au.com.kbrsolutions.melbournepublictransport.utilities.GLOBAL_PREFIX
 import kotlinx.coroutines.*
 
-class StopsSearcherViewModel(val favoriteStopsRepository: FavoriteStopsRepository) : ViewModel() {
+class StopsSearcherViewModel(private val favoriteStopsRepository: FavoriteStopsRepository)
+    : ViewModel() {
 
     /**
      * viewModelJob allows us to cancel all coroutines started by this ViewModel.
@@ -75,6 +78,11 @@ class StopsSearcherViewModel(val favoriteStopsRepository: FavoriteStopsRepositor
 
     private fun getRoute(): Int {
         return rowCnt.rem(3)
+    }
+
+    @SuppressLint("LongLogTag")
+    fun startLineAndStopsSearch(searchText: String) {
+        Log.v(GLOBAL_PREFIX + "StopsSearcherViewModel", """startLineAndStopsSearch - searchText: ${searchText} """)
     }
 
     /**
