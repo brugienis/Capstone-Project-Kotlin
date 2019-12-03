@@ -42,6 +42,9 @@ class StopsSearcherViewModel(private val favoriteStopsRepository: FavoriteStopsR
         }
     }
 
+    // fixLater: Dec 01, 2019 - check out https://medium.com/@dimabatyuk/adding-clear-button-to-edittext-9655e9dbb721
+    // fixLater: Dec 01, 2019 - check out https://github.com/DmytroBatyuk/Clearable-EditText-Implementation/blob/master/app/src/main/java/ua/batyuk/dmytro/clearableedittextimplementation/EditText.kt#L70
+
     private var rowCnt = -1
     private suspend fun insertStopDetails() {
         rowCnt = favoriteStopsRepository.getFavoriteStopsCount()

@@ -23,10 +23,11 @@ class StopsSearcherFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+        savedInstanceState: Bundle?): View? {
         val binding: FragmentStopsSearcherBinding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_stops_searcher, container, false)
+
+        val stopsSearchTextLayout = binding.stopsSearchTextLayout
 
         stopsSearchText = binding.stopsSearchText
         stopsSearchText.requestFocus()
