@@ -1,17 +1,23 @@
 package au.com.kbrsolutions.melbournepublictransport.stopssearcher
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.util.Log
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import au.com.kbrsolutions.melbournepublictransport.data.DatabaseFavoriteStop
 import au.com.kbrsolutions.melbournepublictransport.domain.FavoriteStop
 import au.com.kbrsolutions.melbournepublictransport.repository.FavoriteStopsRepository
 import au.com.kbrsolutions.melbournepublictransport.utilities.GLOBAL_PREFIX
+import au.com.kbrsolutions.melbournepublictransport.utilities.SharedPreferencesUtility
+import au.com.kbrsolutions.melbournepublictransport.utilities.SharedPreferencesUtility.setShowStopSearcherInstructions
 import kotlinx.coroutines.*
 
-class StopsSearcherViewModel(private val favoriteStopsRepository: FavoriteStopsRepository)
-    : ViewModel() {
+
+class StopsSearcherViewModel(
+    private val favoriteStopsRepository: FavoriteStopsRepository,
+    private val context: Context) : ViewModel() {
 
     /**
      * viewModelJob allows us to cancel all coroutines started by this ViewModel.
@@ -34,9 +40,12 @@ class StopsSearcherViewModel(private val favoriteStopsRepository: FavoriteStopsR
 
     private var _favoriteStopsMsg = MutableLiveData<String>()
 
+    private val _showInstructions = MutableLiveData<Boolean>()
+
+    val showInstructions: LiveData<Boolean>
+        get() = _showInstructions
+
     fun insertFavoriteStop() {
-        // favoriteStop: FavoriteStop
-        Log.v("StopsSearcherViewModel", """insertFavoriteStop - insertFavoriteStop start """)
         uiScope.launch {
             insertStopDetails()
         }
@@ -45,6 +54,34 @@ class StopsSearcherViewModel(private val favoriteStopsRepository: FavoriteStopsR
     // fixLater: Dec 01, 2019 - check out https://medium.com/@dimabatyuk/adding-clear-button-to-edittext-9655e9dbb721
     // fixLater: Dec 01, 2019 - check out https://github.com/DmytroBatyuk/Clearable-EditText-Implementation/blob/master/app/src/main/java/ua/batyuk/dmytro/clearableedittextimplementation/EditText.kt#L70
 
+
+    private fun getRoute(): Int {
+        return rowCnt.rem(3)
+    }
+
+    @SuppressLint("LongLogTag")
+    fun startLineAndStopsSearch(searchText: String) {
+        Log.v(GLOBAL_PREFIX + "StopsSearcherViewModel", """startLineAndStopsSearch - searchText: ${searchText} """)
+    }
+
+    fun toggleShowHideNotes() {
+        setShowStopSearcherInstructions(
+            context,
+            !SharedPreferencesUtility.isShowStopSearcherInstructions(context)
+        )
+        _showInstructions.value = SharedPreferencesUtility.isShowStopSearcherInstructions(context)
+    }
+
+    /**
+     * Called when the ViewModel is dismantled.
+     * At this point, we want to cancel all coroutines;
+     * otherwise we end up with processes that have nowhere to return to
+     * using memory and resources.
+     */
+    override fun onCleared() {
+        super.onCleared()
+        viewModelJob.cancel()
+    }
     private var rowCnt = -1
     private suspend fun insertStopDetails() {
         rowCnt = favoriteStopsRepository.getFavoriteStopsCount()
@@ -77,26 +114,6 @@ class StopsSearcherViewModel(private val favoriteStopsRepository: FavoriteStopsR
         Log.v("StopsSearcherViewModel", """insertStopDetails - after  rowCnt: ${rowCnt} """)
         favoriteStopsRepository.printStopsIds("StopsSearcherViewModel - insertStopDetails")
         return
-    }
-
-    private fun getRoute(): Int {
-        return rowCnt.rem(3)
-    }
-
-    @SuppressLint("LongLogTag")
-    fun startLineAndStopsSearch(searchText: String) {
-        Log.v(GLOBAL_PREFIX + "StopsSearcherViewModel", """startLineAndStopsSearch - searchText: ${searchText} """)
-    }
-
-    /**
-     * Called when the ViewModel is dismantled.
-     * At this point, we want to cancel all coroutines;
-     * otherwise we end up with processes that have nowhere to return to
-     * using memory and resources.
-     */
-    override fun onCleared() {
-        super.onCleared()
-        viewModelJob.cancel()
     }
 
 }

@@ -14,8 +14,7 @@ import kotlinx.coroutines.*
 class DeparturesViewModel(
     val departuresFragmentArgs: DeparturesFragmentArgs,
     val context: Context,
-    private val departuresRepository: DeparturesRepository
-) : ViewModel() {
+    private val departuresRepository: DeparturesRepository) : ViewModel() {
 
     /**
      * viewModelJob allows us to cancel all coroutines started by this ViewModel.
@@ -32,12 +31,14 @@ class DeparturesViewModel(
     val departuresLoadingInProgress: LiveData<Boolean>
         get() = departuresRepository.departuresLoadingInProgress
 
-    /* The internal MutableLiveData that stores the status of the most recent request
-    private val _status = MutableLiveData<DeparturesApiStatus>()
+    /*
+        The internal MutableLiveData that stores the status of the most recent request
+        private val _status = MutableLiveData<DeparturesApiStatus>()
 
-     The external immutable LiveData for the request status
-    val status: LiveData<DeparturesApiStatus>
-        get() = _status*/
+         The external immutable LiveData for the request status
+        val status: LiveData<DeparturesApiStatus>
+        get() = _status
+    */
 
     private val _loadErrMsg = MutableLiveData<String>()
 

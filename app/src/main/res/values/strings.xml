@@ -200,4 +200,7 @@
 
         \t\t “route 900” returns the Route 900 line
     </string>
+
+    <string name="text_show_less">Show less</string>
+    <string name="text_show_more">Show more</string>
 </resources>

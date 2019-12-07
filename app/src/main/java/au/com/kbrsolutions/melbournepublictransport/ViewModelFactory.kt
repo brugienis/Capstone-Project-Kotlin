@@ -35,7 +35,8 @@ class ViewModelFactory constructor(private val arguments: Any?, val context: Con
 
                 isAssignableFrom(StopsSearcherViewModel::class.java) ->
                     StopsSearcherViewModel(
-                        mptApp.favoriteStopsRepository)
+                        mptApp.favoriteStopsRepository,
+                        context)
 
                 else ->
                     throw IllegalArgumentException("Unknown ViewModel class: ${modelClass.name}")

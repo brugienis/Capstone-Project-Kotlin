@@ -1,6 +1,8 @@
 package au.com.kbrsolutions.melbournepublictransport.stopssearcher
 
+import android.annotation.SuppressLint
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,6 +13,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import au.com.kbrsolutions.melbournepublictransport.R
 import au.com.kbrsolutions.melbournepublictransport.databinding.FragmentStopsSearcherBinding
+import au.com.kbrsolutions.melbournepublictransport.utilities.GLOBAL_PREFIX
 import au.com.kbrsolutions.melbournepublictransport.utilities.Miscellaneous
 import au.com.kbrsolutions.melbournepublictransport.utilities.hideKeyboard
 import au.com.kbrsolutions.melbournepublictransport.utilities.obtainViewModel
@@ -33,9 +36,7 @@ class StopsSearcherFragment : Fragment() {
         stopsSearchText.requestFocus()
 
         stopsSearchText.setOnEditorActionListener(OnEditorActionListener { v, actionId, event ->
-            handleSearchButtonClicked(
-                actionId
-            )
+            handleSearchButtonClicked(actionId)
         })
 
 //        val application = requireNotNull(this.activity).application
@@ -56,9 +57,11 @@ class StopsSearcherFragment : Fragment() {
     }
 
     /**
-     * Called when user pressed search button. Starts search if search text is not empty.
+     * Called when user pressed 'search' button. Starts search if search text is not empty.
      */
+    @SuppressLint("LongLogTag")
     private fun handleSearchButtonClicked(actionId: Int): Boolean {
+        Log.v(GLOBAL_PREFIX + "StopsSearcherFragment", """handleSearchButtonClicked - actionId: ${actionId} """)
         var handled = false
         if (actionId == EditorInfo.IME_ACTION_SEARCH) {
             val searchTest = getSearchText()
