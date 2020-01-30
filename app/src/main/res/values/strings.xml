@@ -158,7 +158,8 @@
     <string name="content_desc_tram_transport_type">Tram</string>
     <string name="content_desc_train_transport_type">Train</string>
     <string name="content_desc_show_departures">Show databaseDepartures</string>
-    <string name="content_desc_add_to_favorites">Add to favorite stopss</string>
+    <string name="content_desc_add_to_favorites">Add to favorite stops</string>
+    <string name="content_desc_search_for_line_stops">search for line\'s stops</string>
     <string name="content_desc_delete_recent_search_text">Delete recent search text</string>
     <string name="content_desc_start_search">Start lines/stops search</string>
     <string name="content_desc_show_map">Show stop on map</string>
@@ -167,6 +168,7 @@
     <string name="content_show_disruptions">Show disruptions</string>
     <string name="content_desc_next_departures">Next databaseDepartures</string>
     <string name="enter_search_text">Enter search text.</string>
+    <string name="search_cancelled_enter_search_text">Search cancelled - enter search text.</string>
     <string name="search_instructions">
         Type line, route or stop name and wait\n one second
         or press search button.
@@ -203,4 +205,5 @@
 
     <string name="text_show_less">Show less</string>
     <string name="text_show_more">Show more</string>
+    <string name="ptv_is_not_available">PTV is not available - try again later</string>
 </resources>

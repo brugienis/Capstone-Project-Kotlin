@@ -12,11 +12,26 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import au.com.kbrsolutions.melbournepublictransport.R
 import au.com.kbrsolutions.melbournepublictransport.databinding.ActivityMainBinding
-import com.google.android.material.snackbar.Snackbar
-import kotlinx.android.synthetic.main.activity_main.*
 
 /*
           git push -u origin
+*/
+/*
+          If the logcat with the Tag longer then 23 characters, you can use
+
+              @SuppressLint("LongLogTag")
+
+          on the surrounding method or
+
+              Menu -> Analyze -> Inspect Code
+
+              popup window will open
+
+              click 0n the three dots to the right of 'Inspection Profile'
+
+              A new window will open - select Android -> Lint -> Correctness ->
+
+              Scroll to 'Too Long Log Tags' and uncheck it
 
           logcat - show messages containing DeparturesFragment and DeparturesViewModel text
               (?:DeparturesFragment|DeparturesViewModel)\b
@@ -42,10 +57,10 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbar)
         setupActionBarWithNavController(navController, appBarConfiguration)
 
-        fab.setOnClickListener { view ->
+        /*fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
-        }
+        }*/
     }
 
     override fun onSupportNavigateUp(): Boolean {

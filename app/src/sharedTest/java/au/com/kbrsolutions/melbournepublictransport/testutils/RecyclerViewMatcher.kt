@@ -50,7 +50,7 @@ class RecyclerViewMatcher(private val recyclerViewId: Int) {
                     }
                 }
 
-                description.appendText("RecyclerView with id: $idDescription at position: $position")
+                description.appendText("RecyclerView with id: $idDescription at ListView position: $position")
             }
 
             public override fun matchesSafely(view: View): Boolean {

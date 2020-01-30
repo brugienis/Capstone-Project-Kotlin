@@ -36,6 +36,7 @@ class ViewModelFactory constructor(private val arguments: Any?, val context: Con
                 isAssignableFrom(StopsSearcherViewModel::class.java) ->
                     StopsSearcherViewModel(
                         mptApp.favoriteStopsRepository,
+                        mptApp.stopsSearcherRepository,
                         context)
 
                 else ->

@@ -16,7 +16,7 @@ import au.com.kbrsolutions.melbournepublictransport.departures.DepartureListener
 import au.com.kbrsolutions.melbournepublictransport.departures.DepartureListener.Companion.SHOW_STOP_FACILITY
 import au.com.kbrsolutions.melbournepublictransport.domain.Departure
 import au.com.kbrsolutions.melbournepublictransport.utilities.EspressoIdlingResource
-import au.com.kbrsolutions.melbournepublictransport.utilities.GLOBAL_PREFIX
+import au.com.kbrsolutions.melbournepublictransport.utilities.G_P
 import au.com.kbrsolutions.melbournepublictransport.utilities.SharedPreferencesUtility
 import au.com.kbrsolutions.melbournepublictransport.utilities.obtainViewModel
 
@@ -24,7 +24,7 @@ class DeparturesFragment : Fragment() {
 
     private lateinit var departureViewModel: DeparturesViewModel
     private lateinit var adapter: DeparturesAdapter
-    //    private lateinit var adapter: DeparturesAdapterSimple
+//    private lateinit var adapter: DeparturesAdapterSimple
     private lateinit var progressBarHandler: ProgressBarHandler
 
     companion object {
@@ -38,13 +38,13 @@ class DeparturesFragment : Fragment() {
 
         val arguments = DeparturesFragmentArgs.fromBundle(arguments!!)
 
-        /*
-            When in the build.gradle I use lifecycleVersion = '2.2.0-alpha03', the
-                ViewModelProviders.of
-            was showing as 'deprecated'.
-            The deprecated warning disappeared when I changed to lifecycleVersion = '2.1.0-beta01'.
-            This a version used in Google's 'iosched' project.
-         */
+            /*
+                When in the build.gradle I use lifecycleVersion = '2.2.0-alpha03', the
+                    ViewModelProviders.of
+                was showing as 'deprecated'.
+                The deprecated warning disappeared when I changed to lifecycleVersion = '2.1.0-beta01'.
+                This a version used in Google's 'iosched' project.
+             */
 
         departureViewModel = obtainViewModel(DeparturesViewModel::class.java, arguments)
 
@@ -60,7 +60,7 @@ class DeparturesFragment : Fragment() {
         adapter = DeparturesAdapter(DepartureListener{ departure, clickedViewName ->
             println("DeparturesFragment - onCreateView - departure: ${departure} ")
             when (clickedViewName) {
-                LIST_VIEW_ROW -> departureViewModel.onListViewClick(departure.id)
+                LIST_VIEW_ROW -> departureViewModel.onListItemViewClick(departure.id)
                 DEPARTURE_LAYOUT_ID -> departureViewModel.onDepartureLayoutIdClicked(departure)
                 SHOW_STOP_FACILITY -> departureViewModel.onShowStopFacilityClicked(departure.id)
                 DISRUPTIONS_IMAGE_ID -> departureViewModel.onDisruptionImageIdClicked(departure)
@@ -83,7 +83,7 @@ class DeparturesFragment : Fragment() {
 
         departureViewModel.departureInPtvSortOrder.observe(viewLifecycleOwner, Observer {
             val currentTimeMillis = System.currentTimeMillis()
-            println(GLOBAL_PREFIX + """DeparturesFragment - onCreateView - it.size: ${it.size} sorted by time: ${SharedPreferencesUtility.isSortDeparturesDataByTime(context!!)}""")
+            println(G_P + """DeparturesFragment - onCreateView - it.size: ${it.size} sorted by time: ${SharedPreferencesUtility.isSortDeparturesDataByTime(context!!)}""")
             it?.let {
                 if (it.isNotEmpty()) {
                     progressBarHandler.hide()
@@ -124,7 +124,7 @@ class DeparturesFragment : Fragment() {
 
     // Below is not private because I use it also in the fragment test.
     fun sortDepartureDataAndUpdateAdapter(sortDirectionsByTime: Boolean = true): Boolean {
-        val sortedDepartures = departureViewModel.sortDepartureDetailsByTime(sortDirectionsByTime)
+        val sortedDepartures= departureViewModel.sortDepartureDetailsByTime(sortDirectionsByTime)
         updateAdapterData(sortedDepartures)
         return true
     }

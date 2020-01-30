@@ -7,6 +7,7 @@ package au.com.kbrsolutions.melbournepublictransport.utilities
  */
 
 import android.content.Context
+import android.view.View
 import android.view.WindowManager.LayoutParams
 import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.app.AppCompatActivity
@@ -43,5 +44,18 @@ fun Fragment.hideKeyboard() {
     val activity = this.activity
     if (activity is AppCompatActivity) {
         activity.hideKeyboard()
+    }
+}
+
+/*
+    Hide a keyboard for a specific view - can be called from any class.
+ */
+fun hideSoftKeyboardForView(view: View?) {
+    if (view != null) {
+        val inputManager: InputMethodManager =
+            view.getContext().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        if (inputManager != null) {
+            inputManager.hideSoftInputFromWindow(view.getWindowToken(), 0)
+        }
     }
 }

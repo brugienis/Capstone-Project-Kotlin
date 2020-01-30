@@ -16,7 +16,7 @@ import au.com.kbrsolutions.melbournepublictransport.departures.jsondata.Departur
 import au.com.kbrsolutions.melbournepublictransport.domain.Departure
 import au.com.kbrsolutions.melbournepublictransport.network.PtvApi
 import au.com.kbrsolutions.melbournepublictransport.utilities.EspressoIdlingResource
-import au.com.kbrsolutions.melbournepublictransport.utilities.GLOBAL_PREFIX
+import au.com.kbrsolutions.melbournepublictransport.utilities.G_P
 import au.com.kbrsolutions.melbournepublictransport.utilities.USE_HARD_CODED_PVT_RESPONSE
 import kotlinx.coroutines.*
 import java.util.*
@@ -41,6 +41,7 @@ class DeparturesRepositoryFake : DeparturesRepository {
     override fun getDepartures(favoriteStopsRequestedTimeMillis: Long):
             LiveData<List<Departure>> = _departures
 
+    // fixLater: Jan 28, 2020 - where is the code to clear departuresServiceData?
     override suspend fun clearTableAndInsertNewRows(databaseDepartures: List<DatabaseDeparture>) {
         withContext(Dispatchers.IO) {
             var oneDatabaseDeparture: DatabaseDeparture
@@ -143,6 +144,6 @@ class DeparturesRepositoryFake : DeparturesRepository {
             departuresList.add(departuresServiceData[it]!!.asDomainModel())
         }
         _departures.postValue(departuresList)
-        println(GLOBAL_PREFIX + """DeparturesRepositoryFake - updateLiveData - departuresList size: ${departuresList.size} """)
+        println(G_P + """DeparturesRepositoryFake - updateLiveData - departuresList size: ${departuresList.size} """)
     }
 }

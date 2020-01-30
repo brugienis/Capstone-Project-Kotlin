@@ -9,10 +9,10 @@ buildscript {
         versionCodeMobile = versionCodeBase + 3
 
         // SDK and tools
-        compileSdkVersion = 29
+        compileSdkVersion = 28
         minSdkVersion = 21
         minTvSdkVersion = 21 // TV was introduced with Lollipop, min SDK should be 21.
-        targetSdkVersion = 29
+        targetSdkVersion = 28
 
         // App dependencies
         // from Codelab Android testing
@@ -24,7 +24,9 @@ buildscript {
         androidXLegacySupport = '1.0.0'
 
         archTestingVersion = '2.0.0'
-        robolectricVersion = '4.3-beta-1'
+//        robolectricVersion = '4.3-beta-1'
+        robolectricVersion = '4.3.1'
+
         dexMakerVersion = '2.12.1'
         mockitoVersion = '2.8.9'
 
@@ -62,10 +64,10 @@ buildscript {
     repositories {
         google()
         jcenter()
-
+        
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.5.2'
+        classpath 'com.android.tools.build:gradle:3.5.3'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
         classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navigationVersion"
         // NOTE: Do not place your application dependencies here; they belong
@@ -77,7 +79,7 @@ allprojects {
     repositories {
         google()
         jcenter()
-
+        
     }
 }
 

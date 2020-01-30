@@ -2,10 +2,7 @@ package au.com.kbrsolutions.melbournepublictransport
 
 import android.content.Context
 import androidx.annotation.VisibleForTesting
-import au.com.kbrsolutions.melbournepublictransport.repository.DeparturesRepository
-import au.com.kbrsolutions.melbournepublictransport.repository.DeparturesRepositoryFake
-import au.com.kbrsolutions.melbournepublictransport.repository.FavoriteStopsRepository
-import au.com.kbrsolutions.melbournepublictransport.repository.FavoriteStopsRepositoryFake
+import au.com.kbrsolutions.melbournepublictransport.repository.*
 import kotlinx.coroutines.runBlocking
 
 object ServiceLocator {
@@ -27,6 +24,31 @@ object ServiceLocator {
 
     @VisibleForTesting
     fun resetFavoriteStopsRepository() {
+        synchronized(lock) {
+            runBlocking {
+                favoriteStopsRepository?.deleteAllFavoriteStops()
+            }
+            favoriteStopsRepository = null
+        }
+    }
+
+    @Volatile var stopsSearcherRepository: StopsSearcherRepository? = null
+        @VisibleForTesting set
+
+    fun provideStopsSearcherRepository(context: Context): StopsSearcherRepository {
+        return stopsSearcherRepository ?: synchronized(this) {
+            stopsSearcherRepository ?: createStopsSearcherRepository(context).also {
+                stopsSearcherRepository = it
+            }
+        }
+    }
+
+    private fun createStopsSearcherRepository(context: Context): StopsSearcherRepository {
+        return StopsSearcherRepositoryFake()
+    }
+
+    @VisibleForTesting
+    fun resetStopsSearcherRepository() {
         synchronized(lock) {
             runBlocking {
                 favoriteStopsRepository?.deleteAllFavoriteStops()

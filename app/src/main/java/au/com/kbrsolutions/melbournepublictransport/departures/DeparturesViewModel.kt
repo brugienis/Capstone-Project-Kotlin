@@ -7,7 +7,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import au.com.kbrsolutions.melbournepublictransport.domain.Departure
 import au.com.kbrsolutions.melbournepublictransport.repository.DeparturesRepository
-import au.com.kbrsolutions.melbournepublictransport.utilities.GLOBAL_PREFIX
+import au.com.kbrsolutions.melbournepublictransport.utilities.G_P
 import au.com.kbrsolutions.melbournepublictransport.utilities.Misc
 import kotlinx.coroutines.*
 
@@ -78,7 +78,7 @@ class DeparturesViewModel(
     /**
      * Executes when the 'List View' row is clicked.
      */
-    fun onListViewClick(id: Int) {
+    fun onListItemViewClick(id: Int) {
         Log.v("DeparturesViewModel", """onListViewClick - $id """)
         uiScope.launch {
             toggleMagnifiedView(id)
@@ -90,7 +90,7 @@ class DeparturesViewModel(
      * databaseDeparture and time.
      */
     fun onDepartureLayoutIdClicked(databaseDeparture: Departure) {
-        println(GLOBAL_PREFIX + "DeparturesViewModel" + """onDepartureLayoutIdClicked - databaseDeparture: ${databaseDeparture} """)
+        println(G_P + "DeparturesViewModel" + """onDepartureLayoutIdClicked - databaseDeparture: ${databaseDeparture} """)
         uiScope.launch {
             // TODO - missing logic
         }
@@ -116,17 +116,12 @@ class DeparturesViewModel(
         }
     }
 
-//    var clickedRowViewId: Int? = null
-
     /*
         Toggle view layout - normal/magnified.
     */
     private suspend fun toggleMagnifiedView(id: Int) {
         withContext(Dispatchers.IO) {
-            //            dataSource.flipShowMagnifyView(id)
             departuresRepository.toggleMagnifiedNormalView(id)
-//            clickedRowViewId = id
-
         }
     }
 

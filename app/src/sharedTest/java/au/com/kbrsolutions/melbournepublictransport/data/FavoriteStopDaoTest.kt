@@ -7,7 +7,7 @@ import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.SmallTest
 import androidx.test.platform.app.InstrumentationRegistry
 import au.com.kbrsolutions.melbournepublictransport.testutils.getLiveDataValue
-import au.com.kbrsolutions.melbournepublictransport.utilities.GLOBAL_PREFIX
+import au.com.kbrsolutions.melbournepublictransport.utilities.G_P
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runBlockingTest
 import org.hamcrest.CoreMatchers
@@ -76,7 +76,7 @@ class FavoriteStopDaoTest {
 
     @Test
     fun toggleMagnifiedNormalViewXxx() {
-        println(GLOBAL_PREFIX + " FavoriteStopDaoTest - toggleMagnifiedNormalViewXxx - start")
+        println(G_P + " FavoriteStopDaoTest - toggleMagnifiedNormalViewXxx - start")
         runBlockingTest {
             val favoriteStop0 = DatabaseFavoriteStop(0, 1, "one", "loc A", "sub A", 1.0, 10.0)
             val favoriteStop1 = DatabaseFavoriteStop(1, 1, "two", "loc B", "sub B", 1.1, 11.0, true)

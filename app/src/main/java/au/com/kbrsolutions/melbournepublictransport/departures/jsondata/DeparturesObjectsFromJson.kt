@@ -43,7 +43,7 @@ data class Departure (
 
 data class Stop(
     @Json(name = "stop_id")
-    val stopId: Integer,
+    val stopId: Int,
     @Json(name = "stop_distance")
     val stopDistance: Double,
     @Json(name = "stop_suburb")
@@ -51,14 +51,13 @@ data class Stop(
     @Json(name = "stop_name")
     val stopName: String,
     @Json(name = "route_type")
-    val routeType: Integer,
+    val routeType: Int,
     @Json(name = "stop_latitude")
     val stopLatitude: Double,
     @Json(name = "stop_longitude")
     val stopLongitude: Double,
     @Json(name = "stop_sequence")
-    val stopSequence: Integer
-    )
+    val stopSequence: Int)
 
 class Route (
     @Json(name = "route_id")

@@ -9,7 +9,7 @@ const val USE_HARD_CODED_PVT_RESPONSE: Boolean = true
 
 const val USE_REAL_DATABASE: Boolean = false
 
-const val GLOBAL_PREFIX: String = "gl-x - "
+const val G_P: String = "gl-x - "
 
 // Below are the Ptv constants used in the PTV response
 const val TRAIN_ROUTE_TYPE = 0

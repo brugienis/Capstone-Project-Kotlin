@@ -77,6 +77,8 @@ object DeparturesJsonProcessor {
                 disruptionIdsString = sb.toString()
             }
 
+            // fixLater: Jan 05, 2020 - I don't think status.health is handled anywhere
+            // fixLater: Jan 05, 2020 - create test case when status.health == / != 1
             detailsList.add(
                 DatabaseDeparture(
                     0,

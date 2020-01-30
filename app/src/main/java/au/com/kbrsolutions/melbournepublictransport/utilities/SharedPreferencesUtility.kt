@@ -2,6 +2,7 @@ package au.com.kbrsolutions.melbournepublictransport.utilities
 
 import android.content.Context
 import android.preference.PreferenceManager
+import android.util.Log
 import android.util.TypedValue
 import au.com.kbrsolutions.melbournepublictransport.R
 import au.com.kbrsolutions.melbournepublictransport.common.LatLngDetails

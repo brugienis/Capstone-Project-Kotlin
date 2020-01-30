@@ -3,20 +3,40 @@ package au.com.kbrsolutions.melbournepublictransport.stopssearcher
 import android.annotation.SuppressLint
 import android.content.Context
 import android.util.Log
+import android.view.View
+import android.view.inputmethod.EditorInfo
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import au.com.kbrsolutions.melbournepublictransport.R
 import au.com.kbrsolutions.melbournepublictransport.data.DatabaseFavoriteStop
-import au.com.kbrsolutions.melbournepublictransport.domain.FavoriteStop
+import au.com.kbrsolutions.melbournepublictransport.domain.LineStopDetails
 import au.com.kbrsolutions.melbournepublictransport.repository.FavoriteStopsRepository
-import au.com.kbrsolutions.melbournepublictransport.utilities.GLOBAL_PREFIX
+import au.com.kbrsolutions.melbournepublictransport.repository.StopsSearcherRepository
+import au.com.kbrsolutions.melbournepublictransport.utilities.G_P
+import au.com.kbrsolutions.melbournepublictransport.utilities.Miscellaneous
 import au.com.kbrsolutions.melbournepublictransport.utilities.SharedPreferencesUtility
+import au.com.kbrsolutions.melbournepublictransport.utilities.SharedPreferencesUtility.getRouteTypes
 import au.com.kbrsolutions.melbournepublictransport.utilities.SharedPreferencesUtility.setShowStopSearcherInstructions
+import au.com.kbrsolutions.melbournepublictransport.utilities.hideSoftKeyboardForView
 import kotlinx.coroutines.*
 
+/**
+ * // fixLater: Dec 25, 2019 - is the comment below correct?
+ *
+ * This class is used only in the 'prod' variant. It is returned by the ServiceLocator that is in
+ * the 'prod' path.
+ */
+
+enum class ShowView {
+    SearchResults,
+    InfoText,
+    Instructions
+}
 
 class StopsSearcherViewModel(
     private val favoriteStopsRepository: FavoriteStopsRepository,
+    private val stopsSearcherRepository: StopsSearcherRepository,
     private val context: Context) : ViewModel() {
 
     /**
@@ -36,33 +56,183 @@ class StopsSearcherViewModel(
      */
     private val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
 
-    private var favoriteStops = MutableLiveData<List<FavoriteStop>>()   // = database.getDepartures()
-
-    private var _favoriteStopsMsg = MutableLiveData<String>()
+    private var _showView = MutableLiveData<ShowView>(enumValueOf(ShowView.Instructions.toString()))
+    val showView: LiveData<ShowView>
+        get() = _showView
 
     private val _showInstructions = MutableLiveData<Boolean>()
 
     val showInstructions: LiveData<Boolean>
         get() = _showInstructions
 
-    fun insertFavoriteStop() {
-        uiScope.launch {
-            insertStopDetails()
-        }
+    private val _navigateUp = MutableLiveData<Boolean>(false)
+
+    val navigateUp: LiveData<Boolean>
+        get() = _navigateUp
+
+    private val _searchTextHint = MutableLiveData<String>()
+
+    val searchTextHint: LiveData<String>
+        get() = _searchTextHint
+
+    private val _stopSearcherTextValidationMsg = MutableLiveData<String>()
+
+    val stopSearcherTextValidationMsg: LiveData<String>
+        get() = _stopSearcherTextValidationMsg
+
+    val loadErrMsg: LiveData<String>
+        get() = stopsSearcherRepository.loadErrMsg
+
+    private val _clearMsgClicked = MutableLiveData<Boolean>()
+
+    val clearMsgClicked: LiveData<Boolean>
+        get() = _clearMsgClicked
+
+    val stopsSearchResults = stopsSearcherRepository.getStopsSearcherResults()
+
+    init {
+//        clearRepositoryTables()
+        _clearMsgClicked.value = false
+        _searchTextHint.value = context.resources.getString(R.string.enter_search_text)
+//        _showView.value = ShowView.Instructions
+        clearValidationMsg()
+    }
+
+    fun setShownView(viewEnum: ShowView) {
+        _showView.value = viewEnum
+        Log.v(G_P + "StopsSearcherViewModel", """setShownView - viewEnum: ${viewEnum} """)
+    }
+
+    fun navigateUpDone() {
+        _navigateUp.value = false
+//        clearRepositoryTables()
     }
 
     // fixLater: Dec 01, 2019 - check out https://medium.com/@dimabatyuk/adding-clear-button-to-edittext-9655e9dbb721
     // fixLater: Dec 01, 2019 - check out https://github.com/DmytroBatyuk/Clearable-EditText-Implementation/blob/master/app/src/main/java/ua/batyuk/dmytro/clearableedittextimplementation/EditText.kt#L70
 
-
-    private fun getRoute(): Int {
+    /*private fun getRoute(): Int {
         return rowCnt.rem(3)
+    }*/
+
+    fun cancelStopsSearch() {
+//        Log.v(G_P + "StopsSearcherViewModel", """cancelStopsSearch - start""")
+        _searchTextHint.value = context.resources.getString(R.string.search_cancelled_enter_search_text)
+    }
+
+    fun clearSearchTextClicked() {
+        Log.v(G_P + "StopsSearcherViewModel", """clearSearchTextClicked - clearSearchTextClicked""")
+        _clearMsgClicked.value = true
+        clearValidationMsg()
+        _searchTextHint.value = context.resources.getString(R.string.enter_search_text)
+    }
+
+    private fun clearValidationMsg() {
+        if (_stopSearcherTextValidationMsg.value == null ||
+            _stopSearcherTextValidationMsg.value!!.isNotEmpty()) {
+            _stopSearcherTextValidationMsg.value = ""
+        }
+    }
+
+    /**
+     * Called when user pressed 'search' button. Starts search if search text is not empty.
+     */
+    fun handleSearchButtonClicked(view: View, actionId: Int, searchText: String?): Boolean {
+//        Log.v(G_P + "StopsSearcherViewModel", """handleSearchButtonClicked - actionId: ${actionId} """)
+        var handled = false
+        if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+            if (searchText != null) {
+                validateSearchTextAndStartSearch(searchText)
+                handled = true
+                hideSoftKeyboardForView(view)
+            } else {
+//                setStopsSearchText("")
+            }
+        }
+        return handled
+    }
+
+    /**
+     * Start stops search if searchText is valid, otherwise show validation message.
+     *
+     * @param searchText    search text
+     */
+    fun validateSearchTextAndStartSearch(searchText: String) {
+        var locSearchText: String = searchText
+        if (Miscellaneous.validateSearchText(locSearchText)) {
+            locSearchText = Miscellaneous.capitalizeWords(locSearchText)
+            startLineAndStopsSearch(locSearchText)
+//            showInfoText(getString(R.string.searching_in_progress))
+            _searchTextHint.value = context.resources.getString(R.string.searching_in_progress)
+            clearValidationMsg()
+        } else {
+//            showInfoText(getString(R.string.invalid_search_text))
+            _stopSearcherTextValidationMsg.value = context.resources.getString(R.string.invalid_search_text)
+        }
+        // fixLater: Nov 30, 2019 - look at the below later
+//        setVisibleView(mSearchInfoTextTV, "validateSearchTextAndStartSearch")
     }
 
     @SuppressLint("LongLogTag")
     fun startLineAndStopsSearch(searchText: String) {
-        Log.v(GLOBAL_PREFIX + "StopsSearcherViewModel", """startLineAndStopsSearch - searchText: ${searchText} """)
+        val delayMillis = 3_000L
+        val routTypes = getRouteTypes(context)
+        val path = StopsSearcherUrlBuilder.buildURI(
+            searchText,
+            null,
+            40000f,
+            routTypes
+        )
+//        EspressoIdlingResource.increment("StopsSearcherViewModel.startLineAndStopsSearch")
+        // fixLater: Jan 06, 2020 - create set of favorite stopIds - it probably should be Ints
+        val favoriteStopIdsSet = mutableSetOf<String>()
+        uiScope.launch {
+            /*runBlocking {
+                delay(delayMillis)
+            }*/
+
+            stopsSearcherRepository.sendRequestAndProcessPtvResponse(
+                path,
+                favoriteStopIdsSet,
+                context
+            )
+        }
     }
+
+    /**
+     * Executes when the 'List View' row is clicked.
+     */
+    fun onListItemViewClick(id: Int) {
+        Log.v("StopsSearcherViewModel", """onListViewClick - $id """)
+        uiScope.launch {
+            toggleMagnifiedView(id)
+        }
+    }
+
+    /*
+        Toggle view layout - normal/magnified.
+    */
+    private suspend fun toggleMagnifiedView(id: Int) {
+        withContext(Dispatchers.IO) {
+            stopsSearcherRepository.toggleMagnifiedView(id)
+        }
+    }
+
+    /**
+     * Executes when the 'stop facility' icon is clicked.
+     */
+    fun onAddStopOrGetStopsOnlineClicked(id: Int) {
+        Log.v("StopsSearcherViewModel", """onAddStopOrGetStopsOnlineClicked - $id """)
+        uiScope.launch {
+            insertStopDetails(stopsSearcherRepository.getLineStopDetails(id))
+        }
+    }
+
+    /*fun insertFavoriteStop() {
+        uiScope.launch {
+            insertStopDetails(stopsSearcherRepository.getLineStopdetails(id))
+        }
+    }*/
 
     fun toggleShowHideNotes() {
         setShowStopSearcherInstructions(
@@ -82,38 +252,32 @@ class StopsSearcherViewModel(
         super.onCleared()
         viewModelJob.cancel()
     }
-    private var rowCnt = -1
-    private suspend fun insertStopDetails() {
-        rowCnt = favoriteStopsRepository.getFavoriteStopsCount()
-        Log.v("StopsSearcherViewModel", """insertStopDetails - before rowCnt: ${rowCnt} """)
-        var routeType = getRoute()
-        val favoriteStop = if (rowCnt == 0) {
+
+    private suspend fun insertStopDetails(lineStopDetails: LineStopDetails) {
+//        var routeType = getRoute()
+        val favoriteStop =
             DatabaseFavoriteStop(
-                rowCnt++,
-                0,
-                "1035",
-                """Carrum""",
-                "Carrum",
-                1.0,
-                10.0
+                lineStopDetails.id,
+                lineStopDetails.routeType,
+                lineStopDetails.stopId.toString(),
+                lineStopDetails.stopLocationOrLineName,
+                lineStopDetails.suburb ?: "",
+                lineStopDetails.latitude,
+                lineStopDetails.longitude
             )
-        } else {
-            DatabaseFavoriteStop(
-                rowCnt++,
-                routeType,
-                "stopId$routeType",
-                """loc A: $routeType""",
-                "sub A$routeType",
-                1.0,
-                10.0
-            )
-        }
         withContext(Dispatchers.IO) {
             favoriteStopsRepository.insert(favoriteStop)
         }
-        Log.v("StopsSearcherViewModel", """insertStopDetails - after  rowCnt: ${rowCnt} """)
-        favoriteStopsRepository.printStopsIds("StopsSearcherViewModel - insertStopDetails")
+        context.applicationContext
+        Log.v("StopsSearcherViewModel", """insertStopDetails - favoriteStop: $favoriteStop """)
+        _navigateUp.value = true
         return
+    }
+
+    fun clearRepositoryTables() {
+        uiScope.launch {
+            stopsSearcherRepository.clearTable()
+        }
     }
 
 }

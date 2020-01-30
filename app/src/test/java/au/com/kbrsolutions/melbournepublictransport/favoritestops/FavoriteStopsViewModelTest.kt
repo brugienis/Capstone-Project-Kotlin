@@ -79,21 +79,18 @@ class FavoriteStopsViewModelTest {
 
     @Test
     fun getFavoriteStops() {
-        getLiveDataValue(favoriteStopsViewModel.favoriteStops)
         assertThat(getLiveDataValue(favoriteStopsViewModel.favoriteStops)).hasSize(3)
     }
 
     @Test
     fun deleteOneFavoriteStop() {
         favoriteStopsViewModel.onDeleteFavoriteStop(lafayetteStopId)
-        getLiveDataValue(favoriteStopsViewModel.favoriteStops)
         assertThat(getLiveDataValue(favoriteStopsViewModel.favoriteStops)).hasSize(2)
     }
 
     @Test
     fun deleteAllFavoriteStops() {
         favoriteStopsViewModel.onClear()
-        getLiveDataValue(favoriteStopsViewModel.favoriteStops)
         assertThat(getLiveDataValue(favoriteStopsViewModel.favoriteStops)).hasSize(0)
     }
 

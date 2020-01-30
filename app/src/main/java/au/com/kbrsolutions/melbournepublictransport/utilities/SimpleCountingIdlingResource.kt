@@ -45,11 +45,12 @@ class SimpleCountingIdlingResource(private val resourceName: String) : IdlingRes
     fun decrement() {
         val counterVal = counter.decrementAndGet()
         if (counterVal == 0) {
-            println(GLOBAL_PREFIX + " SimpleCountingIdlingResource decrement() resourceCallback: $resourceCallback")
+            println(G_P + " SimpleCountingIdlingResource decrement() resourceCallback: $resourceCallback")
             // we've gone from non-zero to zero. That means we're idle now! Tell espresso.
             resourceCallback?.onTransitionToIdle()
         } else if (counterVal < 0) {
             throw IllegalStateException("Counter has been corrupted!")
         }
     }
+    fun getCounter() = counter
 }

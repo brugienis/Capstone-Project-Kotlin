@@ -15,7 +15,6 @@ import au.com.kbrsolutions.melbournepublictransport.data.helper.TestDataGenerato
 import au.com.kbrsolutions.melbournepublictransport.domain.Departure
 import au.com.kbrsolutions.melbournepublictransport.repository.DeparturesRepositoryFake
 import au.com.kbrsolutions.melbournepublictransport.testutils.RecyclerViewMatcher
-import au.com.kbrsolutions.melbournepublictransport.utilities.GLOBAL_PREFIX
 import au.com.kbrsolutions.melbournepublictransport.utilities.Misc
 import au.com.kbrsolutions.melbournepublictransport.utilities.SharedPreferencesUtility
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -27,7 +26,6 @@ import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.annotation.LooperMode
 import org.robolectric.annotation.TextLayoutMode
-
 
 /**
  * Integration test for the Departures List screen.
@@ -52,7 +50,7 @@ class DeparturesFragmentTest {
     var instantExecutorRule = InstantTaskExecutorRule()
 
     private lateinit var repository: DeparturesRepositoryFake
-    //    private val departuresList = TestDataGenerator.generateDataDeparturesList3Rows()
+//    private val departuresList = TestDataGenerator.generateDataDeparturesList3Rows()
     private val departuresList = TestDataGenerator.generateDataDeparturesList1Row()
 
     @Before
@@ -65,12 +63,12 @@ class DeparturesFragmentTest {
     @After
     fun cleanupDb() = runBlockingTest {
         repository.setSimulatedDelayMillis(0)
-        ServiceLocator.resetFavoriteStopsRepository()
+        ServiceLocator.resetDeparturesRepository()
     }
 
     /**
      * Set the value of the [favoriteStopsRequestedTimMillis] to the default value defined
-     * in the DeparturesFragment. That will prevent call to the DeparturesViewModel's
+     * in the DeparturesFragment. That will prevent unnecessary calls to the DeparturesViewModel's
      * loadDepartures(). The Departures screen will only show the data loaded in the initRepository
      * function annotated with @Before.
      *
@@ -89,10 +87,8 @@ class DeparturesFragmentTest {
         scenario.onFragment {
         }
 
-        println(GLOBAL_PREFIX + """DeparturesFragmentTest - clickListViewRow_toggleMagnifiedView - before checkIsDisplayed""")
         // THEN - Verify 'magnified' layout section is not displayed on screen
         R.id.departuresTopLayoutId.checkIsDisplayed()
-        println(GLOBAL_PREFIX + """DeparturesFragmentTest - clickListViewRow_toggleMagnifiedView - after  checkIsDisplayed""")
 
         // Click on the favoriteStopsTransportImageId
         R.id.departuresTransportImageId.performClick()
@@ -114,8 +110,8 @@ class DeparturesFragmentTest {
         scenario.onFragment {
             val context = it.context
             context?.let {
-                // Make sure the sort order is 'by time' at the beginig of the test
-                SharedPreferencesUtility.setSortDeparturesDataByTime(context!!, true)
+                // Make sure the sort order is 'by time' at the beginning of the test
+                SharedPreferencesUtility.setSortDeparturesDataByTime(context, true)
                 derparturesList = TestDataGenerator.getDataDeparturesListNRows(
                     rowsToLoadCnt,
                     context
@@ -130,45 +126,39 @@ class DeparturesFragmentTest {
         }
 
         // Sort departures by time
-        var derparturesListSorted =
+        var departuresListSorted =
             Misc.sortDeparturesData(derparturesList!!.asDomainModel(), true)
 
-//        derparturesListSorted.forEachIndexed { index, departure ->
-//            Log.v(GLOBAL_PREFIX + "DeparturesFragmentTest", """verifyListViewItemsOrder - index: $index departure: ${departure.directionName} hhMm: ${departure.departureTimeHourMinutes} """)
-//        }
+        verifyDeparturesOrder(departuresListSorted)
 
         delayNextAction(3_000)
 
-        verifyDeparturesOrder(derparturesListSorted)
-
-        delayNextAction(3_000)
-
-        // Sort departures by time
-        derparturesListSorted =
+        // Sort departures by direction
+        departuresListSorted =
             Misc.sortDeparturesData(derparturesList!!.asDomainModel(), false)
 
-        // Click on the 'Sort by direction' menu item
+        // Simulate click on the 'Sort by direction' menu item
         scenario.onFragment {
             it.sortDepartureDataAndUpdateAdapter(false)
         }
 
         delayNextAction(3_000)
 
-        verifyDeparturesOrder(derparturesListSorted)
+        verifyDeparturesOrder(departuresListSorted)
 
         delayNextAction(3_000)
     }
 
-    private fun verifyDeparturesOrder(derparturesListSorted: List<Departure>) {
-        derparturesListSorted.forEachIndexed { index, departure ->
-            //            println(GLOBAL_PREFIX + """DeparturesFragmentTest - verifyListViewItemsOrder - index: ${index} """)
+    private fun verifyDeparturesOrder(departuresListSorted: List<Departure>) {
+        departuresListSorted.forEachIndexed { index, departure ->
             // First scroll to the position that needs to be matched
             onView(withId(R.id.departuresList))
                 .perform(scrollToPosition<DeparturesAdapter.ViewHolderNormal>(index))
 
+            // Validate that the row on the screen contains correct data
             onView(withRecyclerView(R.id.departuresList).atPosition(index))
-                .check(matches(hasDescendant(withText(derparturesListSorted[index].directionName))))
-                .check(matches(hasDescendant(withText(derparturesListSorted[index].departureTimeHourMinutes))))
+                .check(matches(hasDescendant(withText(departuresListSorted[index].directionName))))
+                .check(matches(hasDescendant(withText(departuresListSorted[index].departureTimeHourMinutes))))
         }
     }
 

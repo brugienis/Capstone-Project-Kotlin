@@ -5,7 +5,7 @@ import au.com.kbrsolutions.melbournepublictransport.DebugUtilities
 import au.com.kbrsolutions.melbournepublictransport.data.DatabaseDeparture
 import au.com.kbrsolutions.melbournepublictransport.data.setId
 import au.com.kbrsolutions.melbournepublictransport.departures.DeparturesJsonProcessor
-import au.com.kbrsolutions.melbournepublictransport.utilities.GLOBAL_PREFIX
+import au.com.kbrsolutions.melbournepublictransport.utilities.G_P
 
 object TestDataGenerator {
 
@@ -140,7 +140,7 @@ object TestDataGenerator {
 //                println(GLOBAL_PREFIX + """TestDataGenerator - getDataDeparturesListNRows - directionName: $index - ${databaseDeparture.directionName} """)
             }
         }
-        println(GLOBAL_PREFIX + """TestDataGenerator - getDataDeparturesListNRows - departuresList size: ${departuresList.size} """)
+        println(G_P + """TestDataGenerator - getDataDeparturesListNRows - departuresList size: ${departuresList.size} """)
         return departuresList
 
 //        var list = mutableListOf<DatabaseDeparture>()

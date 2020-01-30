@@ -95,7 +95,7 @@ class DepartureDiffCallback : DiffUtil.ItemCallback<Departure>() {
     }
 }
 
-class DepartureListener(val clickListener: (databaseDeparture: Departure, clickedViewName: String) -> Unit) {
+class DepartureListener(val clickListener: (departure: Departure, clickedViewName: String) -> Unit) {
 
     fun onClickNoIcon(databaseDeparture: Departure) =
         clickListener(databaseDeparture, LIST_VIEW_ROW)

@@ -1,6 +1,7 @@
 package au.com.kbrsolutions.melbournepublictransport.network
 
 import au.com.kbrsolutions.melbournepublictransport.departures.jsondata.DeparturesObjectsFromJson
+import au.com.kbrsolutions.melbournepublictransport.stopssearcher.jsondata.StopsSearcherObjectsFromJson
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
@@ -45,6 +46,10 @@ interface PtvApiService {
     @GET("{remaining}")
     fun getPtvResponse(@Path("remaining", encoded=true) dynamicPartOfRequest: String):
             Deferred<DeparturesObjectsFromJson>
+
+    @GET("{remaining}")
+    fun getPtvStopsSearcherResponse(@Path("remaining", encoded=true) dynamicPartOfRequest: String):
+            Deferred<StopsSearcherObjectsFromJson>
 }
 
 /**
