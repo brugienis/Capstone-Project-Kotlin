@@ -1,6 +1,7 @@
 package au.com.kbrsolutions.melbournepublictransport.departures
 
 import android.os.Bundle
+import android.util.Log
 import android.view.*
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
@@ -77,6 +78,8 @@ class DeparturesFragment : Fragment() {
 
         departureViewModel.loadErrMsg.observe(viewLifecycleOwner, Observer {
             if (it != null) {
+                Log.v(G_P + "DeparturesFragment", """onCreateView - loadErrMsg: ${it} """)
+//                showErrorMsg(binding.root, it)
                 progressBarHandler.hide()
             }
         })
@@ -106,6 +109,12 @@ class DeparturesFragment : Fragment() {
         }
     }
 
+    /*private fun showErrorMsg(binding: View, errorMsg: String) {
+        Snackbar.make(binding, errorMsg, Snackbar.LENGTH_INDEFINITE).run {
+            show()
+        }
+    }*/
+
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.menu_departures, menu)
     }
@@ -129,13 +138,20 @@ class DeparturesFragment : Fragment() {
         return true
     }
 
+    // Below is not private because I use it also in the fragment test.
+    fun reloadDepartures() {
+        Log.v(G_P + "DeparturesFragment", """reloadDepartures - started """)
+        EspressoIdlingResource.increment("DeparturesFragment.reloadDepartures") // Set app as busy.
+        departureViewModel.loadDepartures()
+    }
+
     /*
        Below will handle menu items that do not require navigation to some other fragments.
     */
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when(item.itemId) {
             R.id.directions_menu_refresh_data -> {
-                departureViewModel.loadDepartures()
+                reloadDepartures()
                 return true
             }
             R.id.directions_menu_sort_by_time -> {

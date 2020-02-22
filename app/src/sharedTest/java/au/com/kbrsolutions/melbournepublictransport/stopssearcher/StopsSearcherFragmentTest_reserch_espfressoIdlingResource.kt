@@ -1,7 +1,6 @@
 package au.com.kbrsolutions.melbournepublictransport.stopssearcher
 
 import android.content.res.Resources
-import android.os.Bundle
 import android.util.Log
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.fragment.app.testing.launchFragmentInContainer
@@ -49,7 +48,7 @@ class StopsSearcherFragmentTest_reserch_espressoIdlingResource {
     private val dataBindingIdlingResource = DataBindingIdlingResource()
 
     private lateinit var stopsSearcherRepository: StopsSearcherRepositoryFake
-    val embarcaderoStopId = "Embarcadero"
+    val embarcaderoStopId = 1000
     val embarcaderoLocationName = "Embarcadero Station"
 
     @Before
@@ -101,8 +100,9 @@ class StopsSearcherFragmentTest_reserch_espressoIdlingResource {
         stopsSearcherRepository.setDebuggingJsonStringFile("stops_searcher_2_stops_health_false.json")
         // Given a user in the home screen
         var resources: Resources? = null
+        val favoriteStopsArray = StopsSearcherFragmentArgs(IntArray(0)).toBundle()
         val scenario =
-            launchFragmentInContainer<StopsSearcherFragment>(Bundle(), R.style.AppTheme)
+            launchFragmentInContainer<StopsSearcherFragment>(favoriteStopsArray, R.style.AppTheme)
         scenario.onFragment {
             resources = it.resources
         }

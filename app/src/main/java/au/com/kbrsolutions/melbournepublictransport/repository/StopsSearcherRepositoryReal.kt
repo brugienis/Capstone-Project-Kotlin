@@ -1,86 +1,108 @@
 package au.com.kbrsolutions.melbournepublictransport.repository
 
 import android.content.Context
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.Transformations
+import au.com.kbrsolutions.melbournepublictransport.DebugUtilities
+import au.com.kbrsolutions.melbournepublictransport.R
 import au.com.kbrsolutions.melbournepublictransport.data.DatabaseLineStopDetails
-import au.com.kbrsolutions.melbournepublictransport.data.FavoriteStopDao
+import au.com.kbrsolutions.melbournepublictransport.data.LineStopDetailsDao
 import au.com.kbrsolutions.melbournepublictransport.data.asDomainModel
-import au.com.kbrsolutions.melbournepublictransport.domain.FavoriteStop
 import au.com.kbrsolutions.melbournepublictransport.domain.LineStopDetails
+import au.com.kbrsolutions.melbournepublictransport.network.PtvApi
+import au.com.kbrsolutions.melbournepublictransport.stopssearcher.LinesAndStopsForSearchResult
+import au.com.kbrsolutions.melbournepublictransport.stopssearcher.StopsSearcherJsonProcessor
+import au.com.kbrsolutions.melbournepublictransport.stopssearcher.jsondata.StopsSearcherObjectsFromJson
+import au.com.kbrsolutions.melbournepublictransport.utilities.G_P
+import au.com.kbrsolutions.melbournepublictransport.utilities.SharedPreferencesUtility
+import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import java.util.*
 
-class StopsSearcherRepositoryReal(private val favoriteStopDao: FavoriteStopDao)
+class StopsSearcherRepositoryReal(private val lineStopDetailsDao: LineStopDetailsDao)
     : StopsSearcherRepository {
 
-    /* map 'id' to LineStopDetails */
-    var stopsSearcherServiceData: LinkedHashMap<Int, DatabaseLineStopDetails> = LinkedHashMap()
-
-    private var _stopsSearcherResults = MutableLiveData<List<LineStopDetails>>()
-
-    override fun getStopsSearcherResults(): LiveData<List<LineStopDetails>> = _stopsSearcherResults
+    override fun getStopsSearcherResults(): LiveData<List<LineStopDetails>> =
+        Transformations.map(lineStopDetailsDao.getStopsSearcherResults()) {
+            it.asDomainModel()
+        }
 
     override val loadErrMsg = MutableLiveData<String>()
 
-    /*override val loadErrMsg: MutableLiveData<String>
-        get() = TODO("not implemented") //To change initializer of created properties use File | Settings | File Templates.
-*/
-
     override suspend fun clearTable() {
-        stopsSearcherServiceData.clear()
+        withContext(Dispatchers.IO) {
+            lineStopDetailsDao.clear()
+        }
     }
 
     override suspend fun getLineStopDetails(id: Int): LineStopDetails {
-        return stopsSearcherServiceData[id]!!.asDomainModel()
+        var lineStopDetails: DatabaseLineStopDetails? = null
+        withContext(Dispatchers.IO) {
+            lineStopDetails = lineStopDetailsDao.getLineStopDetails(id)
+        }
+        return lineStopDetails!!.asDomainModel()
     }
 
     override suspend fun sendRequestAndProcessPtvResponse(
         path: String,
-        favoriteStopIdsSet: Set<String>,
+        favoriteStopIdsSet: Set<Int>,
         context: Context) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
+        Log.v(G_P + "StopsSearcherRepositoryReal", """sendRequestAndProcessPtvResponse - path: ${path} """)
+        var stopsSearcherObjectsFromJson: StopsSearcherObjectsFromJson? = null
+        try {
+            if (SharedPreferencesUtility.useHardCodedPvtResponse(context)) {
+                stopsSearcherObjectsFromJson =
+                    DebugUtilities(context).getStopsSearcherResponse(path)
+            } else {
+                val getDeparturesDeferred: Deferred<StopsSearcherObjectsFromJson> =
+                    PtvApi.retrofitService.getPtvStopsSearcherResponse(path)
+                stopsSearcherObjectsFromJson = getDeparturesDeferred.await()
+            }
+
+            // fixLater: Jan 06, 2020 - the 'stopId' is an Int - why do we pass set of strings?
+//            val favoriteStopIdsSetTemp = mutableSetOf<Int>()
+            val linesAndStopsForSearchResult: LinesAndStopsForSearchResult =
+                StopsSearcherJsonProcessor.buildStopsSearcherDetailsList(
+                    stopsSearcherObjectsFromJson,
+                    favoriteStopIdsSet)
+
+            if (!linesAndStopsForSearchResult.health) {
+                throw java.lang.RuntimeException(context.getString(R.string.ptv_is_not_available))
+            }
+            val linesStopsDetails =
+                linesAndStopsForSearchResult.lineStopDetailsList
+            loadErrMsg.postValue( null)
+            lineStopDetailsDao.clearTableAndInsertNewRows(linesStopsDetails)
+
+            /*linesStopsDetails.forEachIndexed { index, lineStopDetails ->
+                if (index < 10) {
+                    Log.v(G_P + "StopsSearcherRepositoryFake", """sendRequestAndProcessPtvResponse - lineStopDetails: ${lineStopDetails} """)
+//                    println(G_P + """StopsSearcherRepositoryFake - sendRequestAndProcessPtvResponse - lineStopDetails: ${lineStopDetails} """)
+                }
+            }*/
+        } catch (e: Exception) {
+            Log.v(G_P + "StopsSearcherRepositoryReal", """sendRequestAndProcessPtvResponse - e: ${e} """)
+            loadErrMsg.postValue( "${e.message}")
+        }
     }
-
-    /*override suspend fun insert(favoriteStop: DatabaseFavoriteStop) {
-        withContext(Dispatchers.IO) {
-            favoriteStopDao.insert(favoriteStop)
-        }
-    }*/
-
-    /*override suspend fun getFavoriteStopsCount(): Int {
-        var cnt = 0
-        withContext(Dispatchers.IO) {
-            cnt = favoriteStopDao.getFavoriteStopsCount()
-        }
-        return cnt
-    }*/
 
     /*
         Toggle view layout - normal/magnified.
     */
     override suspend fun toggleMagnifiedView(id: Int) {
         withContext(Dispatchers.IO) {
-            favoriteStopDao.toggleMagnifiedNormalView(id)
+            lineStopDetailsDao.toggleMagnifiedNormalView(id)
         }
     }
 
-    /**
-     * Print 'stopIds' of the FavoriteStops in the database.
-     */
-    /*override suspend fun printStopsIds(source: String) {
-        println("FavoriteStopsViewModel - printStopsIds start")
+    override suspend fun getLineStopDetailsCount(): Int {
+        var cnt = 0
         withContext(Dispatchers.IO) {
-            val rows = favoriteStopDao.getDebugFavoriteStops()
-//            rows.forEach { println("FavoriteStopsViewModel - printStopsIds - stopId: ${it.stopId}") }
-            rows.forEach<DatabaseFavoriteStop> {
-                printStopDetails(it.asDomainModel(), "printStopsIds")
-            }
+            cnt = lineStopDetailsDao.getLineStopDetailsCount()
         }
-    }*/
-
-    private fun printStopDetails(favoriteStop: FavoriteStop, source: String, msg: String = "") {
-        println("FavoriteStopsRepositoryReal - printStopDetails - source - $msg stopId: ${favoriteStop.id} stopName: ${favoriteStop.locationName} magnified: ${favoriteStop.showInMagnifiedView}")
+        return cnt
     }
 }

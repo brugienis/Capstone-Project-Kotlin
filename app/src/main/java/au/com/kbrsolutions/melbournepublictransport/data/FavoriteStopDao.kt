@@ -24,13 +24,13 @@ interface FavoriteStopDao {
      * Delete row for a given stop id.
      */
     @Query("DELETE FROM favorite_stop_table WHERE stop_id = :stopId")
-    fun deleteFavoriteStop(stopId: String)
+    fun deleteFavoriteStop(stopId: Int)
 
     @Query("select * from favorite_stop_table WHERE stop_id = :stopId")
-    fun getTestFavoriteStop(stopId: String): DatabaseFavoriteStop
+    fun getTestFavoriteStop(stopId: Int): DatabaseFavoriteStop
 
     @Query("select * from favorite_stop_table WHERE show_in_magnified_view = 1")
-    fun getMagnifiedFavoriteStop(): DatabaseFavoriteStop
+    fun getMagnifiedFavoriteStop(): DatabaseFavoriteStop?
 
     /*
         Get the 'databaseDeparture' row for the given 'id'

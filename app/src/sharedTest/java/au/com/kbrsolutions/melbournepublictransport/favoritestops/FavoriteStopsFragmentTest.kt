@@ -53,7 +53,7 @@ class FavoriteStopsFragmentTest {
     @get:Rule var instantExecutorRule = InstantTaskExecutorRule()
 
     private lateinit var repository: FavoriteStopsRepositoryFake
-    val embarcaderoStopId = "Embarcadero"
+    val embarcaderoStopId = 1000
     val embarcaderoLocationName = "Embarcadero Station"
 
     @Before
@@ -105,7 +105,7 @@ class FavoriteStopsFragmentTest {
         // Then verify that we navigate to the NextDeparture screen
         verify(navController).navigate(
             FavoriteStopsFragmentDirections.actionFavoriteStopsFragmentToNextDeparturesFragment(
-                "Embarcadero",
+                1000,
                 "Embarcadero Station",
                 navigateToNextDeparturesRequestMillis
 //                System.currentTimeMillis()
@@ -165,7 +165,7 @@ class FavoriteStopsFragmentTest {
             FavoriteStop(
                 0,
                 0,
-                "Walnut Station",
+                1000,
                 walnutCreek,
                 "Walnut Creek",
                 1.1,
@@ -175,7 +175,7 @@ class FavoriteStopsFragmentTest {
             FavoriteStop(
                 1,
                 0,
-                "Lafayette Station 1",
+                2000,
                 lafayette,
                 "Lafayette",
                 1.1,
@@ -185,7 +185,7 @@ class FavoriteStopsFragmentTest {
             FavoriteStop(
                 2,
                 0,
-                "Embarcadero Station 1",
+                3000,
                 sanFrancisco,
                 "San Francisco",
                 1.1,

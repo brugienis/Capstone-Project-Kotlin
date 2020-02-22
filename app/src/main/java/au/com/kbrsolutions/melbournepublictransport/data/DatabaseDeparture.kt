@@ -11,6 +11,7 @@ data class DatabaseDeparture constructor(
     @ColumnInfo(name = "id")
     val id: Int,
 
+    @ColumnInfo(name="stop_id")
     val stopId: Int?,
     @ColumnInfo(name="route_id")
     val routeId: Int?,
@@ -43,8 +44,6 @@ data class DatabaseDeparture constructor(
     val lineShortName: String?,
     @ColumnInfo(name="run_type")
     val runType: String?,
-    @ColumnInfo(name="status")
-    val status: Int?,
     @ColumnInfo(name="isReal_time_info")
     val isRealTimeInfo: Boolean,
     @ColumnInfo(name="show_in_magnified_view")
@@ -74,7 +73,7 @@ fun List<DatabaseDeparture>.asDomainModel(): List<Departure> {
             lineNumber = it.lineNumber,
             lineShortName = it.lineShortName,
             runType = it.runType,
-            status = it.status,
+//            status = it.status,
             isRealTimeInfo = it.isRealTimeInfo,
             showInMagnifiedView = it.showInMagnifiedView,
             rowInsertTime = it.rowInsertTime
@@ -102,7 +101,7 @@ fun DatabaseDeparture.asDomainModel(): Departure {
         lineNumber = this.lineNumber,
         lineShortName = this.lineShortName,
         runType = this.runType,
-        status = this.status,
+//        status = this.status,
         isRealTimeInfo = this.isRealTimeInfo,
         showInMagnifiedView = this.showInMagnifiedView,
         rowInsertTime = this.rowInsertTime
@@ -129,7 +128,7 @@ fun DatabaseDeparture.flipShowInMagnifiedView(): DatabaseDeparture {
         lineNumber = this.lineNumber,
         lineShortName = this.lineShortName,
         runType = this.runType,
-        status = this.status,
+//        status = this.status,
         isRealTimeInfo = this.isRealTimeInfo,
         showInMagnifiedView = !this.showInMagnifiedView,
         rowInsertTime = this.rowInsertTime
@@ -159,7 +158,7 @@ fun DatabaseDeparture.setId(newId: Int): DatabaseDeparture {
         lineNumber = this.lineNumber,
         lineShortName = this.lineShortName,
         runType = this.runType,
-        status = this.status,
+//        status = this.status,
         isRealTimeInfo = this.isRealTimeInfo,
         showInMagnifiedView = this.showInMagnifiedView,
         rowInsertTime = this.rowInsertTime

@@ -1,5 +1,6 @@
 package au.com.kbrsolutions.melbournepublictransport.repository
 
+import androidx.annotation.VisibleForTesting
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Transformations
 import au.com.kbrsolutions.melbournepublictransport.data.DatabaseFavoriteStop
@@ -56,10 +57,15 @@ class FavoriteStopsRepositoryReal(private val favoriteStopDao: FavoriteStopDao)
     /*
         Delete one row in the 'favorite_stop' table.
     */
-    override suspend fun deleteFavoriteStop(stopId: String) {
+    override suspend fun deleteFavoriteStop(stopId: Int) {
         withContext(Dispatchers.IO) {
             favoriteStopDao.deleteFavoriteStop(stopId)
         }
+    }
+
+    @VisibleForTesting
+    override suspend fun getFavoriteStop(id: Int): FavoriteStop? {
+        return favoriteStopDao.getFavoriteStop(id)?.asDomainModel()
     }
 
     /**

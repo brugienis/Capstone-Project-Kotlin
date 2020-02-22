@@ -12,7 +12,6 @@ import au.com.kbrsolutions.melbournepublictransport.repository.FavoriteStopsRepo
 import au.com.kbrsolutions.melbournepublictransport.testutils.DataBindingIdlingResource
 import au.com.kbrsolutions.melbournepublictransport.testutils.monitorActivity
 import au.com.kbrsolutions.melbournepublictransport.utilities.EspressoIdlingResource
-import au.com.kbrsolutions.melbournepublictransport.utilities.G_P
 import au.com.kbrsolutions.melbournepublictransport.utilities.SharedPreferencesUtility
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runBlockingTest
@@ -45,7 +44,7 @@ class MainActivityTest {
     // An Idling Resource that waits for Data Binding to have no pending bindings
     private val dataBindingIdlingResource = DataBindingIdlingResource()
 
-    val embarcaderoStopId = "Embarcadero"
+    val embarcaderoStopId = 1000
     val embarcaderoLocationName = "Embarcadero Station"
 
     @Before
@@ -127,10 +126,8 @@ class MainActivityTest {
         dataBindingIdlingResource.monitorActivity(activityScenario)
 
         delayAction(3_000)
-        println(G_P + """MainActivityTest - verifyActivityAndFavoriteStopsFragmentMenuItems - start""")
         // Verify all 'favorite stops' menu items are available
         R.id.favStops_goToStopsSearcherFragment.checkMenuItemIsDisplayed("Add favorite stop")
-        println(G_P + """MainActivityTest - verifyActivityAndFavoriteStopsFragmentMenuItems - after check Add favorite stop""")
         R.id.favStops_removeAllFavoriteStops.checkMenuItemIsDisplayed("Delete all favorite stops")
         R.id.favStops_trainStopsNearby.checkMenuItemIsDisplayed("Train stops nearby")
         R.id.favStops_stopsNearby.checkMenuItemIsDisplayed("Stops nearby")

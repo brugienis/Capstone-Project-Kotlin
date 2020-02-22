@@ -1,0 +1,103 @@
+{
+  "departures": [
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 15293,
+      "direction_id": 5,
+      "disruption_ids": [
+        182985,
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-26T22:49:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_67",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 15694,
+      "direction_id": 1,
+      "disruption_ids": [
+        182985,
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-26T22:50:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_101",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 15294,
+      "direction_id": 5,
+      "disruption_ids": [
+        182985,
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-26T22:57:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_68",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 15697,
+      "direction_id": 1,
+      "disruption_ids": [
+        182985,
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-26T22:58:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_104",
+      "departure_sequence": 0
+    },
+    {
+      "stop_id": 1035,
+      "route_id": 6,
+      "run_id": 15295,
+      "direction_id": 5,
+      "disruption_ids": [
+        182985,
+        182209,
+        181613,
+        175928
+      ],
+      "scheduled_departure_utc": "2019-08-26T23:05:00Z",
+      "estimated_departure_utc": null,
+      "at_platform": false,
+      "platform_number": null,
+      "flags": "S_WCA-S_RRB-RUN_69",
+      "departure_sequence": 0
+    }
+  ],
+  "stops": {},
+  "routes": {},
+  "runs": {},
+  "directions": {},
+  "disruptions": {},
+  "status": {
+    "version": "3.0",
+    "health": 0
+  }
+}

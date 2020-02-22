@@ -1,5 +1,6 @@
 package au.com.kbrsolutions.melbournepublictransport.favoritestops
 
+import android.content.Context
 import android.os.Bundle
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.fragment.app.testing.launchFragmentInContainer
@@ -7,6 +8,7 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.room.Room
 import androidx.test.core.app.ActivityScenario
+import androidx.test.core.app.ApplicationProvider
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions
 import androidx.test.espresso.assertion.ViewAssertions.doesNotExist
@@ -14,7 +16,6 @@ import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.MediumTest
-import androidx.test.platform.app.InstrumentationRegistry
 import au.com.kbrsolutions.melbournepublictransport.*
 import au.com.kbrsolutions.melbournepublictransport.R.id
 import au.com.kbrsolutions.melbournepublictransport.activities.MainActivity
@@ -61,12 +62,13 @@ class FavoriteStopsFragmentTestUsingRoomDb {
     @get:Rule var instantExecutorRule = InstantTaskExecutorRule()
 
     private lateinit var repository: FavoriteStopsRepositoryReal
-    val embarcaderoStopId = "Embarcadero"
+    val embarcaderoStopId = 1000
     val embarcaderoLocationName = "Embarcadero Station"
 
     @Before
     fun initRepository() {
-        val context = InstrumentationRegistry.getInstrumentation().targetContext
+        val context = ApplicationProvider.getApplicationContext<Context>()
+//        val context = InstrumentationRegistry.getInstrumentation().targetContext
         database = Room.inMemoryDatabaseBuilder(context, AppDatabase::class.java)
             .allowMainThreadQueries()
             .build()
@@ -120,7 +122,7 @@ class FavoriteStopsFragmentTestUsingRoomDb {
         // Then verify that we navigate to the NextDeparture screen
         verify(navController).navigate(
             FavoriteStopsFragmentDirections.actionFavoriteStopsFragmentToNextDeparturesFragment(
-                "Embarcadero",
+                1000,
                 "Embarcadero Station",
                 navigateToNextDeparturesRequestMillis
 //                System.currentTimeMillis()
@@ -186,7 +188,7 @@ class FavoriteStopsFragmentTestUsingRoomDb {
             DatabaseFavoriteStop(
                 0,
                 0,
-                "Walnut Station",
+                1000,
                 walnutCreek,
                 "Walnut Creek",
                 1.1,
@@ -197,7 +199,7 @@ class FavoriteStopsFragmentTestUsingRoomDb {
             DatabaseFavoriteStop(
                 1,
                 0,
-                "Lafayette Station 1",
+                2000,
                 lafayette,
                 "Lafayette",
                 1.1,
@@ -208,7 +210,7 @@ class FavoriteStopsFragmentTestUsingRoomDb {
             DatabaseFavoriteStop(
                 2,
                 0,
-                "Embarcadero Station 1",
+                3000,
                 sanFrancisco,
                 "San Francisco",
                 1.1,
@@ -233,7 +235,7 @@ class FavoriteStopsFragmentTestUsingRoomDb {
                 withText(lafayette))
         ).perform(ViewActions.click())
 
-        // Delete row
+        // Delete magnified row
         clickOnViewWithIdWhoseParentsParentTextViewContainsText(
             lafayette,
             id.favoriteStopsGarbageImageMagId)

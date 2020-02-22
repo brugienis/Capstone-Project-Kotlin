@@ -11,7 +11,7 @@ object StopsSearcherJsonProcessor {
     fun buildStopsSearcherDetailsList(
         stopsSearcherObjectsFromJson: StopsSearcherObjectsFromJson, favoriteStopIdsSet: Set<Int>)
             : LinesAndStopsForSearchResult {
-        var lineStopDetailsId = 0
+        var lineStopDetailsId = 1   // start from 1. If start is 0, the Room DB will change 'id' to 1
         var routeType: Int
         var lineOrStopType: Int
         var lineId: Int
@@ -38,7 +38,7 @@ object StopsSearcherJsonProcessor {
 
         val status = stopsSearcherObjectsFromJson.status
 
-        /* Processes s'tops' */
+        /* Processes 'stops' */
         lineId = -1
         stopsSearcherObjectsFromJson.stops.forEach { stop ->
             stopLocationOrLineName = stop.stopName
@@ -106,7 +106,6 @@ object StopsSearcherJsonProcessor {
         }
 
         lineStopDetailsList.addAll(lineStopDetailsSet)
-        // fixLater: Jan 05, 2020 - create test case when status.health == / != 1
         return  LinesAndStopsForSearchResult(status.health == 1, lineStopDetailsList)
     }
 }

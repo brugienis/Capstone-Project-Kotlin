@@ -1,4 +1,5 @@
 package au.com.kbrsolutions.melbournepublictransport.testutils
+
 import androidx.annotation.VisibleForTesting
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
@@ -6,6 +7,13 @@ import java.util.concurrent.CountDownLatch
 import java.util.concurrent.TimeUnit
 import java.util.concurrent.TimeoutException
 
+/**
+ * Retrieve the value of the LiveData.
+ *
+ * If the LiveData was changed and the value was already emitted before call to the
+ *     this.observeForever(observer)
+ * you will get the TimeoutException("LiveData value was never set.")
+ */
 @VisibleForTesting(otherwise = VisibleForTesting.NONE)
 fun <T> LiveData<T>.getOrAwaitValue(
     time: Long = 2,

@@ -13,13 +13,13 @@ object EspressoIdlingResource {
 
     fun increment(source: String) {
         countingIdlingResource.increment()
-        println("""$G_P EspressoIdlingResource increment (${Miscellaneous.getClassHashCode(this)} ${countingIdlingResource.getCounter()}) source: $source""")
+//        println("""$G_P EspressoIdlingResource increment (${Miscellaneous.getClassHashCode(this)} ${countingIdlingResource.getCounter()}) source: $source - countingIdlingResource.isIdleNow: ${countingIdlingResource.isIdleNow} """)
     }
 
     fun decrement(source: String) {
         if (!countingIdlingResource.isIdleNow) {
             countingIdlingResource.decrement()
         }
-        println(G_P + "EspressoIdlingResource decrement (${Miscellaneous.getClassHashCode(this)} ${countingIdlingResource.getCounter()}) source: $source" + """ - countingIdlingResource.isIdleNow: ${countingIdlingResource.isIdleNow} """)
+//        println("""$G_P + "EspressoIdlingResource decrement (${Miscellaneous.getClassHashCode(this)} ${countingIdlingResource.getCounter()}) source: $source - countingIdlingResource.isIdleNow: ${countingIdlingResource.isIdleNow} """)
     }
 }

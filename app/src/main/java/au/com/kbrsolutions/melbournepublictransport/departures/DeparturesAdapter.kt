@@ -15,7 +15,6 @@ private const val ITEM = 1
 class DeparturesAdapter(val clickListener: DepartureListener)
     : ListAdapter<Departure, RecyclerView.ViewHolder>(DepartureDiffCallback()) {
 
-    // fixLater: Sep 02, 2019 - holders classes sealed?
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val departureDetails = getItem(position)
         when (holder) {

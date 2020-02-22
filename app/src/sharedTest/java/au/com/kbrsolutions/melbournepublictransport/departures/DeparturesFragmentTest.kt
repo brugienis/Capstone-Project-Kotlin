@@ -1,8 +1,11 @@
 package au.com.kbrsolutions.melbournepublictransport.departures
 
+import android.content.res.Resources
+import android.util.Log
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.fragment.app.testing.launchFragmentInContainer
 import androidx.test.espresso.Espresso.onView
+import androidx.test.espresso.IdlingRegistry
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.contrib.RecyclerViewActions.scrollToPosition
 import androidx.test.espresso.matcher.ViewMatchers.*
@@ -15,10 +18,13 @@ import au.com.kbrsolutions.melbournepublictransport.data.helper.TestDataGenerato
 import au.com.kbrsolutions.melbournepublictransport.domain.Departure
 import au.com.kbrsolutions.melbournepublictransport.repository.DeparturesRepositoryFake
 import au.com.kbrsolutions.melbournepublictransport.testutils.RecyclerViewMatcher
+import au.com.kbrsolutions.melbournepublictransport.utilities.EspressoIdlingResource
+import au.com.kbrsolutions.melbournepublictransport.utilities.G_P
 import au.com.kbrsolutions.melbournepublictransport.utilities.Misc
 import au.com.kbrsolutions.melbournepublictransport.utilities.SharedPreferencesUtility
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runBlockingTest
+import org.hamcrest.Matchers
 import org.junit.After
 import org.junit.Before
 import org.junit.Rule
@@ -67,6 +73,25 @@ class DeparturesFragmentTest {
     }
 
     /**
+     * Idling resources tell Espresso that the app is idle or busy. This is needed when operations
+     * are not scheduled in the main Looper (for example when executed on a different thread).
+     */
+    @Before
+    fun registerIdlingResource() {
+        IdlingRegistry.getInstance().register(EspressoIdlingResource.countingIdlingResource)
+//        IdlingRegistry.getInstance().register(dataBindingIdlingResource)
+    }
+
+    /**
+     * Unregister your Idling Resource so it can be garbage collected and does not leak any memory.
+     */
+    @After
+    fun unregisterIdlingResource() {
+        IdlingRegistry.getInstance().unregister(EspressoIdlingResource.countingIdlingResource)
+//        IdlingRegistry.getInstance().unregister(dataBindingIdlingResource)
+    }
+
+    /**
      * Set the value of the [favoriteStopsRequestedTimMillis] to the default value defined
      * in the DeparturesFragment. That will prevent unnecessary calls to the DeparturesViewModel's
      * loadDepartures(). The Departures screen will only show the data loaded in the initRepository
@@ -81,7 +106,7 @@ class DeparturesFragmentTest {
     fun clickListViewRow_toggleMagnifiedView() {
         // Given a user in the home screen
         val favoriteStopsRequestedTimMillis = 0L
-        val bundle = DeparturesFragmentArgs("1035", "Test location",
+        val bundle = DeparturesFragmentArgs(1035, "Test location",
             favoriteStopsRequestedTimMillis).toBundle()
         val scenario = launchFragmentInContainer<DeparturesFragment>(bundle, R.style.AppTheme)
         scenario.onFragment {
@@ -97,13 +122,52 @@ class DeparturesFragmentTest {
         R.id.departuresTopLayoutMagId.checkIsDisplayed()
         delayNextAction(2_000)
     }
+    /*
+        https://www.tutorialspoint.com/espresso_testing/espresso_testing_asynchronous_operations.htm
+
+        android espresso wait for async function
+
+        https://www.google.com/search?rlz=1C5CHFA_enAU722AU722&sxsrf=ACYBGNTdEpmcLc3Hro49kevb_951Oek7rA:1581386750955&q=android+espresso+wait+for+async+function&spell=1&sa=X&ved=2ahUKEwiN9avctMjnAhURU30KHQlBA6cQBSgAegQIDBAn&biw=1677&bih=916
+
+        https://medium.com/androiddevelopers/android-testing-with-espressos-idling-resources-and-testing-fidelity-8b8647ed57f4
+
+        https://github.com/googlecodelabs/android-testing/blob/codelab2019/app/src/androidTest/java/com/example/android/architecture/blueprints/todoapp/tasks/AppNavigationTest.kt
+
+        EspressoIdlingResource\.[i|d]
+
+    */
+    @Test
+    fun showErrMsgIdWhenResponseHealthFalse() {
+        val favoriteStopsRequestedTimMillis = 0L
+        val bundle = DeparturesFragmentArgs(1035, "Test location",
+            favoriteStopsRequestedTimMillis).toBundle()
+        var departuresList: List<DatabaseDeparture>? = null
+        repository.setDebuggingJsonStringFile("departures_results_sample_health_false.json")
+        repository.setSimulatedDelayMillis(3_000)
+        var resources: Resources? = null
+        val scenario =
+            launchFragmentInContainer<DeparturesFragment>(bundle, R.style.AppTheme)
+        scenario.onFragment {
+            resources = it.resources
+            it.reloadDepartures()
+        }
+        delayNextAction(5_000)
+        Log.v(G_P + "DeparturesFragmentTest", """showSnackbarWhenResponseHealthFalse - before isDisplayed verification""")
+        onView(
+            Matchers.allOf(
+//                withId (R.id.snackbar_text),
+                withId (R.id.errMsgId),
+                withText(resources!!.getString(R.string.ptv_is_not_available))
+            )
+        ).checkIsDisplayed()
+    }
 
     @Test
     fun verifyListViewItemsOrder() {
         val favoriteStopsRequestedTimMillis = 0L
-        val bundle = DeparturesFragmentArgs("1035", "Test location",
+        val bundle = DeparturesFragmentArgs(1035, "Test location",
             favoriteStopsRequestedTimMillis).toBundle()
-        var derparturesList: List<DatabaseDeparture>? = null
+        var departuresList: List<DatabaseDeparture>? = null
         val rowsToLoadCnt = 1000
         val scenario =
             launchFragmentInContainer<DeparturesFragment>(bundle, R.style.AppTheme)
@@ -112,7 +176,7 @@ class DeparturesFragmentTest {
             context?.let {
                 // Make sure the sort order is 'by time' at the beginning of the test
                 SharedPreferencesUtility.setSortDeparturesDataByTime(context, true)
-                derparturesList = TestDataGenerator.getDataDeparturesListNRows(
+                departuresList = TestDataGenerator.getDataDeparturesListNRows(
                     rowsToLoadCnt,
                     context
                 )
@@ -127,7 +191,7 @@ class DeparturesFragmentTest {
 
         // Sort departures by time
         var departuresListSorted =
-            Misc.sortDeparturesData(derparturesList!!.asDomainModel(), true)
+            Misc.sortDeparturesData(departuresList!!.asDomainModel(), true)
 
         verifyDeparturesOrder(departuresListSorted)
 
@@ -135,7 +199,7 @@ class DeparturesFragmentTest {
 
         // Sort departures by direction
         departuresListSorted =
-            Misc.sortDeparturesData(derparturesList!!.asDomainModel(), false)
+            Misc.sortDeparturesData(departuresList!!.asDomainModel(), false)
 
         // Simulate click on the 'Sort by direction' menu item
         scenario.onFragment {
@@ -167,7 +231,7 @@ class DeparturesFragmentTest {
         return RecyclerViewMatcher(recyclerViewId)
     }
 
-    private val ignoreDelay: Boolean = true
+    private val ignoreDelay: Boolean = false
 
     private fun delayNextAction(millis: Int) {
         if (ignoreDelay) {

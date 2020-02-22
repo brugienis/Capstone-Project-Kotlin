@@ -16,14 +16,16 @@ import au.com.kbrsolutions.melbournepublictransport.utilities.USE_REAL_DATABASE
  */
 
 @Database(
-    entities = [DatabaseFavoriteStop::class, DatabaseDeparture::class],
-    version = 5,
+    entities = [DatabaseFavoriteStop::class, DatabaseDeparture::class,
+        DatabaseLineStopDetails::class],
+    version = 7,
     exportSchema = false
 )
 //@TypeConverters(Converters::class)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun favoriteStopDao(): FavoriteStopDao
     abstract fun departureDao(): DepartureDao
+    abstract fun lineStopDetailsDao(): LineStopDetailsDao
 
     companion object {
 
@@ -60,11 +62,12 @@ abstract class AppDatabase : RoomDatabase() {
             database.favoriteStopDao().insert(DatabaseFavoriteStop(
                 0,
                 0,
-                "Embarcadero",
-                "Embarcadero Station",
-                "San Francisco",
-                1.1,
-                2.2
+//                "Embarcadero",
+                1035,
+                "Carrum Station",
+                "Carrum",
+                -38.0748978,
+                145.122421
             ))
         }
     }}

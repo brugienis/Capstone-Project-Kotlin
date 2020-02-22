@@ -62,6 +62,18 @@ class FavoriteStopsViewModel(
     }
 
     /**
+     * Build array of Favorite stops ids. It will be used in Stops Searcher to remove those stops
+     * from search results.
+     */
+    fun buildFavoriteStopsArray(): IntArray {
+        var favoriteStopsArray = IntArray(0)
+        favoriteStops.value?.let {
+            favoriteStopsArray = IntArray(it.size) { i:Int -> it[i].stopId}
+        }
+        return favoriteStopsArray
+    }
+
+    /**
      * Executes when the 'List View' row is clicked.
      */
     fun onListViewClick(id: Int) {
@@ -74,7 +86,7 @@ class FavoriteStopsViewModel(
     /**
      * Executes when the 'garbage' icon is clicked - delete one FavoriteStop.
      */
-    fun onDeleteFavoriteStop(stopId: String) {
+    fun onDeleteFavoriteStop(stopId: Int) {
         viewModelScope.launch {
             favoriteStopsRepository.deleteFavoriteStop(stopId)
         }
@@ -83,7 +95,7 @@ class FavoriteStopsViewModel(
     /**
      * Executes when the 'map' icon is clicked.
      */
-    fun onShowStopOnMapClicked(stopId: String) {
+    fun onShowStopOnMapClicked(stopId: Int) {
         Log.v("FavoriteStopsViewModel", """onShowStopOnMapClicked - favoriteStop: $stopId """)
         viewModelScope.launch {
             // TODO - missing logic
@@ -104,7 +116,7 @@ class FavoriteStopsViewModel(
     /**
      * Executes when the 'stop facility' icon is clicked.
      */
-    fun onShowStopFacilityClicked(stopId: String) {
+    fun onShowStopFacilityClicked(stopId: Int) {
         Log.v("FavoriteStopsViewModel", """onShowStopFacilityClicked - favoriteStop: $stopId """)
         viewModelScope.launch {
             // TODO - missing logic

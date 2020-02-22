@@ -2,7 +2,7 @@ package au.com.kbrsolutions.melbournepublictransport.departures
 
 import au.com.kbrsolutions.melbournepublictransport.network.PtvServiceUtils
 
-object DynamicUrlBuilder {
+object DepartureUrlBuilder {
 
     private const val EXPAND = "expand="
     private const val AMPERSAND = "&"
@@ -12,7 +12,7 @@ object DynamicUrlBuilder {
     private const val INCLUDE_CANCELLED_TEXT = "&include_cancelled="
     private const val TRUE = "true"
 
-    fun buildURI(routeType: Int, stopId: String, limit: Int, expandElements: Set<String>)
+    fun buildURI(routeType: Int, stopId: Int, limit: Int, expandElements: Set<String>)
             : String {
         val expandOptions = StringBuilder("")
         var notFstTime = false

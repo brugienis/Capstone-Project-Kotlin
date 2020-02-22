@@ -1,0 +1,1159 @@
+{
+  "stops": [
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Frankston",
+      "stop_name": "Frankston Station",
+      "stop_id": 1073,
+      "route_type": 0,
+      "stop_latitude": -38.1429863,
+      "stop_longitude": 145.12616,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Frankston",
+      "stop_name": "Leawarra Station",
+      "stop_id": 1114,
+      "route_type": 0,
+      "stop_latitude": -38.1520348,
+      "stop_longitude": 145.139542,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Frankston South",
+      "stop_name": "13 Golf Links Rd ",
+      "stop_id": 12300,
+      "route_type": 2,
+      "stop_latitude": -38.16453,
+      "stop_longitude": 145.138123,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Frankston",
+      "stop_name": "18 Inglenook Cres ",
+      "stop_id": 12237,
+      "route_type": 2,
+      "stop_latitude": -38.1421738,
+      "stop_longitude": 145.16864,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Frankston South",
+      "stop_name": "59 Robinsons Rd ",
+      "stop_id": 15210,
+      "route_type": 2,
+      "stop_latitude": -38.1755333,
+      "stop_longitude": 145.15303,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Frankston",
+      "stop_name": "65 Karingal Dr ",
+      "stop_id": 13276,
+      "route_type": 2,
+      "stop_latitude": -38.14165,
+      "stop_longitude": 145.157578,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Frankston",
+      "stop_name": "73 Bondi Ave ",
+      "stop_id": 14791,
+      "route_type": 2,
+      "stop_latitude": -38.16456,
+      "stop_longitude": 145.140518,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Frankston South",
+      "stop_name": "98 Golf Links Rd ",
+      "stop_id": 12203,
+      "route_type": 2,
+      "stop_latitude": -38.17143,
+      "stop_longitude": 145.147,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Dandenong South",
+      "stop_name": "Abbotts Rd/Frankston-Dandenong Rd ",
+      "stop_id": 19958,
+      "route_type": 2,
+      "stop_latitude": -38.0308762,
+      "stop_longitude": 145.211945,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Frankston South",
+      "stop_name": "Ablett Ct/Rosedale Gr ",
+      "stop_id": 14391,
+      "route_type": 2,
+      "stop_latitude": -38.1835365,
+      "stop_longitude": 145.135254,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Frankston",
+      "stop_name": "Addicott St/Beach St ",
+      "stop_id": 13267,
+      "route_type": 2,
+      "stop_latitude": -38.14457,
+      "stop_longitude": 145.137909,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Frankston",
+      "stop_name": "Allawah Ave/Nepean Hwy ",
+      "stop_id": 11960,
+      "route_type": 2,
+      "stop_latitude": -38.1330223,
+      "stop_longitude": 145.12439,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Carrum Downs",
+      "stop_name": "Amayla Cres/Frankston-Dandenong Rd ",
+      "stop_id": 19965,
+      "route_type": 2,
+      "stop_latitude": -38.10478,
+      "stop_longitude": 145.168015,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Frankston",
+      "stop_name": "Amber Ave/Skye Rd ",
+      "stop_id": 13229,
+      "route_type": 2,
+      "stop_latitude": -38.1376762,
+      "stop_longitude": 145.159531,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Dandenong South",
+      "stop_name": "Amberley Cres/Frankston-Dandenong Rd ",
+      "stop_id": 19950,
+      "route_type": 2,
+      "stop_latitude": -38.00273,
+      "stop_longitude": 145.21785,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Frankston South",
+      "stop_name": "Ambleside Cl/Overport Rd ",
+      "stop_id": 14379,
+      "route_type": 2,
+      "stop_latitude": -38.17972,
+      "stop_longitude": 145.120728,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Frankston",
+      "stop_name": "Anderson St/Orwil St ",
+      "stop_id": 13242,
+      "route_type": 2,
+      "stop_latitude": -38.13473,
+      "stop_longitude": 145.132233,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Frankston",
+      "stop_name": "Ashleigh Ave/Beach St ",
+      "stop_id": 12288,
+      "route_type": 2,
+      "stop_latitude": -38.1470833,
+      "stop_longitude": 145.1431,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Frankston South",
+      "stop_name": "Baden Powell Dr/Brighton St ",
+      "stop_id": 14787,
+      "route_type": 2,
+      "stop_latitude": -38.16621,
+      "stop_longitude": 145.1121,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Frankston South",
+      "stop_name": "Baden Powell Dr/Harcourt Ave ",
+      "stop_id": 20275,
+      "route_type": 2,
+      "stop_latitude": -38.16272,
+      "stop_longitude": 145.1134,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Frankston South",
+      "stop_name": "Baden Powell Dr/Kars St ",
+      "stop_id": 14783,
+      "route_type": 2,
+      "stop_latitude": -38.16081,
+      "stop_longitude": 145.115265,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Frankston South",
+      "stop_name": "Baileyana St/Overport Rd ",
+      "stop_id": 14371,
+      "route_type": 2,
+      "stop_latitude": -38.1636276,
+      "stop_longitude": 145.125366,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Frankston",
+      "stop_name": "Ballam Park/Cranbourne Rd ",
+      "stop_id": 18841,
+      "route_type": 2,
+      "stop_latitude": -38.1532364,
+      "stop_longitude": 145.159332,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Frankston",
+      "stop_name": "Ballymore Ct/Heatherhill Rd ",
+      "stop_id": 14800,
+      "route_type": 2,
+      "stop_latitude": -38.16003,
+      "stop_longitude": 145.151276,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Balnarring",
+      "stop_name": "Balnarring Village Shopping Centre/Frankston-Flinders Rd ",
+      "stop_id": 18912,
+      "route_type": 2,
+      "stop_latitude": -38.374176,
+      "stop_longitude": 145.1262,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Frankston South",
+      "stop_name": "Bangalay Ave/Overport Rd ",
+      "stop_id": 14374,
+      "route_type": 2,
+      "stop_latitude": -38.1713,
+      "stop_longitude": 145.1209,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Frankston",
+      "stop_name": "Barclay Ave/McMahons Rd ",
+      "stop_id": 13237,
+      "route_type": 2,
+      "stop_latitude": -38.1372528,
+      "stop_longitude": 145.139572,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Frankston South",
+      "stop_name": "Baxter Park/Frankston-Flinders Rd ",
+      "stop_id": 14174,
+      "route_type": 2,
+      "stop_latitude": -38.19352,
+      "stop_longitude": 145.147949,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Frankston",
+      "stop_name": "Beach St/Cranbourne Rd ",
+      "stop_id": 18832,
+      "route_type": 2,
+      "stop_latitude": -38.14801,
+      "stop_longitude": 145.144379,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Frankston",
+      "stop_name": "Beach St/McMahons Rd ",
+      "stop_id": 26030,
+      "route_type": 2,
+      "stop_latitude": -38.14186,
+      "stop_longitude": 145.137558,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Frankston",
+      "stop_name": "Beach St/Stanley St ",
+      "stop_id": 13250,
+      "route_type": 2,
+      "stop_latitude": -38.14229,
+      "stop_longitude": 145.131973,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Frankston",
+      "stop_name": "Beachside Car Park/Nepean Hwy ",
+      "stop_id": 10605,
+      "route_type": 2,
+      "stop_latitude": -38.154377,
+      "stop_longitude": 145.108643,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Frankston",
+      "stop_name": "Beauty Park/High St ",
+      "stop_id": 14362,
+      "route_type": 2,
+      "stop_latitude": -38.1493645,
+      "stop_longitude": 145.123779,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Frankston South",
+      "stop_name": "Bembridge Ave/Nepean Hwy ",
+      "stop_id": 12387,
+      "route_type": 2,
+      "stop_latitude": -38.16045,
+      "stop_longitude": 145.103958,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Frankston",
+      "stop_name": "Birch St/Karingal Dr ",
+      "stop_id": 12281,
+      "route_type": 2,
+      "stop_latitude": -38.1416969,
+      "stop_longitude": 145.1575,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Bittern",
+      "stop_name": "Bittern Railway Station/Frankston-Flinders Rd ",
+      "stop_id": 14198,
+      "route_type": 2,
+      "stop_latitude": -38.33892,
+      "stop_longitude": 145.176163,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Frankston South",
+      "stop_name": "Blair Ave/Kars St ",
+      "stop_id": 20113,
+      "route_type": 2,
+      "stop_latitude": -38.16072,
+      "stop_longitude": 145.115448,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Frankston South",
+      "stop_name": "Blake Ct/Humphries Rd ",
+      "stop_id": 14382,
+      "route_type": 2,
+      "stop_latitude": -38.1859436,
+      "stop_longitude": 145.117767,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Frankston",
+      "stop_name": "Bogong Ct/Karingal Dr ",
+      "stop_id": 12279,
+      "route_type": 2,
+      "stop_latitude": -38.1444244,
+      "stop_longitude": 145.161835,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Frankston",
+      "stop_name": "Bondi Ave/Brooklyn Ave ",
+      "stop_id": 14790,
+      "route_type": 2,
+      "stop_latitude": -38.16579,
+      "stop_longitude": 145.142136,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Frankston",
+      "stop_name": "Bondi Ave/Heatherhill Rd ",
+      "stop_id": 14797,
+      "route_type": 2,
+      "stop_latitude": -38.1582642,
+      "stop_longitude": 145.137787,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Frankston",
+      "stop_name": "Bradshaw St/Orwil St ",
+      "stop_id": 13243,
+      "route_type": 2,
+      "stop_latitude": -38.1325455,
+      "stop_longitude": 145.133209,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Seaford",
+      "stop_name": "Braemar St/Frankston - Dandenong Rd ",
+      "stop_id": 20001,
+      "route_type": 2,
+      "stop_latitude": -38.1251526,
+      "stop_longitude": 145.138916,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Seaford",
+      "stop_name": "Braemar St/Frankston-Dandenong Rd ",
+      "stop_id": 20697,
+      "route_type": 2,
+      "stop_latitude": -38.12453,
+      "stop_longitude": 145.139862,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Hastings",
+      "stop_name": "Bray St/Frankston-Flinders Rd ",
+      "stop_id": 14196,
+      "route_type": 2,
+      "stop_latitude": -38.31352,
+      "stop_longitude": 145.183746,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Carrum Downs",
+      "stop_name": "Broderick Rd/Frankston-Dandenong Rd ",
+      "stop_id": 19966,
+      "route_type": 2,
+      "stop_latitude": -38.1026955,
+      "stop_longitude": 145.169739,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Cranbourne",
+      "stop_name": "Brookland Greens Bvd/Cranbourne-Frankston Rd ",
+      "stop_id": 18881,
+      "route_type": 2,
+      "stop_latitude": -38.11767,
+      "stop_longitude": 145.250626,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Frankston South",
+      "stop_name": "Brooklyn Ave/Golf Links Rd ",
+      "stop_id": 12202,
+      "route_type": 2,
+      "stop_latitude": -38.1673737,
+      "stop_longitude": 145.141373,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Frankston",
+      "stop_name": "Bruce Park/Bondi Ave ",
+      "stop_id": 14794,
+      "route_type": 2,
+      "stop_latitude": -38.16306,
+      "stop_longitude": 145.138184,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Frankston North",
+      "stop_name": "Brunning Cres/Moreton St ",
+      "stop_id": 20011,
+      "route_type": 2,
+      "stop_latitude": -38.1179,
+      "stop_longitude": 145.158142,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Carrum Downs",
+      "stop_name": "Bunurong Memorial Park/790 Frankston-Dandenong Rd ",
+      "stop_id": 19975,
+      "route_type": 2,
+      "stop_latitude": -38.06524,
+      "stop_longitude": 145.20018,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Lyndhurst",
+      "stop_name": "Bunurong Memorial Park/790 Frankston-Dandenong Rd ",
+      "stop_id": 21562,
+      "route_type": 2,
+      "stop_latitude": -38.06507,
+      "stop_longitude": 145.200745,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Frankston",
+      "stop_name": "Burrow St/Stanley St ",
+      "stop_id": 13239,
+      "route_type": 2,
+      "stop_latitude": -38.1404533,
+      "stop_longitude": 145.13269,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Frankston North",
+      "stop_name": "Bursaria Cres/Frankston-Dandenong Rd ",
+      "stop_id": 13580,
+      "route_type": 2,
+      "stop_latitude": -38.1135521,
+      "stop_longitude": 145.156357,
+      "stop_sequence": 0
+    },
+
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Cranbourne South",
+      "stop_name": "Pearcedale Rd/Cranbourne-Frankston Rd ",
+      "stop_id": 18878,
+      "route_type": 2,
+      "stop_latitude": -38.1251869,
+      "stop_longitude": 145.246948,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Frankston",
+      "stop_name": "Pembroke Ave/Lucerne Cres ",
+      "stop_id": 12099,
+      "route_type": 2,
+      "stop_latitude": -38.14638,
+      "stop_longitude": 145.168945,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Frankston",
+      "stop_name": "Peninsula Country Golf Club/Skye Rd ",
+      "stop_id": 13284,
+      "route_type": 2,
+      "stop_latitude": -38.13423,
+      "stop_longitude": 145.147034,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Langwarrin",
+      "stop_name": "Peninsula Hospital/Cranbourne-Frankston Rd ",
+      "stop_id": 18846,
+      "route_type": 2,
+      "stop_latitude": -38.1562843,
+      "stop_longitude": 145.169159,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Hastings",
+      "stop_name": "Phillip Ct/Frankston-Flinders Rd ",
+      "stop_id": 14195,
+      "route_type": 2,
+      "stop_latitude": -38.30906,
+      "stop_longitude": 145.183777,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Frankston North",
+      "stop_name": "Pine St/Forest Dr ",
+      "stop_id": 19998,
+      "route_type": 2,
+      "stop_latitude": -38.12352,
+      "stop_longitude": 145.145584,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Frankston",
+      "stop_name": "Playne St/Young St ",
+      "stop_id": 23301,
+      "route_type": 2,
+      "stop_latitude": -38.14488,
+      "stop_longitude": 145.123657,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Frankston",
+      "stop_name": "Plover Cl/Karingal Dr ",
+      "stop_id": 13280,
+      "route_type": 2,
+      "stop_latitude": -38.1472054,
+      "stop_longitude": 145.165375,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Frankston",
+      "stop_name": "Plowman Pl/Young St ",
+      "stop_id": 14776,
+      "route_type": 2,
+      "stop_latitude": -38.1471329,
+      "stop_longitude": 145.121933,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Frankston South",
+      "stop_name": "Plummer Ave/Nepean Hwy ",
+      "stop_id": 12385,
+      "route_type": 2,
+      "stop_latitude": -38.1545258,
+      "stop_longitude": 145.109085,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Frankston South",
+      "stop_name": "Poinciana St/Overport Rd ",
+      "stop_id": 14372,
+      "route_type": 2,
+      "stop_latitude": -38.1651039,
+      "stop_longitude": 145.125336,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Point Leo",
+      "stop_name": "Point Leo Rd/Frankston-Flinders Rd ",
+      "stop_id": 27571,
+      "route_type": 2,
+      "stop_latitude": -38.4066467,
+      "stop_longitude": 145.06546,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Shoreham",
+      "stop_name": "Point Leo Rd/Frankston-Flinders Rd ",
+      "stop_id": 14608,
+      "route_type": 2,
+      "stop_latitude": -38.4070549,
+      "stop_longitude": 145.065063,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Langwarrin",
+      "stop_name": "Potts Rd/Cranbourne-Frankston Rd ",
+      "stop_id": 18866,
+      "route_type": 2,
+      "stop_latitude": -38.14097,
+      "stop_longitude": 145.212631,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Dandenong South",
+      "stop_name": "Quality Dr/Frankston-Dandenong Rd ",
+      "stop_id": 19956,
+      "route_type": 2,
+      "stop_latitude": -38.0259,
+      "stop_longitude": 145.212936,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Langwarrin",
+      "stop_name": "Quarry Rd/Cranbourne-Frankston Rd ",
+      "stop_id": 18862,
+      "route_type": 2,
+      "stop_latitude": -38.1442146,
+      "stop_longitude": 145.205627,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Carrum Downs",
+      "stop_name": "Queen Beatrix Dr/Frankston-Dandenong Rd ",
+      "stop_id": 19970,
+      "route_type": 2,
+      "stop_latitude": -38.0884323,
+      "stop_longitude": 145.181122,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Frankston",
+      "stop_name": "Queen St/Stanley St ",
+      "stop_id": 13248,
+      "route_type": 2,
+      "stop_latitude": -38.1377335,
+      "stop_longitude": 145.133972,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Frankston",
+      "stop_name": "Quest/435-437 Neapean Hwy ",
+      "stop_id": 33444,
+      "route_type": 2,
+      "stop_latitude": -38.1423454,
+      "stop_longitude": 145.121582,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Langwarrin",
+      "stop_name": "Raneen Dr/Cranbourne-Frankston Rd ",
+      "stop_id": 18867,
+      "route_type": 2,
+      "stop_latitude": -38.1399841,
+      "stop_longitude": 145.214859,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Frankston",
+      "stop_name": "Rex St/Beach St ",
+      "stop_id": 12292,
+      "route_type": 2,
+      "stop_latitude": -38.14285,
+      "stop_longitude": 145.1319,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Frankston South",
+      "stop_name": "Robinsons Rd/Moorooduc Hwy - East ",
+      "stop_id": 29103,
+      "route_type": 2,
+      "stop_latitude": -38.17449,
+      "stop_longitude": 145.139481,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Frankston South",
+      "stop_name": "Robinsons Rd/Moorooduc Hwy - West ",
+      "stop_id": 13636,
+      "route_type": 2,
+      "stop_latitude": -38.1746254,
+      "stop_longitude": 145.139069,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Frankston South",
+      "stop_name": "Rosedale Gr/Moorooduc Hwy ",
+      "stop_id": 13637,
+      "route_type": 2,
+      "stop_latitude": -38.17997,
+      "stop_longitude": 145.139069,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Frankston South",
+      "stop_name": "Rosedale Gr/Moorooduc Hwy - East ",
+      "stop_id": 29104,
+      "route_type": 2,
+      "stop_latitude": -38.18038,
+      "stop_longitude": 145.1396,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Frankston",
+      "stop_name": "Ross Smith Ave/Nepean Hwy ",
+      "stop_id": 11957,
+      "route_type": 2,
+      "stop_latitude": -38.1415863,
+      "stop_longitude": 145.1215,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Frankston North",
+      "stop_name": "Bursaria Cres/Frankston-Dandenong Rd ",
+      "stop_id": 13580,
+      "route_type": 4,
+      "stop_latitude": -38.1135521,
+      "stop_longitude": 145.156357,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Frankston",
+      "stop_name": "Frankston Railway Station/Young St ",
+      "stop_id": 13252,
+      "route_type": 4,
+      "stop_latitude": -38.14368,
+      "stop_longitude": 145.1254,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Frankston",
+      "stop_name": "Nepean Hwy/Playne St ",
+      "stop_id": 12381,
+      "route_type": 4,
+      "stop_latitude": -38.1444664,
+      "stop_longitude": 145.120987,
+      "stop_sequence": 0
+    }
+  ],
+  "routes": [
+    {
+      "route_name": "Frankston Line",
+      "route_number": "",
+      "route_type": 0,
+      "route_id": 6,
+      "route_gtfs_id": "2-FKN",
+      "route_service_status": {
+        "description": "Planned Works",
+        "timestamp": "2020-01-02T20:44:14.5454917+00:00"
+      }
+    },
+    {
+      "route_name": "Stony Point Line",
+      "route_number": "",
+      "route_type": 0,
+      "route_id": 13,
+      "route_gtfs_id": "2-SPT",
+      "route_service_status": {
+        "description": "Planned Works",
+        "timestamp": "2020-01-02T20:44:14.5454917+00:00"
+      }
+    },
+    {
+      "route_name": "Cranbourne - Seaford via Carrum Downs",
+      "route_number": "760",
+      "route_type": 2,
+      "route_id": 13484,
+      "route_gtfs_id": "4-760",
+      "route_service_status": {
+        "description": "Good Service",
+        "timestamp": "2020-01-02T20:44:14.5454917+00:00"
+      }
+    },
+    {
+      "route_name": "Frankston - Karingal via Ashleigh Avenue",
+      "route_number": "770",
+      "route_type": 2,
+      "route_id": 3365,
+      "route_gtfs_id": "4-770",
+      "route_service_status": {
+        "description": "Good Service",
+        "timestamp": "2020-01-02T20:44:14.5454917+00:00"
+      }
+    },
+    {
+      "route_name": "Frankston - Langwarrin via Karingal",
+      "route_number": "771",
+      "route_type": 2,
+      "route_id": 2813,
+      "route_gtfs_id": "4-771",
+      "route_service_status": {
+        "description": "Good Service",
+        "timestamp": "2020-01-02T20:44:14.5454917+00:00"
+      }
+    },
+    {
+      "route_name": "Frankston - Eliza Heights",
+      "route_number": "772",
+      "route_type": 2,
+      "route_id": 970,
+      "route_gtfs_id": "4-772",
+      "route_service_status": {
+        "description": "Good Service",
+        "timestamp": "2020-01-02T20:44:14.5454917+00:00"
+      }
+    },
+    {
+      "route_name": "Frankston - Frankston South via Kars Street",
+      "route_number": "773",
+      "route_type": 2,
+      "route_id": 971,
+      "route_gtfs_id": "4-773",
+      "route_service_status": {
+        "description": "Good Service",
+        "timestamp": "2020-01-02T20:44:14.5454917+00:00"
+      }
+    },
+    {
+      "route_name": "Frankston - Delacombe Park",
+      "route_number": "774",
+      "route_type": 2,
+      "route_id": 972,
+      "route_gtfs_id": "4-774",
+      "route_service_status": {
+        "description": "Good Service",
+        "timestamp": "2020-01-02T20:44:14.5454917+00:00"
+      }
+    },
+    {
+      "route_name": "Frankston - Lakewood via Heatherhill Road",
+      "route_number": "775",
+      "route_type": 2,
+      "route_id": 973,
+      "route_gtfs_id": "4-775",
+      "route_service_status": {
+        "description": "Good Service",
+        "timestamp": "2020-01-02T20:44:14.5454917+00:00"
+      }
+    },
+    {
+      "route_name": "Frankston - Pearcedale via Baxter",
+      "route_number": "776",
+      "route_type": 2,
+      "route_id": 974,
+      "route_gtfs_id": "4-776",
+      "route_service_status": {
+        "description": "Good Service",
+        "timestamp": "2020-01-02T20:44:14.5454917+00:00"
+      }
+    },
+    {
+      "route_name": "Karingal Hub Shopping Centre - McClelland Drive",
+      "route_number": "777",
+      "route_type": 2,
+      "route_id": 1150,
+      "route_gtfs_id": "4-777",
+      "route_service_status": {
+        "description": "Good Service",
+        "timestamp": "2020-01-02T20:44:14.5454917+00:00"
+      }
+    },
+    {
+      "route_name": "Frankston - Belvedere via Kananook",
+      "route_number": "779",
+      "route_type": 2,
+      "route_id": 975,
+      "route_gtfs_id": "4-779",
+      "route_service_status": {
+        "description": "Good Service",
+        "timestamp": "2020-01-02T20:44:14.5454917+00:00"
+      }
+    },
+    {
+      "route_name": "Frankston - Carrum via Seaford",
+      "route_number": "780",
+      "route_type": 2,
+      "route_id": 977,
+      "route_gtfs_id": "4-780",
+      "route_service_status": {
+        "description": "Good Service",
+        "timestamp": "2020-01-02T20:44:14.5454917+00:00"
+      }
+    },
+    {
+      "route_name": "Night Bus - Carrum - Frankston - Mornington - Rosebud",
+      "route_number": "970",
+      "route_type": 4,
+      "route_id": 8941,
+      "route_gtfs_id": "8-970",
+      "route_service_status": {
+        "description": "Good Service",
+        "timestamp": "2020-01-02T20:44:14.5454917+00:00"
+      }
+    }
+  ],
+  "outlets": [
+    {
+      "outlet_distance": 0,
+      "outlet_slid_spid": "970",
+      "outlet_name": "55-57 Beach Street",
+      "outlet_business": "7-Eleven Frankston",
+      "outlet_latitude": -38.1421242,
+      "outlet_longitude": 145.130463,
+      "outlet_suburb": "Frankston",
+      "outlet_postcode": 3199,
+      "outlet_business_hour_mon": "24 Hours",
+      "outlet_business_hour_tue": "24 Hours",
+      "outlet_business_hour_wed": "24 Hours",
+      "outlet_business_hour_thur": "24 Hours",
+      "outlet_business_hour_fri": "24 Hours",
+      "outlet_business_hour_sat": "24 Hours",
+      "outlet_business_hour_sun": "24 Hours",
+      "outlet_notes": null
+    },
+    {
+      "outlet_distance": 0,
+      "outlet_slid_spid": "971",
+      "outlet_name": "72 Young Street",
+      "outlet_business": "7-Eleven Frankston",
+      "outlet_latitude": -38.14337,
+      "outlet_longitude": 145.125259,
+      "outlet_suburb": "Frankston",
+      "outlet_postcode": 3199,
+      "outlet_business_hour_mon": "24 Hours",
+      "outlet_business_hour_tue": "24 Hours",
+      "outlet_business_hour_wed": "24 Hours",
+      "outlet_business_hour_thur": "24 Hours",
+      "outlet_business_hour_fri": "24 Hours",
+      "outlet_business_hour_sat": "24 Hours",
+      "outlet_business_hour_sun": "24 Hours",
+      "outlet_notes": null
+    },
+    {
+      "outlet_distance": 0,
+      "outlet_slid_spid": "2020",
+      "outlet_name": "42-46 Mcmahons Road (Corner Cranbourne Road)",
+      "outlet_business": "7-Eleven Frankston Otr",
+      "outlet_latitude": -38.1472626,
+      "outlet_longitude": 145.136108,
+      "outlet_suburb": "Frankston",
+      "outlet_postcode": 3199,
+      "outlet_business_hour_mon": "24 Hours",
+      "outlet_business_hour_tue": "24 Hours",
+      "outlet_business_hour_wed": "24 Hours",
+      "outlet_business_hour_thur": "24 Hours",
+      "outlet_business_hour_fri": "24 Hours",
+      "outlet_business_hour_sat": "24 Hours",
+      "outlet_business_hour_sun": "24 Hours",
+      "outlet_notes": null
+    },
+    {
+      "outlet_distance": 0,
+      "outlet_slid_spid": "2027",
+      "outlet_name": "1835 Frankston-Flinders Road (Corner Grayden Road)",
+      "outlet_business": "7-Eleven Hastings",
+      "outlet_latitude": -38.28501,
+      "outlet_longitude": 145.184189,
+      "outlet_suburb": "Hastings",
+      "outlet_postcode": 3915,
+      "outlet_business_hour_mon": "24 Hours",
+      "outlet_business_hour_tue": "24 Hours",
+      "outlet_business_hour_wed": "24 Hours",
+      "outlet_business_hour_thur": "24 Hours",
+      "outlet_business_hour_fri": "24 Hours",
+      "outlet_business_hour_sat": "24 Hours",
+      "outlet_business_hour_sun": "24 Hours",
+      "outlet_notes": null
+    },
+    {
+      "outlet_distance": 0,
+      "outlet_slid_spid": "2032",
+      "outlet_name": "330 Frankston Cranbourne Road",
+      "outlet_business": "7-Eleven Karingal",
+      "outlet_latitude": -38.1540947,
+      "outlet_longitude": 145.163467,
+      "outlet_suburb": "Karingal",
+      "outlet_postcode": 3199,
+      "outlet_business_hour_mon": "24 Hours",
+      "outlet_business_hour_tue": "24 Hours",
+      "outlet_business_hour_wed": "24 Hours",
+      "outlet_business_hour_thur": "24 Hours",
+      "outlet_business_hour_fri": "24 Hours",
+      "outlet_business_hour_sat": "24 Hours",
+      "outlet_business_hour_sun": "24 Hours",
+      "outlet_notes": null
+    },
+    {
+      "outlet_distance": 0,
+      "outlet_slid_spid": "19830",
+      "outlet_name": "Peddle Street Frankston-Flinders Road",
+      "outlet_business": "Bittern Station",
+      "outlet_latitude": -38.33739,
+      "outlet_longitude": 145.178024,
+      "outlet_suburb": "Bittern",
+      "outlet_postcode": 3918,
+      "outlet_business_hour_mon": null,
+      "outlet_business_hour_tue": null,
+      "outlet_business_hour_wed": null,
+      "outlet_business_hour_thur": null,
+      "outlet_business_hour_fri": null,
+      "outlet_business_hour_sat": null,
+      "outlet_business_hour_sun": null,
+      "outlet_notes": null
+    },
+    {
+      "outlet_distance": 0,
+      "outlet_slid_spid": "6720",
+      "outlet_name": "50 Heatherhill Road",
+      "outlet_business": "Frankston Heights LPO",
+      "outlet_latitude": -38.15945,
+      "outlet_longitude": 145.141129,
+      "outlet_suburb": "Victoria",
+      "outlet_postcode": 3199,
+      "outlet_business_hour_mon": "8.00AM - 5.00PM",
+      "outlet_business_hour_tue": "8.00AM - 5.00PM",
+      "outlet_business_hour_wed": "8.00AM - 5.00PM",
+      "outlet_business_hour_thur": "8.00AM - 5.00PM",
+      "outlet_business_hour_fri": "8.00AM - 5.00PM",
+      "outlet_business_hour_sat": "9.00AM - 12.00PM",
+      "outlet_business_hour_sun": "CLOSED",
+      "outlet_notes": null
+    },
+    {
+      "outlet_distance": 0,
+      "outlet_slid_spid": "19855",
+      "outlet_name": "Beach Street Fletcher Road",
+      "outlet_business": "Frankston Station",
+      "outlet_latitude": -38.14299,
+      "outlet_longitude": 145.126175,
+      "outlet_suburb": "Frankston",
+      "outlet_postcode": 3199,
+      "outlet_business_hour_mon": null,
+      "outlet_business_hour_tue": null,
+      "outlet_business_hour_wed": null,
+      "outlet_business_hour_thur": null,
+      "outlet_business_hour_fri": null,
+      "outlet_business_hour_sat": null,
+      "outlet_business_hour_sun": null,
+      "outlet_notes": null
+    },
+    {
+      "outlet_distance": 0,
+      "outlet_slid_spid": "19836",
+      "outlet_name": "Lardner Road 5 Bloom Street",
+      "outlet_business": "Leawarra Station",
+      "outlet_latitude": -38.15204,
+      "outlet_longitude": 145.139542,
+      "outlet_suburb": "Frankston",
+      "outlet_postcode": 3199,
+      "outlet_business_hour_mon": null,
+      "outlet_business_hour_tue": null,
+      "outlet_business_hour_wed": null,
+      "outlet_business_hour_thur": null,
+      "outlet_business_hour_fri": null,
+      "outlet_business_hour_sat": null,
+      "outlet_business_hour_sun": null,
+      "outlet_notes": null
+    }
+  ],
+  "status": {
+    "version": "3.0",
+    "health": 1
+  }
+}

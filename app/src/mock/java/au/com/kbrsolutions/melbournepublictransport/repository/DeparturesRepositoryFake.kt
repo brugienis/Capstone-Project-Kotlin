@@ -7,6 +7,7 @@ import androidx.annotation.VisibleForTesting
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import au.com.kbrsolutions.melbournepublictransport.DebugUtilities
+import au.com.kbrsolutions.melbournepublictransport.R
 import au.com.kbrsolutions.melbournepublictransport.data.DatabaseDeparture
 import au.com.kbrsolutions.melbournepublictransport.data.asDomainModel
 import au.com.kbrsolutions.melbournepublictransport.data.flipShowInMagnifiedView
@@ -17,7 +18,7 @@ import au.com.kbrsolutions.melbournepublictransport.domain.Departure
 import au.com.kbrsolutions.melbournepublictransport.network.PtvApi
 import au.com.kbrsolutions.melbournepublictransport.utilities.EspressoIdlingResource
 import au.com.kbrsolutions.melbournepublictransport.utilities.G_P
-import au.com.kbrsolutions.melbournepublictransport.utilities.USE_HARD_CODED_PVT_RESPONSE
+import au.com.kbrsolutions.melbournepublictransport.utilities.SharedPreferencesUtility
 import kotlinx.coroutines.*
 import java.util.*
 
@@ -34,6 +35,10 @@ class DeparturesRepositoryFake : DeparturesRepository {
 
     private var delayMillis = 0L
 
+    private var debuggingJsonStringFile = "departures_results_all_expand_options.json"
+//    private var debuggingJsonStringFile = "departures_results_sample.json"
+//    private var debuggingJsonStringFile = "departures_results_sample_health_false.json"
+
     fun setSimulatedDelayMillis(delayMillis: Long) {
         this.delayMillis = delayMillis
     }
@@ -41,8 +46,12 @@ class DeparturesRepositoryFake : DeparturesRepository {
     override fun getDepartures(favoriteStopsRequestedTimeMillis: Long):
             LiveData<List<Departure>> = _departures
 
+    override fun getDeparture(id: Int): Departure {
+        return departuresServiceData[id]!!.asDomainModel()
+    }
+
     // fixLater: Jan 28, 2020 - where is the code to clear departuresServiceData?
-    override suspend fun clearTableAndInsertNewRows(databaseDepartures: List<DatabaseDeparture>) {
+    private suspend fun clearTableAndInsertNewRows(databaseDepartures: List<DatabaseDeparture>) {
         withContext(Dispatchers.IO) {
             var oneDatabaseDeparture: DatabaseDeparture
             databaseDepartures.forEachIndexed { index, databaseDeparture ->
@@ -52,11 +61,12 @@ class DeparturesRepositoryFake : DeparturesRepository {
 //                    println(GLOBAL_PREFIX + oneDatabaseDeparture)
 //                }
             }
-            updateLiveData()
+            updateLiveData("clearTableAndInsertNewRows")
         }
     }
 
     override suspend fun toggleMagnifiedNormalView(id: Int) {
+        Log.v(G_P + "DeparturesRepositoryFake", """toggleMagnifiedNormalView - id: ${id} """)
         runBlocking {
             val magnifiedDepartureList = departuresServiceData.values.filter {
                 it.showInMagnifiedView == true
@@ -79,7 +89,7 @@ class DeparturesRepositoryFake : DeparturesRepository {
         runBlocking {
             val departure: DatabaseDeparture = departuresServiceData[id]!!
             departuresServiceData[id] = departure.flipShowInMagnifiedView()
-            updateLiveData()
+            updateLiveData("flipShowMagnifyView")
         }
     }
 
@@ -87,7 +97,7 @@ class DeparturesRepositoryFake : DeparturesRepository {
         runBlocking {
             delay(delayMillis)
             departuresServiceData.clear()
-            updateLiveData()
+            updateLiveData("deleteAllDepartures")
         }
     }
 
@@ -99,12 +109,12 @@ class DeparturesRepositoryFake : DeparturesRepository {
         departuresLoadingInProgress.postValue(true)
         withContext(Dispatchers.IO) {
             //            _status.value = DeparturesApiStatus.LOADING
-            var departuresObjectsFromJson: DeparturesObjectsFromJson? = null
+            var departuresObjectsFromJson: DeparturesObjectsFromJson?
             departuresLoadingInProgress.postValue(true)
             try {
-                if (USE_HARD_CODED_PVT_RESPONSE) {
+                if (SharedPreferencesUtility.useHardCodedPvtResponse(context)) {
                     departuresObjectsFromJson =
-                        DebugUtilities(context).getDeparturesResponse()
+                        DebugUtilities(context).getDeparturesResponse(debuggingJsonStringFile)
                 } else {
                     val getDeparturesDeferred: Deferred<DeparturesObjectsFromJson> =
                         PtvApi.retrofitService.getPtvResponse(path)
@@ -112,22 +122,32 @@ class DeparturesRepositoryFake : DeparturesRepository {
                 }
                 departuresLoadingInProgress.postValue(false)
 
-                val databaseDepartureDetails: List<DatabaseDeparture> =
-                    DeparturesJsonProcessor.buildDepartureDetailsList(
-                        departuresObjectsFromJson, context)
+                var departuresSearchResults = DeparturesJsonProcessor
+                    .buildDepartureDetailsList(departuresObjectsFromJson, context)
+
+                if (!departuresSearchResults.health) {
+                    throw java.lang.RuntimeException(context.getString(R.string.ptv_is_not_available))
+                }
+
+                var databaseDepartureDetails=
+                    departuresSearchResults.departuresDetailsList
                 clearTableAndInsertNewRows(databaseDepartureDetails)
 //                _status.value = DeparturesApiStatus.DONE
                 departuresLoadingInProgress.postValue(false)
-                Log.v("DeparturesRepositoryFake", """refreshPtvData -  departuresLoadingInProgress.value: ${ departuresLoadingInProgress.value} """)
+                loadErrMsg.postValue( null)
             } catch (e: Exception) {
 //                _status.value = DeparturesApiStatus.ERROR
 //                loadErrMsg.value = "test error rmessage"
-                loadErrMsg.postValue( "Error message: $e")
+                loadErrMsg.postValue( "${e.message}")
             }
-//            Log.v("DeparturesRepositoryFake", """refreshPtvData - after postValue false """)
-
-            EspressoIdlingResource.decrement("DeparturesRepositoryFake.refreshPtvData") // Set app as idle.
+            EspressoIdlingResource.decrement("DeparturesRepositoryFake.refreshPtvData") // Set app as idle.x
         }
+    }
+
+    @VisibleForTesting
+    fun setDebuggingJsonStringFile(debuggingJsonStringFile: String) {
+        this.debuggingJsonStringFile = debuggingJsonStringFile
+//        println(G_P + """StopsSearcherRepositoryFake - setDebuggingJsonStringFile - debuggingJsonStringFile: ${debuggingJsonStringFile} """)
     }
 
     @VisibleForTesting
@@ -135,15 +155,15 @@ class DeparturesRepositoryFake : DeparturesRepository {
         for (departure in departures) {
             departuresServiceData[departure.id] = departure
         }
-        updateLiveData()
+        updateLiveData("addDepartures")
     }
 
-    private fun updateLiveData() {
+    private fun updateLiveData(source: String) {
         val departuresList = mutableListOf<Departure>()
         departuresServiceData.keys.forEach {
             departuresList.add(departuresServiceData[it]!!.asDomainModel())
         }
         _departures.postValue(departuresList)
-        println(G_P + """DeparturesRepositoryFake - updateLiveData - departuresList size: ${departuresList.size} """)
+//        println(G_P + """DeparturesRepositoryFake - updateLiveData (source: $source) - departuresList size: ${departuresList.size} """)
     }
 }

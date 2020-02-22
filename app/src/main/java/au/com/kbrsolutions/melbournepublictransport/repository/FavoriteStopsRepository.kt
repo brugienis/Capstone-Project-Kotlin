@@ -8,13 +8,15 @@ interface FavoriteStopsRepository : Repository {
 
     fun getFavoriteStops(): LiveData<List<FavoriteStop>>
 
+    suspend fun getFavoriteStop(id: Int): FavoriteStop?
+
     suspend fun insert(favoriteStop: DatabaseFavoriteStop)
 
     suspend fun getFavoriteStopsCount(): Int
 
     suspend fun toggleMagnifiedView(id: Int)
 
-    suspend fun deleteFavoriteStop(stopId: String)
+    suspend fun deleteFavoriteStop(stopId: Int)
 
     suspend fun deleteAllFavoriteStops()
 

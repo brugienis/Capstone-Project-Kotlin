@@ -2,14 +2,11 @@ package au.com.kbrsolutions.melbournepublictransport.utilities
 
 import android.content.Context
 import android.preference.PreferenceManager
-import android.util.Log
 import android.util.TypedValue
 import au.com.kbrsolutions.melbournepublictransport.R
 import au.com.kbrsolutions.melbournepublictransport.common.LatLngDetails
 import org.json.JSONObject
 import java.util.*
-
-//cla
 
 /**
  *
@@ -18,7 +15,21 @@ import java.util.*
  */
 object SharedPreferencesUtility {
 
-    private val TAG = SharedPreferencesUtility::class.java.simpleName
+    private val TAG = SharedPreferencesUtility::class.java
+    /**
+     *
+     * Returns value of the 'use device location' setting.
+     *
+     * @param context
+     * @return
+     */
+    fun useHardCodedPvtResponse(context: Context): Boolean {
+        if (isReleaseVersion(context)) {
+            return false
+        } else {
+            return context.resources.getBoolean(R.bool.use_hard_coded_pvt_response)
+        }
+    }
 
     /**
      * Returns the value of the 'widget' stop name.

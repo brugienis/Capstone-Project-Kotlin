@@ -4,7 +4,7 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import au.com.kbrsolutions.melbournepublictransport.MainCoroutineRule
 import au.com.kbrsolutions.melbournepublictransport.domain.FavoriteStop
 import au.com.kbrsolutions.melbournepublictransport.repository.FavoriteStopsRepositoryFake
-import au.com.kbrsolutions.melbournepublictransport.testutils.getLiveDataValue
+import au.com.kbrsolutions.melbournepublictransport.testutils.getOrAwaitValue
 import com.google.common.truth.Truth.assertThat
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import org.junit.Before
@@ -16,17 +16,22 @@ import org.junit.Test
  */
 @ExperimentalCoroutinesApi
 class FavoriteStopsViewModelTest {
-    private val walnutCreek = "Walnut Creek"
-    private val lafayette = "Lafayette"
+    private val walnutCreekLocationName = "Walnut Creek"
+    private val walnutCreekStopId = 1000
+
+    private val lafayetteLocationName = "Lafayette"
     private val lafayetteId = 1
-    private val lafayetteStopId = "Lafayette Station"
+    private val lafayetteStopId = 2000
+
+    private val embarcaderoStopId = 3000
     private val sanFrancisco = "San Francisco"
+
     private val favoriteStopsList = listOf(
         FavoriteStop(
             0,
             0,
-            "Walnut Station",
-            walnutCreek,
+            walnutCreekStopId,
+            walnutCreekLocationName,
             "Walnut Creek",
             1.1,
             2.2,
@@ -36,7 +41,7 @@ class FavoriteStopsViewModelTest {
             lafayetteId,
             0,
             lafayetteStopId,
-            lafayette,
+            lafayetteLocationName,
             "Lafayette",
             1.1,
             2.2,
@@ -45,7 +50,7 @@ class FavoriteStopsViewModelTest {
         FavoriteStop(
             2,
             0,
-            "Embarcadero Station",
+            embarcaderoStopId,
             sanFrancisco,
             "San Francisco",
             1.1,
@@ -79,48 +84,46 @@ class FavoriteStopsViewModelTest {
 
     @Test
     fun getFavoriteStops() {
-        assertThat(getLiveDataValue(favoriteStopsViewModel.favoriteStops)).hasSize(3)
+        assertThat(favoriteStopsViewModel.favoriteStops.getOrAwaitValue()).hasSize(3)
     }
 
     @Test
     fun deleteOneFavoriteStop() {
         favoriteStopsViewModel.onDeleteFavoriteStop(lafayetteStopId)
-        assertThat(getLiveDataValue(favoriteStopsViewModel.favoriteStops)).hasSize(2)
+        assertThat(favoriteStopsViewModel.favoriteStops.getOrAwaitValue()).hasSize(2)
     }
 
     @Test
     fun deleteAllFavoriteStops() {
         favoriteStopsViewModel.onClear()
-        assertThat(getLiveDataValue(favoriteStopsViewModel.favoriteStops)).hasSize(0)
+        assertThat(favoriteStopsViewModel.favoriteStops.getOrAwaitValue()).hasSize(0)
     }
 
     @Test
     fun makeFavoriteStopMagnifiedAndNormalAgain() {
         // Magnify lafayetteId row
         favoriteStopsViewModel.onListViewClick(lafayetteId)
-        var list: List<FavoriteStop> = getLiveDataValue(favoriteStopsViewModel.favoriteStops)
+        var list: List<FavoriteStop> = favoriteStopsViewModel.favoriteStops.getOrAwaitValue()
         var lafayetteFavoriteStop = list[1]
         assertThat(lafayetteFavoriteStop.showInMagnifiedView).isTrue()
 
         // De-magnify lafayetteId row
         favoriteStopsViewModel.onListViewClick(lafayetteId)
 
-        list = getLiveDataValue(favoriteStopsViewModel.favoriteStops)
+        list = favoriteStopsViewModel.favoriteStops.getOrAwaitValue()
         lafayetteFavoriteStop = list[1]
         assertThat(lafayetteFavoriteStop.showInMagnifiedView).isFalse()
     }
 
     @Test
     fun showDeparturesClicked__toggleNavigateToNextDepartures() {
-        assertThat(getLiveDataValue(favoriteStopsViewModel.navigateToNextDepartures)).isNull()
-
         favoriteStopsViewModel.onShowDeparturesClicked(favoriteStopsList[lafayetteId])
-        assertThat(getLiveDataValue(favoriteStopsViewModel.navigateToNextDepartures))
+        assertThat(favoriteStopsViewModel.navigateToNextDepartures.getOrAwaitValue())
             .isEqualTo(favoriteStopsList[lafayetteId])
 
         favoriteStopsViewModel.doneNavigating()
 
-        assertThat(getLiveDataValue(favoriteStopsViewModel.navigateToNextDepartures)).isNull()
+        assertThat(favoriteStopsViewModel.navigateToNextDepartures.getOrAwaitValue()).isNull()
     }
 
 }

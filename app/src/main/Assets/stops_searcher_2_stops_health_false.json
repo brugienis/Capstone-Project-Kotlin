@@ -1,0 +1,30 @@
+{
+  "stops": [
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Frankston",
+      "stop_name": "Frankston Station",
+      "stop_id": 1073,
+      "route_type": 0,
+      "stop_latitude": -38.1429863,
+      "stop_longitude": 145.12616,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Frankston",
+      "stop_name": "Leawarra Station",
+      "stop_id": 1114,
+      "route_type": 0,
+      "stop_latitude": -38.1520348,
+      "stop_longitude": 145.139542,
+      "stop_sequence": 0
+    }
+  ],
+  "routes": [],
+  "outlets": [],
+  "status": {
+    "version": "3.0",
+    "health": 0
+  }
+}

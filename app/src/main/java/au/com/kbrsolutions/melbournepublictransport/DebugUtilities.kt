@@ -1,7 +1,6 @@
 package au.com.kbrsolutions.melbournepublictransport
 
 import android.content.Context
-import android.util.Log
 import au.com.kbrsolutions.melbournepublictransport.departures.jsondata.DeparturesObjectsFromJson
 import au.com.kbrsolutions.melbournepublictransport.stopssearcher.jsondata.StopsSearcherObjectsFromJson
 import com.squareup.moshi.JsonAdapter
@@ -18,9 +17,10 @@ class DebugUtilities(val context: Context) {
         .add(KotlinJsonAdapterFactory())
         .build()
 
-    fun getDeparturesResponse(): DeparturesObjectsFromJson {
+    fun getDeparturesResponse(jsonString: String): DeparturesObjectsFromJson {
 //        val json = getDeparturesJSON("departures_results_sample.json")
-        val json = getDeparturesJSON("departures_results_all_expand_options.json")
+//        val json = getDeparturesJSON("departures_results_all_expand_options.json")
+        val json = getDeparturesJSON(jsonString)
         val adapter: JsonAdapter<DeparturesObjectsFromJson> =
             moshi.adapter(DeparturesObjectsFromJson::class.java)
         return adapter.fromJson(json)!!
@@ -42,8 +42,11 @@ class DebugUtilities(val context: Context) {
 
     @Throws(IOException::class)
     private fun getInputStreamForJsonFile(fileName: String): InputStream {
-        Log.v("DebugUtilities", """getInputStreamForJsonFile - 
-            |fileName: $fileName """.trimMargin())
+        /*Log.v(
+            G_P + "DebugUtilities", """getInputStreamForJsonFile - 
+            |context.assets: ${context.assets} 
+            |fileName: $fileName 
+            |""".trimMargin())*/
         return context.assets.open(fileName)
     }
 }

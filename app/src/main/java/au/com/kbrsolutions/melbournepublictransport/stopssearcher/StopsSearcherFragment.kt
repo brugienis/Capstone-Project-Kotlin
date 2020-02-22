@@ -40,6 +40,9 @@ class StopsSearcherFragment : Fragment() {
         val binding: FragmentStopsSearcherBinding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_stops_searcher, container, false)
 
+
+        val arguments = StopsSearcherFragmentArgs.fromBundle(arguments!!)
+
         val stopsSearchTextLayout = binding.stopsSearchTextLayout
 
         stopsSearchText = binding.stopsSearchText
@@ -63,7 +66,7 @@ class StopsSearcherFragment : Fragment() {
 
 //        val application = requireNotNull(this.activity).application
 
-        stopsSearcherViewModel = obtainViewModel(StopsSearcherViewModel::class.java, null)
+        stopsSearcherViewModel = obtainViewModel(StopsSearcherViewModel::class.java, arguments)
 
         binding.stopsSearcherViewModel = stopsSearcherViewModel
 
@@ -106,7 +109,6 @@ class StopsSearcherFragment : Fragment() {
                 this.findNavController().navigate(
                     StopsSearcherFragmentDirections
                         .actionStopsSearcherFragmentToFavoriteStopsFragment())
-                Log.v(G_P + "StopsSearcherFragment", """onCreateView after onNavigate - it: ${it} """)
             }
         })
 
@@ -132,10 +134,8 @@ class StopsSearcherFragment : Fragment() {
     }
 
     private fun updateAdapterData(lineStopDetails: List<LineStopDetails>) {
-        Log.v(G_P + "StopsSearcherFragment", """updateAdapterData - lineStopDetails: ${lineStopDetails.size} """)
         activity!!.runOnUiThread {
             adapter.submitList(lineStopDetails)
-            Log.v(G_P + "StopsSearcherFragment", """updateAdapterData after submit - lineStopDetails: ${lineStopDetails.size} """)
         }
     }
 
@@ -150,7 +150,6 @@ class StopsSearcherFragment : Fragment() {
 
     private fun setOnTouchListenerOnStopsSearchText() {
         stopsSearchText.setOnTouchListener(View.OnTouchListener {view, motionEvent ->
-            Log.v(G_P + "StopsSearcherFragment", """setOnTouchListenerOnStopsSearchText - motionEvent: ${motionEvent.action} """)
             when (motionEvent.action) {
                 MotionEvent.ACTION_UP -> {
                     handleTouchEvent()
@@ -246,16 +245,10 @@ class StopsSearcherFragment : Fragment() {
     private fun handleTouchEvent() {
         hideKeyboard()
         stopsSearchText.setOnTouchListener(null)
-        Log.v(G_P + "StopsSearcherFragment", """handleTouchEvent - setOnTouchListener set to null""")
         stopsSearcherViewModel.cancelStopsSearch()
 //        setVisibleView(mSearchInfoTextTV, "handleTouchEvent")
         // In the future add code to start search for 'recent searches' texts
 //        mListener.startSearchForRecentSearchesText()
-    }
-
-    // fixLater: Jan 30, 2020 - investigate why I added the below
-    private fun showInfoText(text: String) {
-        stopsSearchText.setText(text)
     }
 
     /**
@@ -278,7 +271,6 @@ class StopsSearcherFragment : Fragment() {
     override fun onStop() {
         super.onStop()
         stopsSearcherViewModel.clearRepositoryTables()
-        Log.v(G_P + "StopsSearcherFragment", """onStop - called""")
     }
 
     /**

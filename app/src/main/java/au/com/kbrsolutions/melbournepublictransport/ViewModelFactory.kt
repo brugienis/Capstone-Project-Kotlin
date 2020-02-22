@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModelProvider
 import au.com.kbrsolutions.melbournepublictransport.departures.DeparturesFragmentArgs
 import au.com.kbrsolutions.melbournepublictransport.departures.DeparturesViewModel
 import au.com.kbrsolutions.melbournepublictransport.favoritestops.FavoriteStopsViewModel
+import au.com.kbrsolutions.melbournepublictransport.stopssearcher.StopsSearcherFragmentArgs
 import au.com.kbrsolutions.melbournepublictransport.stopssearcher.StopsSearcherViewModel
 
 /**
@@ -35,6 +36,7 @@ class ViewModelFactory constructor(private val arguments: Any?, val context: Con
 
                 isAssignableFrom(StopsSearcherViewModel::class.java) ->
                     StopsSearcherViewModel(
+                        arguments as StopsSearcherFragmentArgs,
                         mptApp.favoriteStopsRepository,
                         mptApp.stopsSearcherRepository,
                         context)

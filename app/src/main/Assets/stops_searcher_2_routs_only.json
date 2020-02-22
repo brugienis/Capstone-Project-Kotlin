@@ -1,0 +1,32 @@
+{
+  "stops": [],
+  "routes": [
+    {
+      "route_name": "Frankston Line",
+      "route_number": "",
+      "route_type": 0,
+      "route_id": 6,
+      "route_gtfs_id": "2-FKN",
+      "route_service_status": {
+        "description": "Planned Works",
+        "timestamp": "2020-01-02T20:44:14.5454917+00:00"
+      }
+    },
+    {
+      "route_name": "Stony Point Line",
+      "route_number": "",
+      "route_type": 0,
+      "route_id": 13,
+      "route_gtfs_id": "2-SPT",
+      "route_service_status": {
+        "description": "Planned Works",
+        "timestamp": "2020-01-02T20:44:14.5454917+00:00"
+      }
+    }
+  ],
+  "outlets": [],
+  "status": {
+    "version": "3.0",
+    "health": 1
+  }
+}

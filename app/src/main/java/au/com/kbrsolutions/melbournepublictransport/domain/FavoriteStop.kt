@@ -5,7 +5,7 @@ import au.com.kbrsolutions.melbournepublictransport.utilities.TRAIN_ROUTE_TYPE
 data class FavoriteStop(
     val id: Int,
     val routeType: Int,
-    val stopId: String,
+    val stopId: Int,
     val locationName: String,
     val suburb: String,
     val latitude: Double,

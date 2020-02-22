@@ -5,8 +5,6 @@ package au.com.kbrsolutions.melbournepublictransport.utilities
  */
 const val DATABASE_NAME = "mpt-db"
 
-const val USE_HARD_CODED_PVT_RESPONSE: Boolean = true
-
 const val USE_REAL_DATABASE: Boolean = false
 
 const val G_P: String = "gl-x - "

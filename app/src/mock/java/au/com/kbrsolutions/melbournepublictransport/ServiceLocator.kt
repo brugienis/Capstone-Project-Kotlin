@@ -32,6 +32,28 @@ object ServiceLocator {
         }
     }
 
+    fun provideDeparturersRepository(context: Context): DeparturesRepository {
+        return departuresRepository ?: synchronized(this) {
+            departuresRepository ?: createDeparturesRepository(context).also {
+                departuresRepository = it
+            }
+        }
+    }
+
+    private fun createDeparturesRepository(context: Context): DeparturesRepository {
+        return DeparturesRepositoryFake()
+    }
+
+    @VisibleForTesting
+    fun resetDeparturesRepository() {
+        synchronized(lock) {
+            runBlocking {
+                departuresRepository?.deleteAllDepartures()
+            }
+            departuresRepository = null
+        }
+    }
+
     @Volatile var stopsSearcherRepository: StopsSearcherRepository? = null
         @VisibleForTesting set
 
@@ -60,25 +82,4 @@ object ServiceLocator {
     @Volatile var departuresRepository: DeparturesRepository? = null
         @VisibleForTesting set
 
-    fun provideDeparturersRepository(context: Context): DeparturesRepository {
-        return departuresRepository ?: synchronized(this) {
-            departuresRepository ?: createDeparturesRepository(context).also {
-                departuresRepository = it
-            }
-        }
-    }
-
-    private fun createDeparturesRepository(context: Context): DeparturesRepository {
-        return DeparturesRepositoryFake()
-    }
-
-    @VisibleForTesting
-    fun resetDeparturesRepository() {
-        synchronized(lock) {
-            runBlocking {
-                departuresRepository?.deleteAllDepartures()
-            }
-            departuresRepository = null
-        }
-    }
 }

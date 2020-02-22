@@ -10,7 +10,7 @@ import org.joda.time.format.DateTimeFormat
 object DeparturesJsonProcessor {
 
     fun buildDepartureDetailsList(departuresObjectsFromJson: DeparturesObjectsFromJson,
-                                  context: Context): List<DatabaseDeparture> {
+                                  context: Context): DeparturesSearchResults {
 
         val fmtHHmm = DateTimeFormat.forPattern("HH:mm")
         val fmtdM = DateTimeFormat.forPattern("d-M")
@@ -18,7 +18,7 @@ object DeparturesJsonProcessor {
 
         val detailsList = mutableListOf<DatabaseDeparture>()
 
-        val stops: Map<String, Stop>? = departuresObjectsFromJson.stops
+//        val stops: Map<String, Stop>? = departuresObjectsFromJson.stops
         val routes: Map<String, Route>? = departuresObjectsFromJson.routes
         val directions: Map<String, Direction>? = departuresObjectsFromJson.directions
         val runs: Map<String, Run>? = departuresObjectsFromJson.runs
@@ -77,8 +77,6 @@ object DeparturesJsonProcessor {
                 disruptionIdsString = sb.toString()
             }
 
-            // fixLater: Jan 05, 2020 - I don't think status.health is handled anywhere
-            // fixLater: Jan 05, 2020 - create test case when status.health == / != 1
             detailsList.add(
                 DatabaseDeparture(
                     0,
@@ -98,12 +96,12 @@ object DeparturesJsonProcessor {
                     lineNumber,
                     lineShortName,
                     runType,
-                    status.health,
+//                    status.health,
                     isRealTimeInfo
                 )
             )
         }
 //        Log.v("DeparturesJsonProcessor", """buildDepartureDetailsList - detailsList: ${detailsList} """)
-        return detailsList
+        return DeparturesSearchResults(status.health == 1, detailsList)
     }
 }

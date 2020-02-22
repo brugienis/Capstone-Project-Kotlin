@@ -16,6 +16,7 @@ import au.com.kbrsolutions.melbournepublictransport.favoritestops.FavoriteStopLi
 import au.com.kbrsolutions.melbournepublictransport.favoritestops.FavoriteStopListener.Companion.LIST_VIEW_ROW
 import au.com.kbrsolutions.melbournepublictransport.favoritestops.FavoriteStopListener.Companion.SHOW_STOP_FACILITY
 import au.com.kbrsolutions.melbournepublictransport.favoritestops.FavoriteStopListener.Companion.SHOW_STOP_ON_MAP
+import au.com.kbrsolutions.melbournepublictransport.utilities.G_P
 import au.com.kbrsolutions.melbournepublictransport.utilities.obtainViewModel
 
 class FavoriteStopsFragment : Fragment() {
@@ -73,15 +74,25 @@ class FavoriteStopsFragment : Fragment() {
         favoriteStopsViewModel.favoriteStops.observe(viewLifecycleOwner, Observer {
             it?.let {
                 adapter.submitList(it)
+                val favoriteStopsArray = favoriteStopsViewModel.buildFavoriteStopsArray()
             }
         })
 
-        /*Specify the current activity as the lifecycle owner of the binding. This is used so that
-        the binding can observe LiveData updates*/
+         /*Specify the current activity as the lifecycle owner of the binding. This is used so that
+         the binding can observe LiveData updates*/
         viewDataBinding.lifecycleOwner = this
 
         setHasOptionsMenu(true)
         return viewDataBinding.root
+    }
+
+    private fun navigateToStopsSearcherFragment(): Boolean {
+        this.findNavController().navigate(
+        FavoriteStopsFragmentDirections
+            .actionFavoriteStopsFragmentToStopsSearcherFragment(
+                favoriteStopsViewModel.buildFavoriteStopsArray()
+            ))
+        return true
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -97,6 +108,7 @@ class FavoriteStopsFragment : Fragment() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when(item.itemId) {
             R.id.favStops_removeAllFavoriteStops -> removeAllFavoriteStops()
+            R.id.favStops_goToStopsSearcherFragment -> navigateToStopsSearcherFragment()
             else -> navigateBasedOnMenuItem(item)
         }
     }
@@ -106,6 +118,7 @@ class FavoriteStopsFragment : Fragment() {
         MenuItem id that user clicked on.
     */
     private fun navigateBasedOnMenuItem(item: MenuItem): Boolean {
+        Log.v(G_P + "FavoriteStopsFragment", """navigateBasedOnMenuItem - item: ${item} """)
         return (NavigationUI
             .onNavDestinationSelected(item, view!!.findNavController())
                 || super.onOptionsItemSelected(item))

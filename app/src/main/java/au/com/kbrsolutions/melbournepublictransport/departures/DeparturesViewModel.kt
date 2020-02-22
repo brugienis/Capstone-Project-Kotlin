@@ -40,7 +40,7 @@ class DeparturesViewModel(
         get() = _status
     */
 
-    private val _loadErrMsg = MutableLiveData<String>()
+//    private val _loadErrMsg = MutableLiveData<String>()
 
     val loadErrMsg: LiveData<String>
         get() = departuresRepository.loadErrMsg
@@ -53,12 +53,12 @@ class DeparturesViewModel(
      */
     init {
         _departuresLoadingInProgress.value = true
-        _loadErrMsg.value = null
+//        _loadErrMsg.value = null
     }
 
     fun loadDepartures() {
         // fixLater: Sep 20, 2019 - get hardcoded values from the SharedPreferences
-        val path = DynamicUrlBuilder.buildURI(0, departuresFragmentArgs.stopId, 5,
+        val path = DepartureUrlBuilder.buildURI(0, departuresFragmentArgs.stopId, 5,
             setOf("all", "stop", "route", "run", "disruption"))
         uiScope.launch {
             departuresRepository.refreshPtvData(path, context)
@@ -135,7 +135,8 @@ class DeparturesViewModel(
         viewModelJob.cancel()
     }
 
-    // fixLater: Aug 23, 2019 - remove below after testing
+    // fixLater: Aug 23, 2019 - code below allowed me to see URL request sent to the PTV server
+    //                          by the 'moshi' API
     /*private fun showRequestUrl() {
         val callBack = PtvApi.retrofitService.getPtvResponse(testBuildUrl())
         val requestUrl = callBack.request().url().toString()

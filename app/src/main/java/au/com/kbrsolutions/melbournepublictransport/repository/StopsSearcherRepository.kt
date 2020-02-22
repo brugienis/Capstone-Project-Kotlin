@@ -11,21 +11,17 @@ interface StopsSearcherRepository : Repository {
 
     fun getStopsSearcherResults(): LiveData<List<LineStopDetails>>
 
+    suspend fun getLineStopDetailsCount(): Int
+
     suspend fun getLineStopDetails(id: Int): LineStopDetails
 
     val loadErrMsg: MutableLiveData<String>
 
     suspend fun sendRequestAndProcessPtvResponse(
         path: String,
-        favoriteStopIdsSet: Set<String>,
-        context: Context
-    )
-
-//    suspend fun insert(favoriteStop: DatabaseFavoriteStop)
-
-//    suspend fun getFavoriteStopsCount(): Int
+        favoriteStopIdsSet: Set<Int>,
+        context: Context)
 
     suspend fun toggleMagnifiedView(id: Int)
 
-//    suspend fun printStopsIds(source: String)
 }

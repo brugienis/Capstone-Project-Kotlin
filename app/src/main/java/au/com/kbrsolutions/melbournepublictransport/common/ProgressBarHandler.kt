@@ -1,6 +1,5 @@
 package au.com.kbrsolutions.melbournepublictransport.common
 
-import android.R
 import android.content.Context
 import android.view.Gravity
 import android.view.View
@@ -8,7 +7,6 @@ import android.view.ViewGroup
 import android.widget.ProgressBar
 import android.widget.RelativeLayout
 import androidx.fragment.app.Fragment
-
 
 /**
  * Indeterminate Progress Bar.
@@ -20,7 +18,7 @@ class ProgressBarHandler(fragment: Fragment, view: View) {
         val context: Context? = fragment.context
         val layout = view as ViewGroup
 
-        mProgressBar = ProgressBar(context, null, R.attr.progressBarStyleLarge)
+        mProgressBar = ProgressBar(context, null, android.R.attr.progressBarStyleLarge)
         mProgressBar.isIndeterminate = true
 
         val params = RelativeLayout.LayoutParams(

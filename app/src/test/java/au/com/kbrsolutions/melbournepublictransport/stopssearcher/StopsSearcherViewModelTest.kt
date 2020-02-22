@@ -8,7 +8,6 @@ import au.com.kbrsolutions.melbournepublictransport.MainCoroutineRule
 import au.com.kbrsolutions.melbournepublictransport.R
 import au.com.kbrsolutions.melbournepublictransport.repository.FavoriteStopsRepositoryFake
 import au.com.kbrsolutions.melbournepublictransport.repository.StopsSearcherRepositoryFake
-import au.com.kbrsolutions.melbournepublictransport.testutils.getLiveDataValue
 import au.com.kbrsolutions.melbournepublictransport.testutils.getOrAwaitValue
 import au.com.kbrsolutions.melbournepublictransport.utilities.G_P
 import com.google.common.truth.Truth.assertThat
@@ -32,7 +31,7 @@ class StopsSearcherViewModelTest {
 
     // Use a fake repository to be injected into the viewmodel
     private lateinit var stopsSearcherRepository: StopsSearcherRepositoryFake
-    private lateinit var favoriteStopsRepositoryFake: FavoriteStopsRepositoryFake
+    private lateinit var favoriteStopsRepository: FavoriteStopsRepositoryFake
 
     // Set the main coroutines dispatcher for unit testing.
     @ExperimentalCoroutinesApi
@@ -46,15 +45,20 @@ class StopsSearcherViewModelTest {
     @Before
     fun setupViewModel() {
         stopsSearcherRepository = StopsSearcherRepositoryFake()
-        favoriteStopsRepositoryFake = FavoriteStopsRepositoryFake()
+        favoriteStopsRepository = FavoriteStopsRepositoryFake()
     }
 
     @Test
     fun startLineAndStopsSearch_healthFalse_assertErrorMsg() {
         stopsSearcherRepository.setDebuggingJsonStringFile("stops_searcher_2_stops_health_false.json")
-        stopsSearcherViewModel = StopsSearcherViewModel(favoriteStopsRepositoryFake, stopsSearcherRepository, context)
+        stopsSearcherViewModel = StopsSearcherViewModel(
+            StopsSearcherFragmentArgs(IntArray(0)),
+            favoriteStopsRepository,
+            stopsSearcherRepository,
+            context
+        )
         stopsSearcherViewModel.startLineAndStopsSearch("franks")
-        val loadErrMsgValue = getLiveDataValue(stopsSearcherViewModel.loadErrMsg)
+        val loadErrMsgValue = stopsSearcherViewModel.loadErrMsg.getOrAwaitValue()
         println(G_P + """StopsSearcherViewModelTest - startLineAndStopsSearch - loadErrMsgValue: $loadErrMsgValue} """)
         assertThat(loadErrMsgValue).isEqualTo(context.getString(R.string.ptv_is_not_available))
     }
@@ -62,9 +66,14 @@ class StopsSearcherViewModelTest {
     @Test
     fun startLineAndStopsSearch_healthTrue_assertErrorMessageNull() {
         stopsSearcherRepository.setDebuggingJsonStringFile("stops_searcher_2_stops_only.json")
-        stopsSearcherViewModel = StopsSearcherViewModel(favoriteStopsRepositoryFake, stopsSearcherRepository, context)
+        stopsSearcherViewModel = StopsSearcherViewModel(
+            StopsSearcherFragmentArgs(IntArray(0)),
+            favoriteStopsRepository,
+            stopsSearcherRepository,
+            context
+        )
         stopsSearcherViewModel.startLineAndStopsSearch("franks")
-        val loadErrMsgValue = getLiveDataValue(stopsSearcherViewModel.loadErrMsg)
+        val loadErrMsgValue = stopsSearcherViewModel.loadErrMsg.getOrAwaitValue()
         println(G_P + """StopsSearcherViewModelTest - startLineAndStopsSearch - loadErrMsgValue: $loadErrMsgValue} """)
         assertThat(loadErrMsgValue).isEqualTo(null)
     }
@@ -72,16 +81,21 @@ class StopsSearcherViewModelTest {
 //    @Test
     fun startLineAndStopsSearch_healthFalseTryAgainHealthTrue_assertErrortMessageNull_0() {
         stopsSearcherRepository.setDebuggingJsonStringFile("stops_searcher_2_stops_health_false.json")
-        stopsSearcherViewModel = StopsSearcherViewModel(favoriteStopsRepositoryFake, stopsSearcherRepository, context)
+        stopsSearcherViewModel = StopsSearcherViewModel(
+            StopsSearcherFragmentArgs(IntArray(0)),
+            favoriteStopsRepository,
+            stopsSearcherRepository,
+            context
+        )
         stopsSearcherViewModel.startLineAndStopsSearch("franks")
-        var loadErrMsgValue = getLiveDataValue(stopsSearcherViewModel.loadErrMsg)
+        var loadErrMsgValue = stopsSearcherViewModel.loadErrMsg.getOrAwaitValue()
         println(G_P + """StopsSearcherViewModelTest - startLineAndStopsSearch - loadErrMsgValue: $loadErrMsgValue} """)
         assertThat(loadErrMsgValue).isEqualTo((context.getString(R.string.ptv_is_not_available)))
 
         stopsSearcherRepository.setDebuggingJsonStringFile("stops_searcher_2_stops_only.json")
 //        stopsSearcherViewModel = StopsSearcherViewModel(repository, context)
         stopsSearcherViewModel.startLineAndStopsSearch("franks")
-        loadErrMsgValue = getLiveDataValue(stopsSearcherViewModel.loadErrMsg)
+        loadErrMsgValue = stopsSearcherViewModel.loadErrMsg.getOrAwaitValue()
         println(G_P + """StopsSearcherViewModelTest - startLineAndStopsSearch - loadErrMsgValue: $loadErrMsgValue} """)
         assertThat(loadErrMsgValue).isEqualTo(null)
     }
@@ -90,7 +104,13 @@ class StopsSearcherViewModelTest {
 //    @Test
     fun startLineAndStopsSearch_healthFalseTryAgainHealthTrue_assertErrortMessageNull() {
         stopsSearcherRepository.setDebuggingJsonStringFile("stops_searcher_2_stops_health_false.json")
-        stopsSearcherViewModel = StopsSearcherViewModel(favoriteStopsRepositoryFake, stopsSearcherRepository, context)
+
+        stopsSearcherViewModel = StopsSearcherViewModel(
+            StopsSearcherFragmentArgs(IntArray(0)),
+            favoriteStopsRepository,
+            stopsSearcherRepository,
+            context
+        )
 
         // Create observer - no need for it to do anything!
         /*val observer = Observer<StopsSearcherViewModel> {}
@@ -99,7 +119,7 @@ class StopsSearcherViewModelTest {
             stopsSearcherViewModel.loadErrMsg.observeForever(observer)
 
             stopsSearcherViewModel.startLineAndStopsSearch("franks")
-            var loadErrMsgValue = getLiveDataValue(stopsSearcherViewModel.loadErrMsg)
+            var loadErrMsgValue = getOrAwaitValueX(stopsSearcherViewModel.loadErrMsg)
             println(G_P + """StopsSearcherViewModelTest - startLineAndStopsSearch - loadErrMsgValue: $loadErrMsgValue} """)
             assertThat(loadErrMsgValue).isEqualTo((context.getString(R.string.ptv_is_not_available)))
         } finally {
@@ -110,7 +130,7 @@ class StopsSearcherViewModelTest {
 
         val loadErrMsgValue = stopsSearcherViewModel.loadErrMsg.getOrAwaitValue()
 
-//        var loadErrMsgValue = getLiveDataValue(stopsSearcherViewModel.loadErrMsg)
+//        var loadErrMsgValue = getOrAwaitValueX(stopsSearcherViewModel.loadErrMsg)
         println(G_P + """StopsSearcherViewModelTest - startLineAndStopsSearch - loadErrMsgValue: $loadErrMsgValue} """)
         assertThat(loadErrMsgValue).isEqualTo((context.getString(R.string.ptv_is_not_available)))
 
@@ -121,10 +141,10 @@ class StopsSearcherViewModelTest {
 
         // the getContentIfNotHandled() is defined in the Event class of the 'testing' code lab
 //        val v = loadErrMsgValue1.getContentIfNotHandled()
-//        val loadErrMsgValue1 = getLiveDataValue(stopsSearcherViewModel.loadErrMsg)
+//        val loadErrMsgValue1 = getOrAwaitValueX(stopsSearcherViewModel.loadErrMsg)
         println(G_P + """StopsSearcherViewModelTest - startLineAndStopsSearch - loadErrMsgValue1: $loadErrMsgValue1} """)
         loadErrMsgValue1 = stopsSearcherViewModel.loadErrMsg.getOrAwaitValue()
-//        val loadErrMsgValue1 = getLiveDataValue(stopsSearcherViewModel.loadErrMsg)
+//        val loadErrMsgValue1 = getOrAwaitValueX(stopsSearcherViewModel.loadErrMsg)
         println(G_P + """StopsSearcherViewModelTest - startLineAndStopsSearch - loadErrMsgValue1: $loadErrMsgValue1} """)
         assertThat(loadErrMsgValue1).isEqualTo(null)
     }

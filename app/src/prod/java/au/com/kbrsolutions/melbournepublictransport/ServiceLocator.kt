@@ -3,10 +3,7 @@ package au.com.kbrsolutions.melbournepublictransport
 import android.content.Context
 import androidx.annotation.VisibleForTesting
 import au.com.kbrsolutions.melbournepublictransport.data.AppDatabase
-import au.com.kbrsolutions.melbournepublictransport.repository.DeparturesRepository
-import au.com.kbrsolutions.melbournepublictransport.repository.DeparturesRepositoryReal
-import au.com.kbrsolutions.melbournepublictransport.repository.FavoriteStopsRepository
-import au.com.kbrsolutions.melbournepublictransport.repository.FavoriteStopsRepositoryReal
+import au.com.kbrsolutions.melbournepublictransport.repository.*
 import kotlinx.coroutines.runBlocking
 
 object ServiceLocator {
@@ -76,4 +73,30 @@ object ServiceLocator {
             departuresRepository = null
         }
     }
+
+    @Volatile var stopsSearcherRepository: StopsSearcherRepository? = null
+        @VisibleForTesting set
+
+    fun provideStopsSearcherRepository(context: Context): StopsSearcherRepository {
+        return stopsSearcherRepository ?: synchronized(this) {
+            stopsSearcherRepository ?: createStopsSearcherRepository(context).also {
+                stopsSearcherRepository = it
+            }
+        }
+    }
+
+    private fun createStopsSearcherRepository(context: Context): StopsSearcherRepository {
+        return StopsSearcherRepositoryReal(database!!.lineStopDetailsDao())
+    }
+
+    @VisibleForTesting
+    fun resetStopsSearcherRepository() {
+        synchronized(lock) {
+            runBlocking {
+                favoriteStopsRepository?.deleteAllFavoriteStops()
+            }
+            favoriteStopsRepository = null
+        }
+    }
+
 }

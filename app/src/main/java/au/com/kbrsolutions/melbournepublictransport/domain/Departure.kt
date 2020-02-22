@@ -19,7 +19,6 @@ data class Departure(
     val lineNumber: String?,
     val lineShortName: String?,
     val runType: String?,
-    val status: Int?,
     val isRealTimeInfo: Boolean,
     val showInMagnifiedView: Boolean = false,
     val rowInsertTime: Long

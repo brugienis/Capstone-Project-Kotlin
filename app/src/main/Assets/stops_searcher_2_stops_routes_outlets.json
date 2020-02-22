@@ -1,0 +1,90 @@
+{
+  "stops": [
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Frankston",
+      "stop_name": "Frankston Station",
+      "stop_id": 1073,
+      "route_type": 0,
+      "stop_latitude": -38.1429863,
+      "stop_longitude": 145.12616,
+      "stop_sequence": 0
+    },
+    {
+      "stop_distance": 0,
+      "stop_suburb": "Frankston",
+      "stop_name": "Leawarra Station",
+      "stop_id": 1114,
+      "route_type": 0,
+      "stop_latitude": -38.1520348,
+      "stop_longitude": 145.139542,
+      "stop_sequence": 0
+    }
+  ],
+  "routes": [
+    {
+      "route_name": "Frankston Line",
+      "route_number": "",
+      "route_type": 0,
+      "route_id": 6,
+      "route_gtfs_id": "2-FKN",
+      "route_service_status": {
+        "description": "Planned Works",
+        "timestamp": "2020-01-02T20:44:14.5454917+00:00"
+      }
+    },
+    {
+      "route_name": "Stony Point Line",
+      "route_number": "",
+      "route_type": 0,
+      "route_id": 13,
+      "route_gtfs_id": "2-SPT",
+      "route_service_status": {
+        "description": "Planned Works",
+        "timestamp": "2020-01-02T20:44:14.5454917+00:00"
+      }
+    }
+  ],
+  "outlets": [
+    {
+      "outlet_distance": 0,
+      "outlet_slid_spid": "970",
+      "outlet_name": "55-57 Beach Street",
+      "outlet_business": "7-Eleven Frankston",
+      "outlet_latitude": -38.1421242,
+      "outlet_longitude": 145.130463,
+      "outlet_suburb": "Frankston",
+      "outlet_postcode": 3199,
+      "outlet_business_hour_mon": "24 Hours",
+      "outlet_business_hour_tue": "24 Hours",
+      "outlet_business_hour_wed": "24 Hours",
+      "outlet_business_hour_thur": "24 Hours",
+      "outlet_business_hour_fri": "24 Hours",
+      "outlet_business_hour_sat": "24 Hours",
+      "outlet_business_hour_sun": "24 Hours",
+      "outlet_notes": null
+    },
+    {
+      "outlet_distance": 0,
+      "outlet_slid_spid": "971",
+      "outlet_name": "72 Young Street",
+      "outlet_business": "7-Eleven Frankston",
+      "outlet_latitude": -38.14337,
+      "outlet_longitude": 145.125259,
+      "outlet_suburb": "Frankston",
+      "outlet_postcode": 3199,
+      "outlet_business_hour_mon": "24 Hours",
+      "outlet_business_hour_tue": "24 Hours",
+      "outlet_business_hour_wed": "24 Hours",
+      "outlet_business_hour_thur": "24 Hours",
+      "outlet_business_hour_fri": "24 Hours",
+      "outlet_business_hour_sat": "24 Hours",
+      "outlet_business_hour_sun": "24 Hours",
+      "outlet_notes": null
+    }
+  ],
+  "status": {
+    "version": "3.0",
+    "health": 1
+  }
+}

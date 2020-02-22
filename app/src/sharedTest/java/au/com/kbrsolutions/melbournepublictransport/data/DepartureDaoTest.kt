@@ -1,13 +1,14 @@
 package au.com.kbrsolutions.melbournepublictransport.data
 
+import android.content.Context
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.room.Room
+import androidx.test.core.app.ApplicationProvider
 import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.SmallTest
-import androidx.test.platform.app.InstrumentationRegistry
 import au.com.kbrsolutions.melbournepublictransport.data.helper.TestDataGenerator
-import au.com.kbrsolutions.melbournepublictransport.testutils.getLiveDataValue
+import au.com.kbrsolutions.melbournepublictransport.testutils.getOrAwaitValue
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import org.hamcrest.CoreMatchers
 import org.junit.After
@@ -29,7 +30,7 @@ class DepartureDaoTest {
 
     @Before
     fun createDb() {
-        val context = InstrumentationRegistry.getInstrumentation().targetContext
+        val context = ApplicationProvider.getApplicationContext<Context>()
         database = Room.inMemoryDatabaseBuilder(context, AppDatabase::class.java).build()
         departureDao = database.departureDao()
     }
@@ -53,7 +54,7 @@ class DepartureDaoTest {
     fun testInsertAndGetDepartures() {
         val departures = TestDataGenerator.generateDataDeparturesList1Row()
         departureDao.insert(departures)
-        val retrievedDepartures = getLiveDataValue(departureDao.getDepartures(1L))
+        val retrievedDepartures = departureDao.getDepartures(1L).getOrAwaitValue()
         retrievedDepartures.forEachIndexed { index, databaseDeparture ->
             ViewMatchers.assertThat(
                 departures[index],
@@ -69,7 +70,7 @@ class DepartureDaoTest {
         val departures3Rows = TestDataGenerator.generateDataDeparturesList3Rows()
         departureDao.clearTableAndInsertNewRows(departures3Rows)
 
-        val retrievedDepartures = getLiveDataValue(departureDao.getDepartures(1L))
+        val retrievedDepartures = departureDao.getDepartures(1L).getOrAwaitValue()
         ViewMatchers.assertThat(
             retrievedDepartures.size,
             CoreMatchers.equalTo(3))
@@ -85,7 +86,7 @@ class DepartureDaoTest {
         val departures3Rows = TestDataGenerator.generateDataDeparturesList3Rows()
         departureDao.clearTableAndInsertNewRows(departures3Rows)
 
-        val retrievedDeparturesBefore = getLiveDataValue(departureDao.getDepartures(1L))
+        val retrievedDeparturesBefore= departureDao.getDepartures(1L).getOrAwaitValue()
         retrievedDeparturesBefore.forEach { databaseDeparture ->
             ViewMatchers.assertThat(
                 databaseDeparture.showInMagnifiedView,
@@ -95,7 +96,7 @@ class DepartureDaoTest {
         val scndRowId = departures3Rows[1].id
         departureDao.toggleMagnifiedNormalView(scndRowId)
 
-        val retrievedDeparturesAfter = getLiveDataValue(departureDao.getDepartures(1L))
+        val retrievedDeparturesAfter= departureDao.getDepartures(1L).getOrAwaitValue()
         var showInMagnifiedViewExpected: Boolean
         retrievedDeparturesAfter.forEachIndexed { index, databaseDeparture ->
             showInMagnifiedViewExpected = databaseDeparture.id == scndRowId

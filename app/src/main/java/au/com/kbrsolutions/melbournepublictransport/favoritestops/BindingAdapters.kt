@@ -7,8 +7,6 @@ import androidx.databinding.BindingAdapter
 import au.com.kbrsolutions.melbournepublictransport.R
 import au.com.kbrsolutions.melbournepublictransport.domain.FavoriteStop
 
-
-// fixLater: Aug 14, 2019 - verify drawables
 /*
     The BindingAdapter's value - 'transportImg' - has to be typed exactly as in the layout
         <ImageView

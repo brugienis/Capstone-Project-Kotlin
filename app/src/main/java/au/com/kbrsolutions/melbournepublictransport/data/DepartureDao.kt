@@ -11,17 +11,17 @@ interface DepartureDao {
 
         Return only the rows inserted after the 'millis' time.
      */
-    @Query("select * from departure_table WHERE row_insert_time > :millis")
+    @Query("SELECT * FROM departure_table WHERE row_insert_time > :millis")
     fun getDepartures(millis: Long): LiveData<List<DatabaseDeparture>>
 
     /*
         Get the 'databaseDeparture' row for the given 'id'.
      */
-    @Query("select * from departure_table  WHERE id = :id")
+    @Query("SELECT * FROM departure_table  WHERE id = :id")
     fun getDeparture(id: Int): DatabaseDeparture
 
-    @Query("select * from departure_table WHERE show_in_magnified_view = 1")
-    fun getMagnifiedDeparture(): DatabaseDeparture
+    @Query("SELECT * FROM departure_table WHERE show_in_magnified_view = 1")
+    fun getMagnifiedDeparture(): DatabaseDeparture?
 
     @Transaction
     fun clearTableAndInsertNewRows(databaseDepartures: List<DatabaseDeparture>) {
@@ -54,17 +54,6 @@ interface DepartureDao {
             Log.v("DepartureDao", """toggleMagnifiedNormalView - idCurr: ${idCurr} """)
             flipShowMagnifyView(idCurr)
         }
-
-//        var isPrevMagnified = false
-//        if (idPrev != null) isPrevMagnified = getDeparture(idPrev).showInMagnifiedView
-//        val isCurrMagnified = getDeparture(idCurr).showInMagnifiedView
-//        if (isPrevMagnified) {
-//            flipShowMagnifyView(idPrev!!)
-//        }
-
-//        if (isPrevMagnified && idPrev != idCurr || !isCurrMagnified) {
-//            flipShowMagnifyView(idCurr)
-//        }
     }
 
     /*

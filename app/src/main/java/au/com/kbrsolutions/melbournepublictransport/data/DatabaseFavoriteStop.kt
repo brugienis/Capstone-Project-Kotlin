@@ -15,7 +15,7 @@ data class DatabaseFavoriteStop constructor(
     val routeType: Int,
 
     @ColumnInfo(name="stop_id")
-    val stopId: String,
+    val stopId: Int,
 
     @ColumnInfo(name="location_name")
     val locationName: String,

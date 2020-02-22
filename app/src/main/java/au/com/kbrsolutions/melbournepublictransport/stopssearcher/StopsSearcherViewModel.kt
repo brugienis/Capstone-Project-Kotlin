@@ -21,13 +21,6 @@ import au.com.kbrsolutions.melbournepublictransport.utilities.SharedPreferencesU
 import au.com.kbrsolutions.melbournepublictransport.utilities.hideSoftKeyboardForView
 import kotlinx.coroutines.*
 
-/**
- * // fixLater: Dec 25, 2019 - is the comment below correct?
- *
- * This class is used only in the 'prod' variant. It is returned by the ServiceLocator that is in
- * the 'prod' path.
- */
-
 enum class ShowView {
     SearchResults,
     InfoText,
@@ -35,6 +28,7 @@ enum class ShowView {
 }
 
 class StopsSearcherViewModel(
+    private val stopsSearcherFragmentArgs: StopsSearcherFragmentArgs,
     private val favoriteStopsRepository: FavoriteStopsRepository,
     private val stopsSearcherRepository: StopsSearcherRepository,
     private val context: Context) : ViewModel() {
@@ -89,9 +83,13 @@ class StopsSearcherViewModel(
         get() = _clearMsgClicked
 
     val stopsSearchResults = stopsSearcherRepository.getStopsSearcherResults()
+    val favoriteStopsArray = stopsSearcherFragmentArgs.favoriteStopsArray
 
     init {
-//        clearRepositoryTables()
+        Log.v(G_P + "StopsSearcherViewModel", """ - favoriteStopsArray: ${favoriteStopsArray.size} """)
+        favoriteStopsArray.forEach {
+            Log.v(G_P + "StopsSearcherViewModel", """ - favStopId: ${it} """)
+        }
         _clearMsgClicked.value = false
         _searchTextHint.value = context.resources.getString(R.string.enter_search_text)
 //        _showView.value = ShowView.Instructions
@@ -169,8 +167,6 @@ class StopsSearcherViewModel(
 //            showInfoText(getString(R.string.invalid_search_text))
             _stopSearcherTextValidationMsg.value = context.resources.getString(R.string.invalid_search_text)
         }
-        // fixLater: Nov 30, 2019 - look at the below later
-//        setVisibleView(mSearchInfoTextTV, "validateSearchTextAndStartSearch")
     }
 
     @SuppressLint("LongLogTag")
@@ -184,13 +180,19 @@ class StopsSearcherViewModel(
             routTypes
         )
 //        EspressoIdlingResource.increment("StopsSearcherViewModel.startLineAndStopsSearch")
-        // fixLater: Jan 06, 2020 - create set of favorite stopIds - it probably should be Ints
-        val favoriteStopIdsSet = mutableSetOf<String>()
+        val favoriteStopIdsSet = mutableSetOf<Int>()
+        Log.v(G_P + "StopsSearcherViewModel", """startLineAndStopsSearch - path: ${path} """)
         uiScope.launch {
             /*runBlocking {
                 delay(delayMillis)
             }*/
 
+            /*add code to build favoriteStopIdsSet - existing Favorite Stops in the database
+                    Better - pass the set of stop ids from FavoriteStops in arguments*/
+
+//            favoriteStopsArray.forEach {
+                favoriteStopIdsSet.addAll(favoriteStopsArray.asList())
+//            }
             stopsSearcherRepository.sendRequestAndProcessPtvResponse(
                 path,
                 favoriteStopIdsSet,
@@ -259,7 +261,7 @@ class StopsSearcherViewModel(
             DatabaseFavoriteStop(
                 lineStopDetails.id,
                 lineStopDetails.routeType,
-                lineStopDetails.stopId.toString(),
+                lineStopDetails.stopId,
                 lineStopDetails.stopLocationOrLineName,
                 lineStopDetails.suburb ?: "",
                 lineStopDetails.latitude,

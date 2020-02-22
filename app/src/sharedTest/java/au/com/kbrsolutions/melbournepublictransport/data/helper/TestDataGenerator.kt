@@ -43,7 +43,6 @@ object TestDataGenerator {
                 null,
                 "Frankston",
                 "All stops to Bonbeach",
-                1,
                 false,
                 false,
                 1571866226162
@@ -71,7 +70,6 @@ object TestDataGenerator {
                 null,
                 "Frankston",
                 "All stops to Bonbeach",
-                1,
                 false,
                 false,
                 1571866226162
@@ -95,7 +93,6 @@ object TestDataGenerator {
                 null,
                 "Frankston1",
                 "All stops to Bonbeach1",
-                1,
                 false,
                 false,
                 1571866226163
@@ -119,7 +116,6 @@ object TestDataGenerator {
                 null,
                 "Frankston2",
                 "All stops to Bonbeach2",
-                1,
                 false,
                 false,
                 1571866226164
@@ -129,9 +125,11 @@ object TestDataGenerator {
 
     fun getDataDeparturesListNRows(rowsCnt: Int, context: Context): List<DatabaseDeparture> {
         val departuresObjectsFromJson =
-            DebugUtilities(context).getDeparturesResponse()
+            DebugUtilities(context).getDeparturesResponse("departures_results_all_expand_options.json")
         val databaseDepartureDetails: List<DatabaseDeparture> =
-            DeparturesJsonProcessor.buildDepartureDetailsList(departuresObjectsFromJson, context)
+            DeparturesJsonProcessor
+                .buildDepartureDetailsList(departuresObjectsFromJson, context)
+                .departuresDetailsList
 
         var departuresList = mutableListOf<DatabaseDeparture>()
         databaseDepartureDetails.forEachIndexed { index, databaseDeparture ->
@@ -170,7 +168,6 @@ object TestDataGenerator {
                 null,
                 "Frankston2",
                 "All stops to Bonbeach" + rowId,
-                1,
                 false,
                 false,
                 System.currentTimeMillis()

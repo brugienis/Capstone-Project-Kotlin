@@ -19,6 +19,14 @@
                 app:popEnterAnim="@anim/nav_default_pop_enter_anim"
                 app:popExitAnim="@anim/nav_default_pop_exit_anim"
                 app:popUpTo="@+id/favoriteStopsFragment" />
+        <action
+                android:id="@+id/action_favoriteStopsFragment_to_stopsSearcherFragment"
+                app:destination="@id/favStops_goToStopsSearcherFragment"
+                app:enterAnim="@anim/nav_default_enter_anim"
+                app:exitAnim="@anim/nav_default_exit_anim"
+                app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+                app:popExitAnim="@anim/nav_default_pop_exit_anim"
+                app:popUpTo="@+id/favoriteStopsFragment" />
     </fragment>
 
     <fragment
@@ -33,6 +41,8 @@
                 app:exitAnim="@anim/nav_default_pop_exit_anim"
                 app:popUpTo="@+id/favoriteStopsFragment"
                 app:popUpToInclusive="true" />
+        <argument android:name="favoriteStopsArray"
+                app:argType="integer[]" />
     </fragment>
 
     <fragment
@@ -42,7 +52,7 @@
             tools:layout="@layout/fragment_departures">
         <argument
                 android:name="stopId"
-                app:argType="string" />
+                app:argType="integer" />
         <argument
                 android:name="locationName"
                 app:argType="string" />

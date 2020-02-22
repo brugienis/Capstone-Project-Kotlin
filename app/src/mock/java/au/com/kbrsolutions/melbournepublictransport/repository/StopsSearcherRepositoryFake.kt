@@ -1,7 +1,8 @@
 package au.com.kbrsolutions.melbournepublictransport.repository
 
+//import au.com.kbrsolutions.melbournepublictransport.utilities.USE_HARD_CODED_PVT_RESPONSE
 import android.content.Context
-import android.util.Log
+import androidx.annotation.VisibleForTesting
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import au.com.kbrsolutions.melbournepublictransport.DebugUtilities
@@ -14,8 +15,7 @@ import au.com.kbrsolutions.melbournepublictransport.network.PtvApi
 import au.com.kbrsolutions.melbournepublictransport.stopssearcher.LinesAndStopsForSearchResult
 import au.com.kbrsolutions.melbournepublictransport.stopssearcher.StopsSearcherJsonProcessor
 import au.com.kbrsolutions.melbournepublictransport.stopssearcher.jsondata.StopsSearcherObjectsFromJson
-import au.com.kbrsolutions.melbournepublictransport.utilities.G_P
-import au.com.kbrsolutions.melbournepublictransport.utilities.USE_HARD_CODED_PVT_RESPONSE
+import au.com.kbrsolutions.melbournepublictransport.utilities.SharedPreferencesUtility
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.runBlocking
 import java.util.*
@@ -45,7 +45,6 @@ class StopsSearcherRepositoryFake() : StopsSearcherRepository {
     override suspend fun clearTable() {
         stopsSearcherServiceData.clear()
         updateLiveData()
-        Log.v(G_P + "StopsSearcherRepositoryFake", """clearTable - stopsSearcherServiceData: ${stopsSearcherServiceData.size} """)
     }
 
     override suspend fun getLineStopDetails(id: Int): LineStopDetails {
@@ -54,9 +53,9 @@ class StopsSearcherRepositoryFake() : StopsSearcherRepository {
 
     override suspend fun sendRequestAndProcessPtvResponse(
         path: String,
-        favoriteStopIdsSet: Set<String>,
+        favoriteStopIdsSet: Set<Int>,
         context: Context) {
-        Log.v(G_P + "StopsSearcherRepositoryFake", """sendRequestAndProcessPtvResponse - path: ${path} """)
+//        Log.v(G_P + "StopsSearcherRepositoryFake", """sendRequestAndProcessPtvResponse - path: ${path} """)
 
 //        EspressoIdlingResource.increment("StopsSearcherRepositoryFake.sendRequestAndProcessPtvResponse") // Set app as busy.
             /*runBlocking {
@@ -64,7 +63,7 @@ class StopsSearcherRepositoryFake() : StopsSearcherRepository {
 
             var stopsSearcherObjectsFromJson: StopsSearcherObjectsFromJson? = null
             try {
-                if (USE_HARD_CODED_PVT_RESPONSE) {
+                if (SharedPreferencesUtility.useHardCodedPvtResponse(context)) {
                     stopsSearcherObjectsFromJson =
                         DebugUtilities(context).getStopsSearcherResponse(
                             debuggingJsonStringFile)
@@ -75,11 +74,11 @@ class StopsSearcherRepositoryFake() : StopsSearcherRepository {
                 }
 
                 // fixLater: Jan 06, 2020 - the 'stopId' is an Int - why do we pass set of strings?
-                val favoriteStopIdsSetTemp = mutableSetOf<Int>()
+//                val favoriteStopIdsSetTemp = mutableSetOf<Int>()
                 val linesAndStopsForSearchResult: LinesAndStopsForSearchResult =
                     StopsSearcherJsonProcessor.buildStopsSearcherDetailsList(
                         stopsSearcherObjectsFromJson,
-                        favoriteStopIdsSetTemp)
+                        favoriteStopIdsSet)
 
                 if (!linesAndStopsForSearchResult.health) {
                     throw java.lang.RuntimeException(context.getString(R.string.ptv_is_not_available))
@@ -114,7 +113,6 @@ class StopsSearcherRepositoryFake() : StopsSearcherRepository {
                 it.showInMagnifiedView == true
             }
             val listSize = magnifiedFavoriteStopList.size
-            Log.v(G_P + "StopsSearcherRepositoryFake", """toggleMagnifiedView - listSize: ${listSize} """)
             if (listSize > 1) {
                 throw RuntimeException("""BR - 
                     |StopsSearcherRepositoryFake.toggleMagnifiedNormalView(): 
@@ -137,48 +135,19 @@ class StopsSearcherRepositoryFake() : StopsSearcherRepository {
         }
     }
 
-    fun setDebuggingJsonStringFile(debuggingJsonStringFile: String) {
-        this.debuggingJsonStringFile = debuggingJsonStringFile
-        println(G_P + """StopsSearcherRepositoryFake - setDebuggingJsonStringFile - debuggingJsonStringFile: ${debuggingJsonStringFile} """)
+    override suspend fun getLineStopDetailsCount(): Int {
+        return stopsSearcherServiceData.size
     }
 
-    /**
-     * Print 'stopIds' of the FavoriteStops in the database.
-     */
-    /*override suspend fun printStopsIds(source: String) {
-        println("StopsSearcherRepositoryFake - printStopsIds start")
-        stopsSearcherServiceData.keys.forEach {
-            printStopDetails(stopsSearcherServiceData[it]!!, source)
-        }
-        println("StopsSearcherRepositoryFake - printStopsIds end")
-    }*/
+    @VisibleForTesting
+    fun setDebuggingJsonStringFile(debuggingJsonStringFile: String) {
+        this.debuggingJsonStringFile = debuggingJsonStringFile
+//        println(G_P + """StopsSearcherRepositoryFake - setDebuggingJsonStringFile - debuggingJsonStringFile: ${debuggingJsonStringFile} """)
+    }
 
     private fun printStopDetails(lineStopDetails: DatabaseLineStopDetails, source: String, msg: String = "") {
         println("StopsSearcherRepositoryFake - printStopDetails - source - $msg stopId: ${lineStopDetails.id} stopName: ${lineStopDetails.lineId} magnified: ${lineStopDetails.showInMagnifiedView}")
     }
-
-    /**
-     * Print 'stopIds' of the FavoriteStops in the database.
-     */
-    /*private fun localPrintStopsIds(source: String) {
-        if (stopsSearcherServiceData == null) {
-            println("StopsSearcherRepositoryFake - localPrintStopsIds favoriteStopsServiceData is null")
-            return
-        }
-        println("StopsSearcherRepositoryFake - localPrintStopsIds start")
-        stopsSearcherServiceData.keys.forEach {
-            printStopDetails(stopsSearcherServiceData[it]!!, source)
-        }
-        println("StopsSearcherRepositoryFake - localPrintStopsIds end")
-    }*/
-
-    /*@VisibleForTesting
-    fun addFavoriteStops(vararg favoriteStops: FavoriteStop) {
-        for (favoriteStop in favoriteStops) {
-            stopsSearcherServiceData[favoriteStop.id] = favoriteStop
-        }
-        updateLiveData()
-    }*/
 
     private fun updateLiveData() {
         val stopsSearcherResultsList = mutableListOf<LineStopDetails>()
@@ -186,7 +155,7 @@ class StopsSearcherRepositoryFake() : StopsSearcherRepository {
             stopsSearcherResultsList.add(stopsSearcherServiceData[it]!!.asDomainModel())
         }
         _stopsSearcherResults.postValue(stopsSearcherResultsList)
-        Log.v(G_P + "StopsSearcherRepositoryFake", """updateLiveData - stopsSearcherResultsList: ${stopsSearcherResultsList.size} """)
+//        Log.v(G_P + "StopsSearcherRepositoryFake", """updateLiveData - stopsSearcherResultsList: ${stopsSearcherResultsList.size} """)
     }
 }
 

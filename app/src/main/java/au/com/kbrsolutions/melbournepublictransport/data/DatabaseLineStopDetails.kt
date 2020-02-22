@@ -18,7 +18,7 @@ data class DatabaseLineStopDetails constructor(
     @ColumnInfo(name="line_id")
     val lineId: Int,
     @ColumnInfo(name="stop_id")
-    val stopId: Int?,
+    val stopId: Int,
     @ColumnInfo(name="stop_location_or_line_name")
     val stopLocationOrLineName: String,
     val suburb: String? = null,
@@ -35,21 +35,21 @@ data class DatabaseLineStopDetails constructor(
 
 fun DatabaseLineStopDetails.asDomainModel(): LineStopDetails {
     return LineStopDetails(
-        id = this.id,
-        routeType = this.routeType,
-        lineOrStopType = this.lineOrStopType,
-        lineId = this.lineId,
-        stopId = this.stopId,
-        stopLocationOrLineName = this.stopLocationOrLineName,
-        suburb = this.suburb,
-        latitude = this.latitude,
-        longitude = this.longitude,
-        distance = this.distance,
-        favorite = this.favorite,
-        lineNameShort = this.lineNameShort,
-        lineNumber = this.lineNumber,
-        showInMagnifiedView = this.showInMagnifiedView
-    )
+            id = this.id,
+            routeType = this.routeType,
+            lineOrStopType = this.lineOrStopType,
+            lineId = this.lineId,
+            stopId = this.stopId,
+            stopLocationOrLineName = this.stopLocationOrLineName,
+            suburb = this.suburb,
+            latitude = this.latitude,
+            longitude = this.longitude,
+            distance = this.distance,
+            favorite = this.favorite,
+            lineNameShort = this.lineNameShort,
+            lineNumber = this.lineNumber,
+            showInMagnifiedView = this.showInMagnifiedView
+        )
 }
 
 fun List<DatabaseLineStopDetails>.asDomainModel(): List<LineStopDetails> {

@@ -81,7 +81,7 @@ class FavoriteStopsRepositoryFake() : FavoriteStopsRepository {
     /**
      *  Delete one row in the 'favorite_stop' table.
      */
-    override suspend fun deleteFavoriteStop(stopId: String) {
+    override suspend fun deleteFavoriteStop(stopId: Int) {
         runBlocking {
             delay(delayMillis)
             val favoriteStops = favoriteStopsServiceData.keys.filter {
@@ -133,6 +133,14 @@ class FavoriteStopsRepositoryFake() : FavoriteStopsRepository {
         println("FavoriteStopsRepositoryFake - localPrintStopsIds end")
     }
 
+    private fun updateLiveData() {
+        val favoriteStopsList = mutableListOf<FavoriteStop>()
+        favoriteStopsServiceData.keys.forEach {
+            favoriteStopsList.add(favoriteStopsServiceData[it]!!)
+        }
+        _favoriteStops.postValue(favoriteStopsList)
+    }
+
     @VisibleForTesting
     fun addFavoriteStops(vararg favoriteStops: FavoriteStop) {
         for (favoriteStop in favoriteStops) {
@@ -141,12 +149,9 @@ class FavoriteStopsRepositoryFake() : FavoriteStopsRepository {
         updateLiveData()
     }
 
-    private fun updateLiveData() {
-        val favoriteStopsList = mutableListOf<FavoriteStop>()
-        favoriteStopsServiceData.keys.forEach {
-            favoriteStopsList.add(favoriteStopsServiceData[it]!!)
-        }
-        _favoriteStops.postValue(favoriteStopsList)
+    @VisibleForTesting
+    override suspend fun getFavoriteStop(id: Int): FavoriteStop? {
+        return favoriteStopsServiceData[id]
     }
 }
 

@@ -1,7 +1,6 @@
 package au.com.kbrsolutions.melbournepublictransport.stopssearcher
 
 import android.content.res.Resources
-import android.os.Bundle
 import android.util.Log
 import android.view.KeyEvent
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
@@ -61,7 +60,7 @@ class StopsSearcherFragmentTest {
 
     private lateinit var favoriteStopsRepository: FavoriteStopsRepositoryFake
     private lateinit var stopsSearcherRepository: StopsSearcherRepositoryFake
-    val embarcaderoStopId = "Embarcadero"
+    val embarcaderoStopId = 1000
     val embarcaderoLocationName = "Embarcadero Station"
 
     @Before
@@ -90,6 +89,7 @@ class StopsSearcherFragmentTest {
     fun cleanupDb() = runBlockingTest {
         favoriteStopsRepository.setSimulatedDelayMillis(0)
         ServiceLocator.resetFavoriteStopsRepository()
+        ServiceLocator.resetStopsSearcherRepository()
     }
 
     @Test
@@ -98,8 +98,9 @@ class StopsSearcherFragmentTest {
         stopsSearcherRepository.setDebuggingJsonStringFile("stops_searcher_2_stops_health_false.json")
         // Given a user in the home screen
         var resources: Resources? = null
+        val favoriteStopsArray = StopsSearcherFragmentArgs(IntArray(0)).toBundle()
         val scenario =
-            launchFragmentInContainer<StopsSearcherFragment>(Bundle(), R.style.AppTheme)
+            launchFragmentInContainer<StopsSearcherFragment>(favoriteStopsArray, R.style.AppTheme)
         dataBindingIdlingResource.monitorFragment(scenario)
         scenario.onFragment {
             resources = it.resources
@@ -110,13 +111,12 @@ class StopsSearcherFragmentTest {
 
 //        delayNextStep(3_000)
 
-//        Log.v(G_P + "StopsSearcherFragmentTest", """enterSearchText_responseHealthFalse_showErrMsg - before pressImeActionButton""")
         // Click on the 'action search button' on the keyboard - magnifying glass icon
         onView(withId(R.id.stopsSearchText))
             .perform(pressImeActionButton())
-//        Log.v(G_P + "StopsSearcherFragmentTest", """enterSearchText_responseHealthFalse_showErrMsg - after  pressImeActionButton""")
 
-        // Verify that Snackbar with the appropriate message appears. For this test the Snackbar
+        // fixLater: Feb 20, 2020 - show errMsg view instead of Snackbar - like in departures.
+        // For this test the Snackbar
         // time_length has to be Snackbar.LENGTH_INDEFINITE, otherwise the test will fail.
         onView(
             Matchers.allOf(
@@ -124,9 +124,6 @@ class StopsSearcherFragmentTest {
                 ViewMatchers.withText(resources!!.getString(R.string.ptv_is_not_available))
             )
         ).checkIsDisplayed()
-//        Log.v(G_P + "StopsSearcherFragmentTest", """enterSearchText_responseHealthFalse_showErrMsg - after isDisplayed() """)
-
-//        R.id.snackbar_action.performClick()
 
         Log.v(G_P + "StopsSearcherFragmentTest", """enterSearchText_responseHealthFalse_showErrMsg - enterSearchText_responseHealthFalse_showErrMsg end""")
     }
@@ -138,13 +135,14 @@ class StopsSearcherFragmentTest {
         stopsSearcherRepository.setDebuggingJsonStringFile("stops_searcher_2_stops_health_false.json")
         // Given a user in the home screen
         var resources: Resources? = null
+        val favoriteStopsArray = StopsSearcherFragmentArgs(IntArray(0)).toBundle()
         val scenario =
-            launchFragmentInContainer<StopsSearcherFragment>(Bundle(), R.style.AppTheme)
+            launchFragmentInContainer<StopsSearcherFragment>(favoriteStopsArray, R.style.AppTheme)
         scenario.onFragment {
             resources = it.resources
         }
 
-        // Initiate the first search request - response will contain 'health' flag false
+        // Initiate the first search request - response will contain 'health' flag 'false'
 
         // Type some search text - less than 3 characters, so the automatic search will not start
         R.id.stopsSearchText.performTypeText("01")
@@ -153,7 +151,7 @@ class StopsSearcherFragmentTest {
             .perform(pressImeActionButton())
         delayNextStep(5_000)
 
-        // Initiate the second search request - response will contain 'health' flag true
+        // Initiate the second search request - response will contain 'health' flag 'true'
 
         stopsSearcherRepository.setDebuggingJsonStringFile("stops_searcher_2_stops_only.json")
 
@@ -172,12 +170,15 @@ class StopsSearcherFragmentTest {
         Log.v(G_P + "StopsSearcherFragmentTest", """enterSearchText_responseHealthFalse_showErrMsg_startSearchAgainWithResponseHealthTrue - end""")
     }
 
+    // fixLater: Feb 20, 2020 - add test with favoriteStopsArray in the bundle contains a stopId.
+    // fixLater: Feb 20, 2020 - Verify that this stopId is excluded from the search results.
     @Test
     fun enterSearchText_clickOnClearTextIcon() {
         // Given a user in the home screen
         var resources: Resources? = null
+        val favoriteStopsArray = StopsSearcherFragmentArgs(IntArray(0)).toBundle()
         val scenario =
-            launchFragmentInContainer<StopsSearcherFragment>(Bundle(), R.style.AppTheme)
+            launchFragmentInContainer<StopsSearcherFragment>(favoriteStopsArray, R.style.AppTheme)
         scenario.onFragment {
             resources = it.resources
         }
@@ -229,8 +230,9 @@ class StopsSearcherFragmentTest {
     fun enterSearchText_clickOnStartSearchKey() {
         // Given a user in the home screen
 //        var resources: Resources? = null
+        val favoriteStopsArray = StopsSearcherFragmentArgs(IntArray(0)).toBundle()
         val scenario =
-            launchFragmentInContainer<StopsSearcherFragment>(Bundle(), R.style.AppTheme)
+            launchFragmentInContainer<StopsSearcherFragment>(favoriteStopsArray, R.style.AppTheme)
         scenario.onFragment {
 //            resources = it.resources
         }
@@ -278,8 +280,9 @@ class StopsSearcherFragmentTest {
     @Test
     fun enterSearchText_waitOneSec() {
         // Given a user in the home screen
+        val favoriteStopsArray = StopsSearcherFragmentArgs(IntArray(0)).toBundle()
         val scenario =
-            launchFragmentInContainer<StopsSearcherFragment>(Bundle(), R.style.AppTheme)
+            launchFragmentInContainer<StopsSearcherFragment>(favoriteStopsArray, R.style.AppTheme)
 
         // Verify initial hint text
         onView(
@@ -327,8 +330,9 @@ class StopsSearcherFragmentTest {
     @Test
     fun enterSearchText2Chars_deleteAllTypedCharactersOneByOne() {
         // Given a user in the home screen
+        val favoriteStopsArray = StopsSearcherFragmentArgs(IntArray(0)).toBundle()
         val scenario =
-            launchFragmentInContainer<StopsSearcherFragment>(Bundle(), R.style.AppTheme)
+            launchFragmentInContainer<StopsSearcherFragment>(favoriteStopsArray, R.style.AppTheme)
 
         // Verify initial hint text
         onView(
@@ -376,8 +380,9 @@ class StopsSearcherFragmentTest {
     @Test
     fun enterSearchText3Chars_deleteAllTypedCharactersOneByOne() {
         // Given a user in the home screen
+        val favoriteStopsArray = StopsSearcherFragmentArgs(IntArray(0)).toBundle()
         val scenario =
-            launchFragmentInContainer<StopsSearcherFragment>(Bundle(), R.style.AppTheme)
+            launchFragmentInContainer<StopsSearcherFragment>(favoriteStopsArray, R.style.AppTheme)
 
         // Verify initial hint text
         onView(
@@ -430,9 +435,9 @@ class StopsSearcherFragmentTest {
     @Test
     fun enter3CharsSearchTextAndWait1Second_touchSearchTextToCancelSearchInProgress() {
         // Given a user in the home screen
-//        var resources: Resources? = null
+        val favoriteStopsArray = StopsSearcherFragmentArgs(IntArray(0)).toBundle()
         val scenario =
-            launchFragmentInContainer<StopsSearcherFragment>(Bundle(), R.style.AppTheme)
+            launchFragmentInContainer<StopsSearcherFragment>(favoriteStopsArray, R.style.AppTheme)
 
         // Type search text
         R.id.stopsSearchText.performTypeText("bla bla")
@@ -461,9 +466,9 @@ class StopsSearcherFragmentTest {
     @Test
     fun enterSearchTextAndStartSearch_touchSearchTextToCancelSearchInProgress() {
         // Given a user in the home screen
-//        var resources: Resources? = null
+        val favoriteStopsArray = StopsSearcherFragmentArgs(IntArray(0)).toBundle()
         val scenario =
-            launchFragmentInContainer<StopsSearcherFragment>(Bundle(), R.style.AppTheme)
+            launchFragmentInContainer<StopsSearcherFragment>(favoriteStopsArray, R.style.AppTheme)
         scenario.onFragment {
 //            resources = it.resources
         }

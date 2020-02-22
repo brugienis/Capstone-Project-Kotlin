@@ -3,7 +3,6 @@ package au.com.kbrsolutions.melbournepublictransport.repository
 import android.content.Context
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import au.com.kbrsolutions.melbournepublictransport.data.DatabaseDeparture
 import au.com.kbrsolutions.melbournepublictransport.domain.Departure
 
 interface DeparturesRepository : Repository {
@@ -14,11 +13,11 @@ interface DeparturesRepository : Repository {
 
     fun getDepartures(favoriteStopsRequestedTimeMillis: Long): LiveData<List<Departure>>
 
-    suspend fun clearTableAndInsertNewRows(databaseDepartures: List<DatabaseDeparture>)
+    fun getDeparture(id: Int): Departure
 
     suspend fun toggleMagnifiedNormalView(id: Int)
 
-    // fixLater: Oct 23, 2019 - it looks like the below is not in use - if confirmed, remove it.
+    // Below is used in the ServiceLocator.resetDeparturesRepository()
     suspend fun deleteAllDepartures()
 
     suspend fun refreshPtvData(path: String, context: Context)

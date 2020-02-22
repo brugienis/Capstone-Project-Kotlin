@@ -1,6 +1,7 @@
 package au.com.kbrsolutions.melbournepublictransport.stopssearcher
 
 import au.com.kbrsolutions.melbournepublictransport.common.LatLngDetails
+import au.com.kbrsolutions.melbournepublictransport.network.PtvServiceUtils
 import au.com.kbrsolutions.melbournepublictransport.utilities.Miscellaneous
 
 object StopsSearcherUrlBuilder {
@@ -8,6 +9,7 @@ object StopsSearcherUrlBuilder {
     // https://jsonformatter.org/
 
 
+    private const val SEARCH = "/search/"
     private const val ROUTE_TYPES = "route_types="
     private const val LATITUDE_TEXT = "latitude="
     private const val LONGITUDE_TEXT = "longitude="
@@ -21,6 +23,7 @@ object StopsSearcherUrlBuilder {
         searchMaxDistanceMeters: Float,
         routeTypes: Set<String>?): String {
         val sb = StringBuilder().apply {
+            append(SEARCH)
             append(
                 Miscellaneous.replaceSearchTextMultipleSpacesWithOne(
                     searchText.replace("\n".toRegex(), "")
@@ -54,6 +57,9 @@ object StopsSearcherUrlBuilder {
                 append(searchMaxDistanceMeters)
             }
         }
-        return sb.toString()
+        // /v3/search/frankst?devid
+        // /v3Frankst?route_types=0&rou
+
+        return PtvServiceUtils.buildTTAPIURL(sb.toString())
     }
 }

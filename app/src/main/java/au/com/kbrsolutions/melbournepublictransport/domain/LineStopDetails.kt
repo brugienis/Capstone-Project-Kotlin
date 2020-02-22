@@ -4,12 +4,12 @@ import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-class LineStopDetails(
+data class LineStopDetails(
     val id: Int,
     val routeType: Int,
     val lineOrStopType: Int,
     val lineId: Int,
-    val stopId: Int?,
+    val stopId: Int,
     val stopLocationOrLineName: String,
     val suburb: String? = null,
     val latitude: Double,
