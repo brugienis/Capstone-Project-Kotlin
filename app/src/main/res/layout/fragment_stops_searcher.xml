@@ -17,61 +17,82 @@
                 type="au.com.kbrsolutions.melbournepublictransport.stopssearcher.StopsSearcherViewModel" />
     </data>
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:id="@+id/linearLayout">
 
-        <LinearLayout
+        <!--<LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical">-->
 
             <!-- based on https://github.com/material-components/material-components-android/blob/master/docs/components/TextInputLayout.md
                  I had to change build.gradle - see
                           https://www.journaldev.com/31980/android-material-text-fields
              -->
-            <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/stopsSearchTextLayout"
-                    android:layout_width="match_parent"
-                    android:layout_height="48dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:hint="@{stopsSearcherViewModel.searchTextHint}"
-                    app:endIconMode="clear_text"
-                    app:endIconTint="@color/deep_orange_500">
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/stopsSearchTextLayout"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:hint="@{stopsSearcherViewModel.searchTextHint}"
 
-                <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/stopsSearchText"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:imeOptions="actionSearch"
+                app:stopsSearchTextLayoutIsProcessing='@{stopsSearcherViewModel.searchTextHint}'
+                app:source='@{"stopsSearchTextLayout"}'
 
-                        android:inputType="textNoSuggestions"
-                        android:singleLine="true"
+                app:endIconMode="clear_text"
+                app:endIconTint="@color/deep_orange_500"
 
-                        app:clearSearchText='@{stopsSearcherViewModel.clearMsgClicked}'
-                        app:source='@{"stopsSearchText"}'
-                        tools:text="Find stop" />
-            </com.google.android.material.textfield.TextInputLayout>
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/stopsSearchValidationMsg"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
 
-            <!--
-                                    app:clearSearchText='@{stopsSearcherViewModel.stopSearcherTextValidationMsg}'
-                                              -->
-
-            <TextView
-                    android:id="@+id/stopsSearchValidationMsg"
+            <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/stopsSearchText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@{stopsSearcherViewModel.stopSearcherTextValidationMsg}"
+                    android:imeOptions="actionSearch"
 
-                    android:textColor="@android:color/black"
-                    app:searchValidationMsgVisibility='@{stopsSearcherViewModel.stopSearcherTextValidationMsg}'
+                    android:inputType="textNoSuggestions"
+                    android:singleLine="true"
 
-                    app:source='@{"stopsSearchValidationMsg"}'
-                    tools:text="Validation message" />
+                    app:clearSearchText='@{stopsSearcherViewModel.clearMsgClicked}'
+                    app:source='@{"stopsSearchText"}'
+                    tools:text="Find stop"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/stopsSearchValidationMsg" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        </LinearLayout>
+            <!--
+                  app:clearSearchText='@{stopsSearcherViewModel.stopSearcherTextValidationMsg}'
+                                              -->
+
+        <TextView
+                android:id="@+id/stopsSearchValidationMsg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+
+                android:text="@{stopsSearcherViewModel.stopSearcherScreenMsg}"
+                android:textColor="@android:color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:searchValidationMsgVisibility="@{stopsSearcherViewModel.stopSearcherScreenMsg}"
+                app:source='@{"stopsSearchValidationMsg"}'
+                tools:text="Validation message"
+
+                app:layout_constraintTop_toBottomOf="@id/stopsSearchTextLayout"/>
+
+<!--        </LinearLayout>-->
 
         <!--
                     android:visibility="@{stopsSearcherViewModel.stopSearcherTextValidationMsg.length() == 0 ? View.GONE : View.VISIBLE}"
@@ -82,8 +103,10 @@
                  -->
 
         <RelativeLayout
+                android:id="@+id/relativeLayout"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/stopsSearchValidationMsg">
 
             <ScrollView
                     android:layout_width="match_parent"
@@ -94,7 +117,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
-                        android:visibility="@{(stopsSearcherViewModel.showView == ShowView.Instructions) ? View.VISIBLE : View.GONE}">
+                        app:visibleUnless='@{(stopsSearcherViewModel.showView != ShowView.Instructions)|| stopsSearcherViewModel.stopSearcherScreenMsg != ""}'>
+
+<!--
+                        app:visibleUnless='@{(stopsSearcherViewModel.showView != ShowView.Instructions ||
+                        stopsSearcherViewModel.stopSearcherTextValidationMsg != "")}'>                -->
 
                     <Space
                             android:layout_width="wrap_content"
@@ -107,16 +134,6 @@
                             android:gravity="center"
                             android:text="@string/search_instructions"
                             android:textColor="@android:color/black" />
-
-
-<!--                    <Button-->
-<!--                            android:id="@+id/addTestFavoriteStop"-->
-<!--                            android:layout_width="wrap_content"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:layout_gravity="center_vertical"-->
-<!--                            android:onClick="@{() -> stopsSearcherViewModel.insertFavoriteStop()}"-->
-<!--                            android:text="Add test stop"-->
-<!--                            tools:text="Add test stop" />-->
 
                     <Space
                             android:layout_width="wrap_content"
@@ -162,32 +179,47 @@
                 </LinearLayout>
             </ScrollView>
 
-            <TextView
-                    android:id="@+id/searchInfoText"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:gravity="center_horizontal"
-                    android:textColor="@android:color/black"
-                    android:visibility="@{(stopsSearcherViewModel.showView == ShowView.InfoText) ? View.VISIBLE : View.GONE}"
-                    tools:text="info" />
-
             <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/linesStopsSearchResults"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="8dp"
-
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    app:loadError="@{stopsSearcherViewModel.loadErrMsg}"
-                    app:showWhenLoadErrMsgIsNull="@{true}"
 
-                    app:source='@{"linesStopsSearchResults"}' />
+                    app:visibleUnless='@{stopsSearcherViewModel.isLoading || stopsSearcherViewModel.loadErrMsg != null || stopsSearcherViewModel.stopSearcherScreenMsg != "" || stopsSearcherViewModel.stopsSearchResults.isEmpty()}' />
 
         </RelativeLayout>
 
-    </LinearLayout>
-</layout><!--
+        <!--
+
+                    app:loadError="@{stopsSearcherViewModel.loadErrMsg}"
+                    app:showWhenLoadErrMsgIsNull="@{true}"
+                    app:source='@{"linesStopsSearchResults"}'
+
+                        android:indeterminateTint="?attr/colorControlLight"
+                        -->
+        <ProgressBar
+                android:id="@+id/loading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:indeterminate="true"
+
+                app:goneUnless="@{stopsSearcherViewModel.isLoading}"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+
+        <!--
+
+                        android:visibility="@{(stopsSearcherViewModel.showView == ShowView.InfoText) ? View.VISIBLE : View.GONE}"
 
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintLeft_toLeftOf="parent"

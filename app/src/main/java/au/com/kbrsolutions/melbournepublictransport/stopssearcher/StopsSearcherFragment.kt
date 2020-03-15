@@ -20,6 +20,7 @@ import au.com.kbrsolutions.melbournepublictransport.databinding.FragmentStopsSea
 import au.com.kbrsolutions.melbournepublictransport.domain.LineStopDetails
 import au.com.kbrsolutions.melbournepublictransport.stopssearcher.StopsSearcherListener.Companion.ADD_TO_FAVORITE_OR_GET_STOPS_ONLINE_ID
 import au.com.kbrsolutions.melbournepublictransport.stopssearcher.StopsSearcherListener.Companion.LIST_VIEW_ROW
+import au.com.kbrsolutions.melbournepublictransport.utilities.EspressoIdlingResource
 import au.com.kbrsolutions.melbournepublictransport.utilities.G_P
 import au.com.kbrsolutions.melbournepublictransport.utilities.hideKeyboard
 import au.com.kbrsolutions.melbournepublictransport.utilities.obtainViewModel
@@ -32,14 +33,12 @@ class StopsSearcherFragment : Fragment() {
     private lateinit var stopsSearchText: TextInputEditText
     private lateinit var adapter: StopsSearcherAdapter
     private var searchTextChangedByUser = true
-//    private lateinit var progressBarHandler: ProgressBarHandler
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?): View? {
         val binding: FragmentStopsSearcherBinding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_stops_searcher, container, false)
-
 
         val arguments = StopsSearcherFragmentArgs.fromBundle(arguments!!)
 
@@ -51,6 +50,7 @@ class StopsSearcherFragment : Fragment() {
         stopsSearchText.setOnEditorActionListener(OnEditorActionListener { v, actionId, event ->
             when (stopsSearcherViewModel.handleSearchButtonClicked(v, actionId, getSearchText())) {
                 true -> {
+//                    EspressoIdlingResource.increment("StopsSearcherFragment.onCreateView.setOnEditorActionListener")
                     setOnTouchListenerOnStopsSearchText()
                     true
                 }
@@ -89,15 +89,12 @@ class StopsSearcherFragment : Fragment() {
 
         setHasOptionsMenu(true)
 
-        // fixLater: Jan 16, 2020 - show progress bar when search started - should be initiated
-        //                          in the view model by some flag observed in this fragment
-        /*progressBarHandler = ProgressBarHandler(this, binding.root)
-        progressBarHandler.show()*/
-
         stopsSearcherViewModel.loadErrMsg.observe(viewLifecycleOwner, Observer {
+
+            Log.v(G_P + "StopsSearcherFragment", """onCreateView - loadErrMsg.observe - it: ${it} """)
             if (it != null) {
-                showErrorMsg(binding.root, it)
-//                progressBarHandler.hide()
+//                showErrorMsg(binding.root, it)
+                stopsSearcherViewModel.setScreenMsg(it)
             }
 //            EspressoIdlingResource.decrement("StopsSearcherViewModel.startLineAndStopsSearch")
         })
@@ -116,19 +113,15 @@ class StopsSearcherFragment : Fragment() {
             val currentTimeMillis = System.currentTimeMillis()
             println(G_P + """StopsSearcherFragment - onCreateView topsSearchResults.observe - it.size: ${it.size}""")
             it?.let {
-                //                if (it.isNotEmpty()) {
-//                    progressBarHandler.hide()
-//                    val departuresSorted = departureViewModel.sortDepartures(
-//                        it, SharedPreferencesUtility.isSortDeparturesDataByTime(context!!))
                 updateAdapterData(it)
                 if (it.isNotEmpty()) {
                     stopsSearcherViewModel.setShownView(ShowView.SearchResults)
+                } else {
+                    stopsSearcherViewModel.emptySearchResultsReturned()
                 }
 //                }
             }
         })
-
-//        stopsSearcherViewModel.insertFavoriteStop()
 
         return binding.root
     }
@@ -139,6 +132,7 @@ class StopsSearcherFragment : Fragment() {
         }
     }
 
+    // fixLater: Mar 08, 2020 - show eror message in a layout and remove function below
     private fun showErrorMsg(binding: View, errorMsg: String) {
         Snackbar.make(binding, errorMsg, Snackbar.LENGTH_SHORT).run {
             show()
@@ -204,6 +198,7 @@ class StopsSearcherFragment : Fragment() {
     private var autoStartSearchRunnable: AutoStartSearchRunnable? = null
 
     private fun autoStartSearchChecker(source: String) {
+        EspressoIdlingResource.increment("StopsSearcherFragment.handleSearchTextChanged")
         if (autoStartSearchRunnable != null) { // remove just in case if there is already one waiting in a queue
             handler.removeCallbacks(autoStartSearchRunnable)
         }
@@ -225,13 +220,13 @@ class StopsSearcherFragment : Fragment() {
          */
         override fun run() {
             if (System.currentTimeMillis() - mMostRecentTimeTextChanged >
-                WAIT_MILLIS_BEFORE_START_AUTO_SEARCH
-            ) {
+                WAIT_MILLIS_BEFORE_START_AUTO_SEARCH) {
                 val searchTest: String? = getSearchText()
                 searchTest?.let {
                     setOnTouchListenerOnStopsSearchText()
                     hideKeyboard()
                     stopsSearcherViewModel.validateSearchTextAndStartSearch(it)
+                    EspressoIdlingResource.decrement("StopsSearcherFragment.AutoStartSearchRunnable.handleSearchTextChanged")
                 }
             } else {
                 autoStartSearchChecker("AutoStartSearchRunnable.run")

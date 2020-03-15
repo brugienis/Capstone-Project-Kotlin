@@ -14,6 +14,7 @@
     <string name="action_sort_by_direction">Sort by direction</string>
 
     <string name="searching_in_progress">Searching</string>
+    <string name="empty_search_results">Nothing found - change search text and try again.</string>
     <string name="invalid_search_text">Search text can only contain letters, numbers, spaces, commas and decimal period.</string>
 
     <string name="express_train">Express to <xliff:g id="platform_number">%1$s</xliff:g></string>

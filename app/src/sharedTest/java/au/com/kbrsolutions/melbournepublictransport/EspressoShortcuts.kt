@@ -13,11 +13,14 @@ import androidx.test.espresso.action.ViewActions
 import androidx.test.espresso.assertion.ViewAssertions
 import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
+import au.com.kbrsolutions.melbournepublictransport.utilities.EspressoIdlingResource
+import au.com.kbrsolutions.melbournepublictransport.utilities.G_P
 import org.hamcrest.CoreMatchers.not
 import org.hamcrest.Description
 import org.hamcrest.Matcher
 import org.hamcrest.Matchers
 import org.hamcrest.TypeSafeMatcher
+import java.lang.Thread.sleep
 
 /*
     check package androidx.test.espresso.matcher - HasSiblingMatcher
@@ -45,8 +48,39 @@ fun Int.performTypeText(stringToBeTyped: String): ViewInteraction =
 fun ViewInteraction.checkIsDisplayed(): ViewInteraction =
     check(ViewAssertions.matches(ViewMatchers.isDisplayed()))
 
+// fixLater: Mar 12, 2020 - remove below
+/*fun ViewInteraction.checkIsDisplayedDebug(): ViewInteraction {
+    Log.v(G_P + "EspressoShortcuts", """checkIsDisplayedDebug - countingIdlingResource counter: ${EspressoIdlingResource.countingIdlingResource.getCounter()}""")
+    while (EspressoIdlingResource.countingIdlingResource.getCounter().get() > 0) {
+        sleep(1_000)
+        Log.v(G_P + "EspressoShortcuts", """checkIsDisplayedDebug - waking counter: ${EspressoIdlingResource.countingIdlingResource.getCounter()}""")
+    }
+    return check(ViewAssertions.matches(ViewMatchers.isDisplayed()))
+}*/
+
 fun ViewInteraction.checkIsNotDisplayed(): ViewInteraction =
     check(ViewAssertions.matches(not(isDisplayed())))
+
+/**
+ * We have now one test case
+ *
+ *     enterSearchText_responseHealthFalse_showErrMsg_startSearchAgainWithResponseHealthTrue
+ *
+ * where the 'verify' step starts when the
+ *
+ *     EspressoIdlingResource.countingIdlingResource.getCounter()
+ *
+ * is not 0 - weird. The Espresso framework should take care of that.
+ *
+ * This function blocks the next Espresso's step until the counter is zero.
+ */
+fun showIdlingResourcesDetails(source: String) {
+    Log.v(G_P + "EspressoShortcuts", """showIdlingResourcesDetails - countingIdlingResource counter: ${EspressoIdlingResource.countingIdlingResource.getCounter()} source: $source""")
+    while (EspressoIdlingResource.countingIdlingResource.getCounter().get() > 0) {
+        sleep(1_000)
+        Log.v(G_P + "EspressoShortcuts", """showIdlingRecourcesDetails - waking countingIdlingResource counter: ${EspressoIdlingResource.countingIdlingResource.getCounter()}""")
+    }
+}
 
 //-------------------------------------------------------------------------------
 

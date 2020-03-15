@@ -31,6 +31,8 @@ class StopsSearcherRepositoryReal(private val lineStopDetailsDao: LineStopDetail
 
     override val loadErrMsg = MutableLiveData<String>()
 
+    override val isLoading = MutableLiveData<Boolean>()
+
     override suspend fun clearTable() {
         withContext(Dispatchers.IO) {
             lineStopDetailsDao.clear()
@@ -49,43 +51,63 @@ class StopsSearcherRepositoryReal(private val lineStopDetailsDao: LineStopDetail
         path: String,
         favoriteStopIdsSet: Set<Int>,
         context: Context) {
+        withContext(Dispatchers.IO) {
+            isLoading.postValue(true)
+            val useHardCodedPvtResponse = SharedPreferencesUtility.useHardCodedPvtResponse(context)
+            Log.v(
+                G_P + "StopsSearcherRepositoryReal",
+                """sendRequestAndProcessPtvResponse - path: ${path} """
+            )
+            Log.v(
+                G_P + "StopsSearcherRepositoryReal",
+                """sendRequestAndProcessPtvResponse - useHardCodedPvtResponse: $useHardCodedPvtResponse """
+            )
+            var stopsSearcherObjectsFromJson: StopsSearcherObjectsFromJson? = null
+            try {
+                if (SharedPreferencesUtility.useHardCodedPvtResponse(context)) {
+                    stopsSearcherObjectsFromJson =
+                        DebugUtilities(context).getStopsSearcherResponse(path)
+                } else {
+                    Log.v(
+                        G_P + "StopsSearcherRepositoryReal",
+                        """sendRequestAndProcessPtvResponse - sending request to the real PTV"""
+                    )
+                    val getDeparturesDeferred: Deferred<StopsSearcherObjectsFromJson> =
+                        PtvApi.retrofitService.getPtvStopsSearcherResponse(path)
+                    stopsSearcherObjectsFromJson = getDeparturesDeferred.await()
+                }
 
-        Log.v(G_P + "StopsSearcherRepositoryReal", """sendRequestAndProcessPtvResponse - path: ${path} """)
-        var stopsSearcherObjectsFromJson: StopsSearcherObjectsFromJson? = null
-        try {
-            if (SharedPreferencesUtility.useHardCodedPvtResponse(context)) {
-                stopsSearcherObjectsFromJson =
-                    DebugUtilities(context).getStopsSearcherResponse(path)
-            } else {
-                val getDeparturesDeferred: Deferred<StopsSearcherObjectsFromJson> =
-                    PtvApi.retrofitService.getPtvStopsSearcherResponse(path)
-                stopsSearcherObjectsFromJson = getDeparturesDeferred.await()
-            }
-
-            // fixLater: Jan 06, 2020 - the 'stopId' is an Int - why do we pass set of strings?
+                // fixLater: Jan 06, 2020 - the 'stopId' is an Int - why do we pass set of strings?
 //            val favoriteStopIdsSetTemp = mutableSetOf<Int>()
-            val linesAndStopsForSearchResult: LinesAndStopsForSearchResult =
-                StopsSearcherJsonProcessor.buildStopsSearcherDetailsList(
-                    stopsSearcherObjectsFromJson,
-                    favoriteStopIdsSet)
+                val linesAndStopsForSearchResult: LinesAndStopsForSearchResult =
+                    StopsSearcherJsonProcessor.buildStopsSearcherDetailsList(
+                        stopsSearcherObjectsFromJson,
+                        favoriteStopIdsSet
+                    )
 
-            if (!linesAndStopsForSearchResult.health) {
-                throw java.lang.RuntimeException(context.getString(R.string.ptv_is_not_available))
-            }
-            val linesStopsDetails =
-                linesAndStopsForSearchResult.lineStopDetailsList
-            loadErrMsg.postValue( null)
-            lineStopDetailsDao.clearTableAndInsertNewRows(linesStopsDetails)
+                if (!linesAndStopsForSearchResult.health) {
+                    throw java.lang.RuntimeException(context.getString(R.string.ptv_is_not_available))
+                }
+                val linesStopsDetails =
+                    linesAndStopsForSearchResult.lineStopDetailsList
+                loadErrMsg.postValue(null)
+                lineStopDetailsDao.clearTableAndInsertNewRows(linesStopsDetails)
 
-            /*linesStopsDetails.forEachIndexed { index, lineStopDetails ->
+                /*linesStopsDetails.forEachIndexed { index, lineStopDetails ->
                 if (index < 10) {
                     Log.v(G_P + "StopsSearcherRepositoryFake", """sendRequestAndProcessPtvResponse - lineStopDetails: ${lineStopDetails} """)
 //                    println(G_P + """StopsSearcherRepositoryFake - sendRequestAndProcessPtvResponse - lineStopDetails: ${lineStopDetails} """)
                 }
             }*/
-        } catch (e: Exception) {
-            Log.v(G_P + "StopsSearcherRepositoryReal", """sendRequestAndProcessPtvResponse - e: ${e} """)
-            loadErrMsg.postValue( "${e.message}")
+            } catch (e: Exception) {
+                Log.v(
+                    G_P + "StopsSearcherRepositoryReal",
+                    """sendRequestAndProcessPtvResponse - e: ${e} """
+                )
+                loadErrMsg.postValue("${e.message}")
+            } finally {
+                isLoading.postValue(false)
+            }
         }
     }
 

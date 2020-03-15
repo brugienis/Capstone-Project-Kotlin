@@ -17,6 +17,8 @@ interface StopsSearcherRepository : Repository {
 
     val loadErrMsg: MutableLiveData<String>
 
+    val isLoading: MutableLiveData<Boolean>
+
     suspend fun sendRequestAndProcessPtvResponse(
         path: String,
         favoriteStopIdsSet: Set<Int>,

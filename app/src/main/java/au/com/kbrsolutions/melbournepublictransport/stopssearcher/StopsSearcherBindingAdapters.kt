@@ -1,15 +1,31 @@
 package au.com.kbrsolutions.melbournepublictransport.stopssearcher
 
 import android.annotation.SuppressLint
+import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import au.com.kbrsolutions.melbournepublictransport.R
 import au.com.kbrsolutions.melbournepublictransport.domain.LineStopDetails
+import au.com.kbrsolutions.melbournepublictransport.utilities.EspressoIdlingResource
+import au.com.kbrsolutions.melbournepublictransport.utilities.G_P
 import au.com.kbrsolutions.melbournepublictransport.utilities.TRAIN_ROUTE_TYPE
 import au.com.kbrsolutions.melbournepublictransport.utilities.TRAM_ROUTE_TYPE
 import com.google.android.material.textfield.TextInputEditText
+
+@BindingAdapter("goneUnless")
+fun goneUnless(view: View, visible: Boolean) {
+    view.visibility = if (visible) View.VISIBLE else View.GONE
+    Log.v(G_P + "<top>", """goneUnless - request: $visible; visible?: ${view.visibility} view: ${view} """)
+}
+
+@BindingAdapter("visibleUnless")
+fun visibleUnless(view: View, visible: Boolean) {
+    view.visibility = if (visible) View.GONE else View.VISIBLE
+    Log.v(G_P + "<top>", """visibleUnless - request: $visible; visible?: ${view.visibility} view: ${view} """)
+}
+
 
 /**
  * This binding adapter toggles the 'show less/more' icon.
@@ -66,11 +82,24 @@ fun setSearchValidationMsgVisibility(
     searchValidationMsgView: TextView,
     searchValidationMsg: String,
     source: String?) {
+    Log.v(G_P + "<top>", """setSearchValidationMsgVisibility - searchValidationMsg: ${searchValidationMsg} """)
     if (searchValidationMsg.isEmpty()) {
         searchValidationMsgView.visibility = View.GONE
     } else {
         searchValidationMsgView.visibility = View.VISIBLE
     }
+//    if (view.visibility == View.VISIBLE && !showWhenLoadErrMsgIsNull) {
+        EspressoIdlingResource.decrement("BindingAdapters.bindViewLoadErrMsg") // Set app as idle.x
+//    }
+}
+
+@BindingAdapter(value = ["stopsSearchTextLayoutIsProcessing", "source"])
+fun stopsSearchTextLayoutIsProcessing(
+    stopsSearchTextLayout: View,
+    searchText: String,
+    source: String?) {
+    Log.v(G_P + "<top>", """stopsSearchTextLayoutIsProcessing - searchText: ${searchText} """)
+    EspressoIdlingResource.decrement("StopsSearcherBindingAdapters.stopsSearchTextLayoutIsProcessing") // Set app as idle.x
 }
 
 /**

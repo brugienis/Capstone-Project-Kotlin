@@ -13,12 +13,9 @@ import au.com.kbrsolutions.melbournepublictransport.data.DatabaseFavoriteStop
 import au.com.kbrsolutions.melbournepublictransport.domain.LineStopDetails
 import au.com.kbrsolutions.melbournepublictransport.repository.FavoriteStopsRepository
 import au.com.kbrsolutions.melbournepublictransport.repository.StopsSearcherRepository
-import au.com.kbrsolutions.melbournepublictransport.utilities.G_P
-import au.com.kbrsolutions.melbournepublictransport.utilities.Miscellaneous
-import au.com.kbrsolutions.melbournepublictransport.utilities.SharedPreferencesUtility
+import au.com.kbrsolutions.melbournepublictransport.utilities.*
 import au.com.kbrsolutions.melbournepublictransport.utilities.SharedPreferencesUtility.getRouteTypes
 import au.com.kbrsolutions.melbournepublictransport.utilities.SharedPreferencesUtility.setShowStopSearcherInstructions
-import au.com.kbrsolutions.melbournepublictransport.utilities.hideSoftKeyboardForView
 import kotlinx.coroutines.*
 
 enum class ShowView {
@@ -69,13 +66,16 @@ class StopsSearcherViewModel(
     val searchTextHint: LiveData<String>
         get() = _searchTextHint
 
-    private val _stopSearcherTextValidationMsg = MutableLiveData<String>()
+    private val _stopSearcherScreenMsg = MutableLiveData<String>("")
 
-    val stopSearcherTextValidationMsg: LiveData<String>
-        get() = _stopSearcherTextValidationMsg
+    val stopSearcherScreenMsg: LiveData<String>
+        get() = _stopSearcherScreenMsg
 
     val loadErrMsg: LiveData<String>
         get() = stopsSearcherRepository.loadErrMsg
+
+    val isLoading: LiveData<Boolean>
+        get() = stopsSearcherRepository.isLoading
 
     private val _clearMsgClicked = MutableLiveData<Boolean>()
 
@@ -86,7 +86,7 @@ class StopsSearcherViewModel(
     val favoriteStopsArray = stopsSearcherFragmentArgs.favoriteStopsArray
 
     init {
-        Log.v(G_P + "StopsSearcherViewModel", """ - favoriteStopsArray: ${favoriteStopsArray.size} """)
+        Log.v(G_P + "StopsSearcherViewModel", """ - init - favoriteStopsArray size: ${favoriteStopsArray.size} """)
         favoriteStopsArray.forEach {
             Log.v(G_P + "StopsSearcherViewModel", """ - favStopId: ${it} """)
         }
@@ -126,9 +126,9 @@ class StopsSearcherViewModel(
     }
 
     private fun clearValidationMsg() {
-        if (_stopSearcherTextValidationMsg.value == null ||
-            _stopSearcherTextValidationMsg.value!!.isNotEmpty()) {
-            _stopSearcherTextValidationMsg.value = ""
+        if (_stopSearcherScreenMsg.value == null ||
+            _stopSearcherScreenMsg.value!!.isNotEmpty()) {
+            _stopSearcherScreenMsg.value = ""
         }
     }
 
@@ -156,6 +156,7 @@ class StopsSearcherViewModel(
      * @param searchText    search text
      */
     fun validateSearchTextAndStartSearch(searchText: String) {
+        Log.v(G_P + "StopsSearcherViewModel", """validateSearchTextAndStartSearch - searchText: ${searchText} """)
         var locSearchText: String = searchText
         if (Miscellaneous.validateSearchText(locSearchText)) {
             locSearchText = Miscellaneous.capitalizeWords(locSearchText)
@@ -163,9 +164,12 @@ class StopsSearcherViewModel(
 //            showInfoText(getString(R.string.searching_in_progress))
             _searchTextHint.value = context.resources.getString(R.string.searching_in_progress)
             clearValidationMsg()
+            Log.v(G_P + "StopsSearcherViewModel", """validateSearchTextAndStartSearch - searchHint: ${context.resources.getString(R.string.searching_in_progress)} counter: ${EspressoIdlingResource.countingIdlingResource.getCounter()} """)
+//            EspressoIdlingResource.decrement("StopsSearcherViewModel.validateSearchTextAndStartSearch")
         } else {
+            Log.v(G_P + "StopsSearcherViewModel", """validateSearchTextAndStartSearch - validation failed - searchText: ${searchText} """)
 //            showInfoText(getString(R.string.invalid_search_text))
-            _stopSearcherTextValidationMsg.value = context.resources.getString(R.string.invalid_search_text)
+            _stopSearcherScreenMsg.value = context.resources.getString(R.string.invalid_search_text)
         }
     }
 
@@ -179,7 +183,7 @@ class StopsSearcherViewModel(
             40000f,
             routTypes
         )
-//        EspressoIdlingResource.increment("StopsSearcherViewModel.startLineAndStopsSearch")
+        EspressoIdlingResource.increment("StopsSearcherViewModel.startLineAndStopsSearch")
         val favoriteStopIdsSet = mutableSetOf<Int>()
         Log.v(G_P + "StopsSearcherViewModel", """startLineAndStopsSearch - path: ${path} """)
         uiScope.launch {
@@ -235,6 +239,16 @@ class StopsSearcherViewModel(
             insertStopDetails(stopsSearcherRepository.getLineStopdetails(id))
         }
     }*/
+
+    fun setScreenMsg(screenMsg: String) {
+        _stopSearcherScreenMsg.value = screenMsg
+//        EspressoIdlingResource.decrement("StopsSearcherViewModel.startLineAndStopsSearch")
+        Log.v(G_P + "StopsSearcherViewModel", """setScreenMsg - screenMsg: ${screenMsg} """)
+    }
+
+    fun emptySearchResultsReturned() {
+        _stopSearcherScreenMsg.value = context.resources.getString(R.string.empty_search_results)
+    }
 
     fun toggleShowHideNotes() {
         setShowStopSearcherInstructions(

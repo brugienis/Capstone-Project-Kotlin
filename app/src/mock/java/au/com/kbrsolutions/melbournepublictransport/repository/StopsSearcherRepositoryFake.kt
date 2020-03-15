@@ -2,6 +2,7 @@ package au.com.kbrsolutions.melbournepublictransport.repository
 
 //import au.com.kbrsolutions.melbournepublictransport.utilities.USE_HARD_CODED_PVT_RESPONSE
 import android.content.Context
+import android.util.Log
 import androidx.annotation.VisibleForTesting
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -15,9 +16,10 @@ import au.com.kbrsolutions.melbournepublictransport.network.PtvApi
 import au.com.kbrsolutions.melbournepublictransport.stopssearcher.LinesAndStopsForSearchResult
 import au.com.kbrsolutions.melbournepublictransport.stopssearcher.StopsSearcherJsonProcessor
 import au.com.kbrsolutions.melbournepublictransport.stopssearcher.jsondata.StopsSearcherObjectsFromJson
+import au.com.kbrsolutions.melbournepublictransport.utilities.EspressoIdlingResource
+import au.com.kbrsolutions.melbournepublictransport.utilities.G_P
 import au.com.kbrsolutions.melbournepublictransport.utilities.SharedPreferencesUtility
-import kotlinx.coroutines.Deferred
-import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.*
 import java.util.*
 
 /**
@@ -37,7 +39,9 @@ class StopsSearcherRepositoryFake() : StopsSearcherRepository {
 
     override val loadErrMsg = MutableLiveData<String>()
 
-    private var delayMillis = 0L
+    override val isLoading = MutableLiveData<Boolean>(false)
+
+    private var delayMillis: Long = 1L
 
     fun setSimulatedDelayMillis(delayMillis: Long) {
         this.delayMillis = delayMillis
@@ -55,53 +59,56 @@ class StopsSearcherRepositoryFake() : StopsSearcherRepository {
         path: String,
         favoriteStopIdsSet: Set<Int>,
         context: Context) {
-//        Log.v(G_P + "StopsSearcherRepositoryFake", """sendRequestAndProcessPtvResponse - path: ${path} """)
+        Log.v(G_P + "StopsSearcherRepositoryFake", """sendRequestAndProcessPtvResponse - path: ${path} """)
 
-//        EspressoIdlingResource.increment("StopsSearcherRepositoryFake.sendRequestAndProcessPtvResponse") // Set app as busy.
-            /*runBlocking {
-                delay(delayMillis)*/
+        EspressoIdlingResource.increment("StopsSearcherRepositoryFake.sendRequestAndProcessPtvResponse") // Set app as busy.
 
-            var stopsSearcherObjectsFromJson: StopsSearcherObjectsFromJson? = null
+        withContext(Dispatchers.IO) {
+            isLoading.postValue(true)
+
+            runBlocking {
+                delay(delayMillis)
+            }
+
+            var stopsSearcherObjectsFromJson: StopsSearcherObjectsFromJson?
             try {
                 if (SharedPreferencesUtility.useHardCodedPvtResponse(context)) {
                     stopsSearcherObjectsFromJson =
                         DebugUtilities(context).getStopsSearcherResponse(
-                            debuggingJsonStringFile)
+                            debuggingJsonStringFile
+                        )
                 } else {
                     val getDeparturesDeferred: Deferred<StopsSearcherObjectsFromJson> =
                         PtvApi.retrofitService.getPtvStopsSearcherResponse(path)
                     stopsSearcherObjectsFromJson = getDeparturesDeferred.await()
                 }
 
-                // fixLater: Jan 06, 2020 - the 'stopId' is an Int - why do we pass set of strings?
-//                val favoriteStopIdsSetTemp = mutableSetOf<Int>()
                 val linesAndStopsForSearchResult: LinesAndStopsForSearchResult =
                     StopsSearcherJsonProcessor.buildStopsSearcherDetailsList(
                         stopsSearcherObjectsFromJson,
-                        favoriteStopIdsSet)
+                        favoriteStopIdsSet
+                    )
 
                 if (!linesAndStopsForSearchResult.health) {
                     throw java.lang.RuntimeException(context.getString(R.string.ptv_is_not_available))
                 }
                 val linesStopsDetails =
                     linesAndStopsForSearchResult.lineStopDetailsList
-                loadErrMsg.postValue( null)
-
-                /*linesStopsDetails.forEachIndexed { index, lineStopDetails ->
-                    if (index < 10) {
-                        Log.v(G_P + "StopsSearcherRepositoryFake", """sendRequestAndProcessPtvResponse - lineStopDetails: ${lineStopDetails} """)
-                        println(G_P + """StopsSearcherRepositoryFake - sendRequestAndProcessPtvResponse - lineStopDetails: ${lineStopDetails} """)
-                    }
-                }*/
+                loadErrMsg.postValue(null)
 
                 linesStopsDetails.forEach { lineStopDetails ->
                     stopsSearcherServiceData[lineStopDetails.id] = lineStopDetails
                 }
                 updateLiveData()
+                Log.v(G_P + "StopsSearcherRepositoryFake", """sendRequestAndProcessPtvResponse - stopsSearcherServiceData: ${stopsSearcherServiceData.size} """)
             } catch (e: Exception) {
-                loadErrMsg.postValue( "${e.message}")
+                loadErrMsg.postValue("${e.message}")
+                Log.v(G_P + "StopsSearcherRepositoryFake", """sendRequestAndProcessPtvResponse - e: ${e} """)
+            } finally {
+                isLoading.postValue(false)
             }
-//        EspressoIdlingResource.decrement("StopsSearcherRepositoryFake.sendRequestAndProcessPtvResponse") // Set app as idle.
+            EspressoIdlingResource.decrement("StopsSearcherRepositoryFake.sendRequestAndProcessPtvResponse") // Set app as idle.
+        }
     }
 
     /*
